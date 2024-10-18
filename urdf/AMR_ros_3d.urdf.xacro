@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<robot name="AGV" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.14 0 0.33" rpy="1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/amr_scl.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white">
+           <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="laser_joint_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan_10" />
+    <origin xyz="0.2247 0.2847 0.05" rpy="0 0 0.707"/>
+
+  </joint>
+
+  <link name="base_scan_10">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/laser_scan.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="blue">
+           <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+   <joint name="laser_joint_2" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan_11" />
+    <origin xyz="-0.5047 -0.2847 0.05" rpy="0 0 -2.3561"/>
+  </joint>
+
+  <link name="base_scan_11">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/laser_scan.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="blue">
+           <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+ <joint name="sick_laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="VLP16" />
+    <origin xyz="0.04 0 1.29" rpy="0.0 0.00436 0.015"/> //0.27 0.68 -14
+  </joint>
+
+  <link name="VLP16">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/sick_tim_5xx.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="blue">
+           <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+</robot>

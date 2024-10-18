@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<robot name="AGV" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- This first link called "world" is empty -->
+  <!-- <link name="world"></link>
+  <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="1.5708 0 -1.5708"/>
+      <parent link="world"/>
+      <child link="base_link"/>        
+  </joint> -->
+
+  <!--base link-->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.38" rpy="1.5708 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/amr_scl.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="gray">
+           <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!--front laser link-->
+  <joint name="front_laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_laser_link" />
+    <origin xyz="0.35 0.27 0.15" rpy="0 0 0.785"/>
+  </joint>
+  <link name="front_laser_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/laser_scan.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white">
+           <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!--back laser link-->
+  <joint name="back_laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_laser_link" />
+    <origin xyz="-0.35 -0.27 0.15" rpy="0 0 3.925"/>
+  </joint>
+  <link name="back_laser_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/laser_scan.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white">
+           <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!--velodyne VLP16-->
+  <joint name="VLP16_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="VLP16" />
+    <origin xyz="0.35 0 1.26" rpy="0 0 0"/>
+  </joint>
+  <link name="VLP16">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://scl_amr/meshes/sick_tim_5xx.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="white">
+           <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!--IMU-->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="IMU" />
+    <origin xyz="0.05 0.05 0.32" rpy="0 0 0"/>
+  </joint>
+  <link name="IMU">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.2 0.1" />
+      </geometry>
+      <material name="white">
+           <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+</robot>
