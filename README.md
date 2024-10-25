@@ -1,3 +1,7 @@
-# scl_amr
+# ROS2 3D lidar AMR develop
 
-scl amr for ros2 humble 
+## sensor
+- velodyne
+- hokuyo
+- imu
+
