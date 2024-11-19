@@ -21,8 +21,8 @@ typedef struct
 PIDInfo leftInfo, rightInfo; // PID information for left and right motors
 
 // PID parameters configuration
-double Kp_L = 0.3, Ki_L = 0.007, Kd_L = 0.0;   // Left motor PID gains
-double Kp_R = 0.315, Ki_R = 0.007, Kd_R = 0.0; // Right motor PID gains
+double Kp_L = 0.315, Ki_L = 0.0, Kd_L = 0.0;   // Left motor PID gains I = 0.007?
+double Kp_R = 0.3, Ki_R = 0.0, Kd_R = 0.0; // Right motor PID gains I = 0.007?
 
 PID leftPID(&leftInfo.input, &leftInfo.output, &leftInfo.target, Kp_L, Ki_L, Kd_L, DIRECT);
 PID rightPID(&rightInfo.input, &rightInfo.output, &rightInfo.target, Kp_R, Ki_R, Kd_R, DIRECT);
@@ -32,7 +32,6 @@ double pidRate = 100.0;                // 100 Hz
 double pidinterval = 1000.0 / pidRate; // 10 ms interval for PID computation
 
 long nextmotion; // Time tracker for next PID computation
-int moving;      // Flag indicating whether PID is active
 
 // Function to reset encoder and PID-related variables
 void resetPIDInfo()

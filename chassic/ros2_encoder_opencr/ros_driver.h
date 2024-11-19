@@ -12,7 +12,7 @@
 #include <sensor_msgs/msg/nav_sat_fix.h>
 #include <sensor_msgs/msg/range.h>
 #include <std_msgs/msg/int32.h>
-#include <std_msgs/msg/float32.h>
+#include <std_msgs/msg/float64.h>
 #include "motor_driver.h"
 
 // Macro to check and handle RCL initialization errors
@@ -49,11 +49,11 @@ rcl_allocator_t allocator;
 rcl_node_t node;
 
 // ROS messages for encoder and PWM data
-std_msgs__msg__Float32 encoderLeftMsg;
-std_msgs__msg__Float32 encoderRightMsg;
-std_msgs__msg__Float32 pwmLeftMsg;
-std_msgs__msg__Float32 pwmRightMsg;
-std_msgs__msg__Float32 pwmMsg;
+std_msgs__msg__Float64 encoderLeftMsg;
+std_msgs__msg__Float64 encoderRightMsg;
+std_msgs__msg__Float64 pwmLeftMsg;
+std_msgs__msg__Float64 pwmRightMsg;
+std_msgs__msg__Float64 pwmMsg;
 
 geometry_msgs__msg__Twist twist_msg;
 
@@ -69,7 +69,7 @@ void error_loop()
 }
 
 // Timer callback to subscribe cmd_vel topic
-void cmd_vel_callback(const void *msgin)
+void cmdVelTimerCallback(const void *msgin)
 {
   const geometry_msgs__msg__Twist *msg = (const geometry_msgs__msg__Twist *)msgin;
   double Velocity = msg->linear.x;
@@ -129,7 +129,7 @@ void initializePublisher(rcl_publisher_t &publisher, const char *topic_name)
   RCCHECK(rclc_publisher_init_default(
       &publisher,
       &node,
-      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32),
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64),
       topic_name));
 }
 
@@ -169,7 +169,7 @@ void Init_ROS_Node()
   RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
 
   // Create the ROS 2 node
-  RCCHECK(rclc_node_init_default(&node, "micro_ros_esp32_node", "", &support));
+  RCCHECK(rclc_node_init_default(&node, "micro_ros_opencr_node", "", &support));
 
   // Initialize executor with support context
   RCCHECK(rclc_executor_init(&executor, &support.context, 5, &allocator));
@@ -188,7 +188,7 @@ void Init_ROS_Node()
   initializeTimer(rightPwmTimer, timerTimeout, rightPwmTimerCallback);
 
   // Initialize cmd_vel subscriber
-  twistSubscriber(cmdVelSubscriber, "cmd_vel", cmd_vel_callback);
+  twistSubscriber(cmdVelSubscriber, "cmd_vel", cmdVelTimerCallback);
 }
 
 #endif
