@@ -181,7 +181,7 @@ void Init_ROS_Node()
   initializePublisher(pwmRightPublisher, "pwm_right");
 
   // Initialize timers for encoder data publishing
-  const unsigned int timerTimeout = 50; // Timer interval in ms
+  const unsigned int timerTimeout = 5; // Timer interval in ms
   initializeTimer(leftEncoderTimer, timerTimeout, leftEncoderTimerCallback);
   initializeTimer(rightEncoderTimer, timerTimeout, rightEncoderTimerCallback);
   initializeTimer(leftPwmTimer, timerTimeout, leftPwmTimerCallback);

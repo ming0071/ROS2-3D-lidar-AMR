@@ -6,15 +6,18 @@
 #include <std_msgs/msg/float64.h>
 
 // Pin definitions for encoders
-#define EncoderLeftA 3  // Left encoder channel A pin
-#define EncoderLeftB 4  // Left encoder channel B pin
-#define EncoderRightA 8 // Right encoder channel A pin
-#define EncoderRightB 9 // Right encoder channel B pin
+// 左侧电机的 A B 相编码器接口引脚
+#define EncoderLeftA 26  
+#define EncoderLeftB 27  
+
+// 右侧电机的 A B 相编码器接口引脚
+#define EncoderRightA 18  
+#define EncoderRightB 19  
 
 // Constants for encoder calculations
-const double PULSES_PER_REVOLUTION = 753982.23686; // Adjusted for gear ratio or resolution
-const int PULSE_THRESHOLD = 10;                    // Minimum pulse count required for speed calculation
-const int VELOCITY_DIVISOR = 20;                   // Divisor to scale computed velocity
+const double PPR = 1000.0;           // Encoder pulses per revolution (2*500 = 1000)
+const double Ridus = 0.06;           // Wheel radius in meters
+const double PULSE_THRESHOLD = 50.0; // Minimum pulse count required for speed calculation
 
 // Structure to store encoder properties and calculated data
 typedef struct
@@ -73,11 +76,11 @@ void encoderISR(EncoderData &encoder, int pinA, int pinB)
             encoder.direction = -encoder.directionFactor; // Set direction based on directionFactor for reverse rotation
         }
 
-        encoder.currentMicros = micros();                                     // Record the current time
-        encoder.timeElapsed = encoder.currentMicros - encoder.previousMicros; // Compute time interval
+        encoder.currentMicros = micros();                                                   // Record the current time
+        encoder.timeElapsed = (encoder.currentMicros - encoder.previousMicros) / 1000000.0; // Compute time interval in seconds
 
         // Compute speed and update ROS message
-        encoder.speedMsg.data = (encoder.direction * PULSES_PER_REVOLUTION) / encoder.timeElapsed / VELOCITY_DIVISOR;
+        encoder.speedMsg.data = encoder.direction * (2 * PI * Ridus) * (PULSE_THRESHOLD / PPR) / encoder.timeElapsed;
 
         // Reset values for the next calculation
         encoder.value = 0;

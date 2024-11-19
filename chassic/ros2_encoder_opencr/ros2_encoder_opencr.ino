@@ -5,6 +5,8 @@
 
 #define AUTO_STOP_INTERVAL 1500 // Time (in milliseconds) to stop motors if no new command is received
 
+int moving; // Flag indicating whether PID is active
+
 void setup()
 {
   Serial.begin(115200); // Initialize serial communication at 115200 baud rate for debugging or logging
@@ -26,6 +28,11 @@ void loop()
   if ((millis() - lastMotorCommand) > AUTO_STOP_INTERVAL)
   {
     setTargetTicksPerFrame(0, 0); // Set target motor ticks to zero to stop motion
+    moving = 0;
+  }
+  else
+  {
+    moving = 1;
   }
 
   // Process incoming ROS messages and execute callbacks

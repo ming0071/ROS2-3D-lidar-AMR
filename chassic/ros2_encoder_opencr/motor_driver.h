@@ -8,7 +8,7 @@
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 #include <std_msgs/msg/int32.h>
-#include <std_msgs/msg/float32.h>
+#include <std_msgs/msg/float64.h>
 #include "pid_v1.h"
 
 // Motor control pins for left motor
@@ -33,6 +33,7 @@ struct TwistControl
 const double encoderResolution = 40000.0; // Encoder pulses per revolution (2*2*500*20 = 40000)
 const double wheelDiameter = 0.120;       // Wheel diameter in meters
 const double wheelBase = 0.36;            // Distance between rear wheels in meters
+
 
 // Function to control the speed and direction of motors
 void setSpeeds(int leftSpeed, int rightSpeed)
@@ -91,30 +92,19 @@ void Init_Motors()
   setSpeeds(0, 0);
 }
 
-// Reset the custom Twist structure
-void resetTwistTemp()
-{
-  twistTemp.leftPulsePerInterval = 0;
-  twistTemp.rightPulsePerInterval = 0;
-}
-
 // Set target pulses for the PID controller
 void setTargetTicksPerFrame(int left, int right)
 {
   if (left == 0 && right == 0)
   {
     setSpeeds(0, 0);
-    moving = 0;
-  }
-  else
-  {
-    moving = 1;
   }
   leftInfo.target = left;
   rightInfo.target = right;
-  resetTwistTemp();
+  // Reset Twist temp
+  twistTemp.leftPulsePerInterval = 0;
+  twistTemp.rightPulsePerInterval = 0;
 }
-
 // Convert twist commands to motor target pulses
 void twistToPulseAndServo(double linearVel, double angularVel)
 {

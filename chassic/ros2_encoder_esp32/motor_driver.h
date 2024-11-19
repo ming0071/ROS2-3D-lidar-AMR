@@ -11,15 +11,16 @@
 #include <std_msgs/msg/float64.h>
 #include "pid_v1.h"
 
-// Motor control pins for left motor
-#define LEFT_SV 5 // Left motor PWM speed control pin
-#define LEFT_FR 6 // Left motor forward/reverse control pin
-#define LEFT_EN 7 // Left motor enable pin
+// 左边电机转动方向控制位 引脚
+#define LEFT_SV 32
+#define LEFT_FR 33
+#define LEFT_EN 25
 
-// Motor control pins for right motor
-#define RIGHT_SV 10 // Right motor PWM speed control pin
-#define RIGHT_FR 11 // Right motor forward/reverse control pin
-#define RIGHT_EN 12 // Right motor enable pin
+// 右边电机转动方向控制位 引脚
+#define RIGHT_SV 23
+#define RIGHT_FR 22
+#define RIGHT_EN 21 
+
 
 #define PI 3.1415926
 
