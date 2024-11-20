@@ -28,7 +28,7 @@ PID rightPID(&rightInfo.input, &rightInfo.output, &rightInfo.target, Kp_R, Ki_R,
 double pidRate = 100.0;                // 100 Hz
 double pidinterval = 1000.0 / pidRate; // 10 ms interval for PID computation
 
-long nextmotion; // Time tracker for next PID computation
+long nextMotion; // Time tracker for next PID computation
 
 // PID initialization function
 void Init_PID()
@@ -69,7 +69,7 @@ void compute_PID()
   setSpeeds(leftInfo.output, rightInfo.output);
 
   // Update next motion timestamp
-  nextmotion = millis() + pidinterval;
+  nextMotion = millis() + pidinterval;
 }
 
 #endif
