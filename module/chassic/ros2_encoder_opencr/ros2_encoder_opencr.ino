@@ -19,7 +19,7 @@ void setup()
 void loop()
 {
   // Execute PID control if the scheduled time interval has passed and motion is active
-  if (nextmotion <= millis() && moving == 1)
+  if (nextMotion <= millis() && moving == 1)
   {
     compute_PID(); // Perform PID computation and update motor outputs
   }
