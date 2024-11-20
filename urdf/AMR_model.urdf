@@ -76,13 +76,13 @@
     </visual>
   </link>
 
-  <!--IMU-->
+  <!--IMU link-->
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="IMU" />
+    <child link="imu_link" />
     <origin xyz="0.05 0.05 0.32" rpy="0 0 0"/>
   </joint>
-  <link name="IMU">
+  <link name="imu_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>

@@ -43,11 +43,19 @@ def generate_launch_description():
             "imu_pub.launch.py",
         ),
     )
+    micro_ros_launch = IncludeLaunchDescription(
+        os.path.join(
+            get_package_share_directory("micro_ros_agent"),
+            "launch",
+            "micro_ros_agent_launch.py",
+        ),
+    )
 
     ld = LaunchDescription()
     ld.add_action(tf_launch)
     ld.add_action(hokuyo_launch)
     ld.add_action(merged_launch)
     ld.add_action(imu_launch)
+    ld.add_action(micro_ros_launch)
 
     return ld
