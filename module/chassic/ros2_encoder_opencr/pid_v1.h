@@ -21,8 +21,8 @@ typedef struct
 PIDInfo leftInfo, rightInfo; // PID information for left and right motors
 
 // PID parameters configuration
-double Kp_L = 0.315, Ki_L = 0.0, Kd_L = 0.0;   // Left motor PID gains I = 0.007?
-double Kp_R = 0.3, Ki_R = 0.0, Kd_R = 0.0; // Right motor PID gains I = 0.007?
+double Kp_L = 0.315, Ki_L = 0.0, Kd_L = 0.0; // Left motor PID gains I = 0.007?
+double Kp_R = 0.3, Ki_R = 0.0, Kd_R = 0.0;   // Right motor PID gains I = 0.007?
 
 PID leftPID(&leftInfo.input, &leftInfo.output, &leftInfo.target, Kp_L, Ki_L, Kd_L, DIRECT);
 PID rightPID(&rightInfo.input, &rightInfo.output, &rightInfo.target, Kp_R, Ki_R, Kd_R, DIRECT);
@@ -61,19 +61,15 @@ void Init_PID()
 // PID computation function, called at the specified interval
 void compute_PID()
 {
-  // Update and calculate left motor PID
-  leftInfo.currentEncoder = leftEncoder.speedMsg.data;
-  leftInfo.input = leftInfo.currentEncoder - leftInfo.lastEncoder; // Compute input change
-  leftInfo.error = leftInfo.target - leftInfo.input;               // Compute error
-  leftPID.Compute();                                               // Perform PID calculation
-  leftInfo.lastEncoder = leftEncoder.speedMsg.data;                // Store last encoder value
+  // Update left motor PID
+  leftInfo.currentEncoder = leftEncoder.speedMsg.data; // Current encoder speed
+  leftInfo.input = leftInfo.currentEncoder;            // Use current speed as input
+  leftPID.Compute();                                   // Perform PID calculation
 
-  // Update and calculate right motor PID
-  rightInfo.currentEncoder = rightEncoder.speedMsg.data;
-  rightInfo.input = rightInfo.currentEncoder - rightInfo.lastEncoder; // Compute input change
-  rightInfo.error = rightInfo.target - rightInfo.input;               // Compute error
-  rightPID.Compute();                                                 // Perform PID calculation
-  rightInfo.lastEncoder = rightEncoder.speedMsg.data;                 // Store last encoder value
+  // Update right motor PID
+  rightInfo.currentEncoder = rightEncoder.speedMsg.data; // Current encoder speed
+  rightInfo.input = rightInfo.currentEncoder;            // Use current speed as input
+  rightPID.Compute();                                    // Perform PID calculation
 
   // Set motor speeds based on PID output
   setSpeeds(leftInfo.output, rightInfo.output);
