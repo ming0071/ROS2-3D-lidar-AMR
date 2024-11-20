@@ -10,19 +10,16 @@ void setSpeeds(int m1Speed, int m2Speed);
 // Structure to store PID-related information
 typedef struct
 {
-  double target;         // Desired target speed
-  double currentEncoder; // Current encoder reading
-  double lastEncoder;    // Previous encoder reading
-  double error;          // Error between target and input
-  double input;          // Process variable for PID
-  double output;         // PID output value
+  double target; // Desired target speed
+  double input;  // Process variable for PID
+  double output; // PID output value
 } PIDInfo;
 
 PIDInfo leftInfo, rightInfo; // PID information for left and right motors
 
 // PID parameters configuration
-double Kp_L = 0.315, Ki_L = 0.0, Kd_L = 0.0;   // Left motor PID gains I = 0.007?
-double Kp_R = 0.3, Ki_R = 0.0, Kd_R = 0.0; // Right motor PID gains I = 0.007?
+double Kp_L = 0.3, Ki_L = 0.0, Kd_L = 0.0; // Left motor PID gains I = 0.007?
+double Kp_R = 0.32, Ki_R = 0.0, Kd_R = 0.0;   // Right motor PID gains I = 0.007?
 
 PID leftPID(&leftInfo.input, &leftInfo.output, &leftInfo.target, Kp_L, Ki_L, Kd_L, DIRECT);
 PID rightPID(&rightInfo.input, &rightInfo.output, &rightInfo.target, Kp_R, Ki_R, Kd_R, DIRECT);
@@ -32,15 +29,6 @@ double pidRate = 100.0;                // 100 Hz
 double pidinterval = 1000.0 / pidRate; // 10 ms interval for PID computation
 
 long nextmotion; // Time tracker for next PID computation
-
-// Function to reset encoder and PID-related variables
-void resetPIDInfo()
-{
-  leftInfo.currentEncoder = 0;
-  leftInfo.lastEncoder = 0;
-  rightInfo.currentEncoder = 0;
-  rightInfo.lastEncoder = 0;
-}
 
 // PID initialization function
 void Init_PID()
@@ -55,25 +43,27 @@ void Init_PID()
   rightPID.SetSampleTime(pidinterval);
   rightPID.SetOutputLimits(-255, 255);
 
-  resetPIDInfo(); // Reset PID information before starting
+  leftInfo.input = 0;
+  leftInfo.target = 0;
+  leftInfo.output = 0;
+
+  rightInfo.input = 0;
+  rightInfo.target = 0;
+  rightInfo.output = 0;
+
+  nextMotion = millis();
 }
 
 // PID computation function, called at the specified interval
 void compute_PID()
 {
-  // Update and calculate left motor PID
-  leftInfo.currentEncoder = leftEncoder.speedMsg.data;
-  leftInfo.input = leftInfo.currentEncoder - leftInfo.lastEncoder; // Compute input change
-  leftInfo.error = leftInfo.target - leftInfo.input;               // Compute error
-  leftPID.Compute();                                               // Perform PID calculation
-  leftInfo.lastEncoder = leftEncoder.speedMsg.data;                // Store last encoder value
+  // Update left motor PID
+  leftInfo.input = leftEncoder.speedMsg.data; // Use current encoder speed as input
+  leftPID.Compute();                          // Perform PID calculation
 
-  // Update and calculate right motor PID
-  rightInfo.currentEncoder = rightEncoder.speedMsg.data;
-  rightInfo.input = rightInfo.currentEncoder - rightInfo.lastEncoder; // Compute input change
-  rightInfo.error = rightInfo.target - rightInfo.input;               // Compute error
-  rightPID.Compute();                                                 // Perform PID calculation
-  rightInfo.lastEncoder = rightEncoder.speedMsg.data;                 // Store last encoder value
+  // Update right motor PID
+  rightInfo.input = rightEncoder.speedMsg.data; // Use current encoder speed as input
+  rightPID.Compute();                           // Perform PID calculation
 
   // Set motor speeds based on PID output
   setSpeeds(leftInfo.output, rightInfo.output);

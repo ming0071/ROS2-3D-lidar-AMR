@@ -1,7 +1,7 @@
 #include "encoder_driver.h" // Custom driver for handling encoder functions, such as reading encoder data
 #include "motor_driver.h"   // Custom driver for controlling motors, including PWM and speed control
 #include "ros_driver.h"     // Custom driver for initializing and managing ROS communication
-#include "pid_driver.h"         // Custom driver for PID control to regulate motor speed
+#include "pid_v1.h"         // Custom driver for PID control to regulate motor speed
 
 #define AUTO_STOP_INTERVAL 1500 // Time (in milliseconds) to stop motors if no new command is received
 
