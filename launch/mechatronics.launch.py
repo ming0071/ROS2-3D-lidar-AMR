@@ -35,6 +35,15 @@ def generate_launch_description():
             "laserscan_multi_merger.launch",
         ),
     )
+    VLP16_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory("velodyne"),
+                "launch",
+                "velodyne-all-nodes-VLP16-launch.py",
+            ),
+        )
+    )
     imu_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -57,6 +66,7 @@ def generate_launch_description():
             tf_launch,
             hokuyo_launch,
             merged_launch,
+            VLP16_launch,
             imu_launch,
             micro_ros_node,
         ]
