@@ -1,2 +1,7 @@
+# Project generated files
 bagfile/
 map/
+
+# Think about it
+# .vscode/
+# bagfile/*.pcd
