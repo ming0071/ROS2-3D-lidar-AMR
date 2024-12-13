@@ -35,4 +35,8 @@ install(DIRECTORY rviz/
   DESTINATION share/${PROJECT_NAME}/data
 )
 
+install(DIRECTORY rviz/
+  DESTINATION share/${PROJECT_NAME}/map
+)
+
 ament_package()
