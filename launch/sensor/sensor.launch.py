@@ -61,11 +61,12 @@ def generate_launch_description():
         ),
     )
 
-    ld = LaunchDescription()
-    ld.add_action(tf_launch)
-    ld.add_action(hokuyo_launch)
-    ld.add_action(merged_launch)
-    ld.add_action(VLP16_launch)
-    ld.add_action(imu_launch)
-
-    return ld
+    return LaunchDescription(
+        [
+            tf_launch,
+            hokuyo_launch,
+            merged_launch,
+            VLP16_launch,
+            imu_launch,
+        ]
+    )
