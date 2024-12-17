@@ -20,36 +20,44 @@ def generate_launch_description():
             ),
         )
     )
+    # urg node 2
     hokuyo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
-                get_package_share_directory("urg_node2"),
+                get_package_share_directory("scl_amr"),
                 "launch",
-                "urg_node2_2lidar.launch.py",
+                "sensor",
+                "hokuyo.launch.py",
             ),
         )
     )
+    # ira laser tools
     merged_launch = IncludeLaunchDescription(
         os.path.join(
-            get_package_share_directory("ira_laser_tools"),
+            get_package_share_directory("scl_amr"),
             "launch",
-            "laserscan_multi_merger.launch",
+            "sensor",
+            "laser_merger.launch",
         ),
     )
+    # velodyne
     VLP16_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
-                get_package_share_directory("velodyne"),
+                get_package_share_directory("scl_amr"),
                 "launch",
-                "velodyne-all-nodes-VLP16-launch.py",
+                "sensor",
+                "velodyne.launch.py",
             ),
         )
     )
+    # serial imu
     imu_launch = IncludeLaunchDescription(
         os.path.join(
-            get_package_share_directory("serial_imu"),
+            get_package_share_directory("scl_amr"),
             "launch",
-            "imu_pub.launch.py",
+            "sensor",
+            "imu.launch.py",
         ),
     )
 
