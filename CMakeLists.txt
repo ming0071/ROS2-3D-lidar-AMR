@@ -31,11 +31,11 @@ install(DIRECTORY rviz/
   DESTINATION share/${PROJECT_NAME}/rviz
 )
 
-install(DIRECTORY rviz/
+install(DIRECTORY data/
   DESTINATION share/${PROJECT_NAME}/data
 )
 
-install(DIRECTORY rviz/
+install(DIRECTORY map/
   DESTINATION share/${PROJECT_NAME}/map
 )
 

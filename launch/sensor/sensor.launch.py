@@ -10,7 +10,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # Include launch file
+    # urdf
     tf_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
