@@ -33,10 +33,10 @@ def generate_launch_description():
     source_setup_files()
 
     # Get the launch directory
-    bringup_dir = get_package_share_directory("nav2_bringup")
     scl_amr_dir = get_package_share_directory("scl_amr")
-    launch_dir = os.path.join(bringup_dir, "launch")
-    rviz_config_dir = os.path.join(scl_amr_dir, "rviz", "nav2_default.rviz")
+    # bringup_dir = get_package_share_directory("nav2_bringup")
+    # launch_dir = os.path.join(bringup_dir, "launch")
+    rviz_config_dir = os.path.join(scl_amr_dir, "rviz", "nav2_hdl.rviz")
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration("namespace")
@@ -133,6 +133,14 @@ def generate_launch_description():
     # Specify the actions
     bringup_cmd_group = GroupAction(
         [
+            Node(
+                package="rviz2",
+                executable="rviz2",
+                name="rviz2",
+                arguments=["-d", rviz_config_dir],
+                parameters=[{"use_sim_time": use_sim_time}],
+                output="screen",
+            ),
             PushRosNamespace(condition=IfCondition(use_namespace), namespace=namespace),
             Node(
                 condition=IfCondition(use_composition),
@@ -146,7 +154,7 @@ def generate_launch_description():
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(launch_dir, "localization_launch.py")
+                    os.path.join(scl_amr_dir, "launch", "localization_edit_launch.py")
                 ),
                 launch_arguments={
                     "namespace": namespace,
@@ -161,7 +169,7 @@ def generate_launch_description():
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(launch_dir, "navigation_launch.py")
+                    os.path.join(scl_amr_dir, "launch", "navigation_launch.py")
                 ),
                 launch_arguments={
                     "namespace": namespace,
@@ -172,14 +180,6 @@ def generate_launch_description():
                     "use_respawn": use_respawn,
                     "container_name": "nav2_container",
                 }.items(),
-            ),
-            Node(
-                package="rviz2",
-                executable="rviz2",
-                name="rviz2",
-                arguments=["-d", rviz_config_dir],
-                parameters=[{"use_sim_time": use_sim_time}],
-                output="screen",
             ),
         ]
     )

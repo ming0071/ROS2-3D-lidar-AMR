@@ -12,6 +12,6 @@
 		<param name="angle_increment" value="0.00437"/>
 		<param name="scan_time" value="0.0"/>
 		<param name="range_min" value="0.1"/>
-		<param name="range_max" value="5.0"/>
+		<param name="range_max" value="20.0"/>
 	</node>
 </launch>
