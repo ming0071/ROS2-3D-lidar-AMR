@@ -21,5 +21,13 @@ I have a [detailed article](https://hackmd.io/@ming0071/ROS2-notebook/%2F%40ming
     - ira_laser_tools
     - micro_ros_arduino
     - micro_ros_agent
+    - micro_ros_msgs
+    - serial_imu
 - SLAM:
+    - FAST_LIO
+    - livox_ros_driver2
 - Localization:
+    - Hdl-Localization-ROS2-Humble
+- Navigation2:
+    - local planner : MPPI
+    - global planner
