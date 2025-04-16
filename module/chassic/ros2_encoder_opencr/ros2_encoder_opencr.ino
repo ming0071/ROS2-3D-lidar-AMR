@@ -1,3 +1,7 @@
+#include <micro_ros_arduino.h>
+
+#include <micro_ros_arduino.h>
+
 #include "encoder_driver.h" // Custom driver for handling encoder functions, such as reading encoder data
 #include "motor_driver.h"   // Custom driver for controlling motors, including PWM and speed control
 #include "ros_driver.h"     // Custom driver for initializing and managing ROS communication
