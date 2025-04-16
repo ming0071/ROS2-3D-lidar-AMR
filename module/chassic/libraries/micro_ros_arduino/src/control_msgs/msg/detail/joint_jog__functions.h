@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/JointJog.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/joint_jog.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__JOINT_JOG__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__JOINT_JOG__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__JointJog__fini(control_msgs__msg__JointJog * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__JointJog *
-control_msgs__msg__JointJog__create();
+control_msgs__msg__JointJog__create(void);
 
 /// Destroy msg/JointJog message.
 /**

@@ -2,6 +2,9 @@
 // with input from statistics_msgs:msg/StatisticDataPoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "statistics_msgs/msg/statistic_data_point.h"
+
+
 #ifndef STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_POINT__TYPE_SUPPORT_H_
 #define STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_POINT__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   statistics_msgs,
   msg,
   StatisticDataPoint
-)();
+)(void);
 
 #ifdef __cplusplus
 }

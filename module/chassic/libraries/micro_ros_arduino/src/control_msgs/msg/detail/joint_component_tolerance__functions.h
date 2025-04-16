@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/JointComponentTolerance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/joint_component_tolerance.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__JOINT_COMPONENT_TOLERANCE__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__JOINT_COMPONENT_TOLERANCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__JointComponentTolerance__fini(control_msgs__msg__JointCompone
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__JointComponentTolerance *
-control_msgs__msg__JointComponentTolerance__create();
+control_msgs__msg__JointComponentTolerance__create(void);
 
 /// Destroy msg/JointComponentTolerance message.
 /**

@@ -2,6 +2,9 @@
 // with input from action_msgs:msg/GoalInfo.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "action_msgs/msg/goal_info.h"
+
+
 #ifndef ACTION_MSGS__MSG__DETAIL__GOAL_INFO__FUNCTIONS_H_
 #define ACTION_MSGS__MSG__DETAIL__GOAL_INFO__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ action_msgs__msg__GoalInfo__fini(action_msgs__msg__GoalInfo * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_action_msgs
 action_msgs__msg__GoalInfo *
-action_msgs__msg__GoalInfo__create();
+action_msgs__msg__GoalInfo__create(void);
 
 /// Destroy msg/GoalInfo message.
 /**

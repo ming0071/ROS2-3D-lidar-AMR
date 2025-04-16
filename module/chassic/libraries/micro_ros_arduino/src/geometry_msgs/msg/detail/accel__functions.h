@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/Accel.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/accel.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__ACCEL__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__ACCEL__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__Accel__fini(geometry_msgs__msg__Accel * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__Accel *
-geometry_msgs__msg__Accel__create();
+geometry_msgs__msg__Accel__create(void);
 
 /// Destroy msg/Accel message.
 /**

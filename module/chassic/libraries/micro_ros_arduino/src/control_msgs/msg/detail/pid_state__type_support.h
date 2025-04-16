@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/PidState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/pid_state.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__PID_STATE__TYPE_SUPPORT_H_
 #define CONTROL_MSGS__MSG__DETAIL__PID_STATE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   msg,
   PidState
-)();
+)(void);
 
 #ifdef __cplusplus
 }

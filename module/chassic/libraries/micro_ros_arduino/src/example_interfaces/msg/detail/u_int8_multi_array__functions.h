@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/UInt8MultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/u_int8_multi_array.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__U_INT8_MULTI_ARRAY__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__U_INT8_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__UInt8MultiArray__fini(example_interfaces__msg__UInt8Mul
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__UInt8MultiArray *
-example_interfaces__msg__UInt8MultiArray__create();
+example_interfaces__msg__UInt8MultiArray__create(void);
 
 /// Destroy msg/UInt8MultiArray message.
 /**

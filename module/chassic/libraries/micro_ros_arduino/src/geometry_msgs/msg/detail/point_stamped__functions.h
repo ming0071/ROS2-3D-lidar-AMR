@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/PointStamped.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/point_stamped.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__POINT_STAMPED__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__POINT_STAMPED__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__PointStamped__fini(geometry_msgs__msg__PointStamped * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__PointStamped *
-geometry_msgs__msg__PointStamped__create();
+geometry_msgs__msg__PointStamped__create(void);
 
 /// Destroy msg/PointStamped message.
 /**

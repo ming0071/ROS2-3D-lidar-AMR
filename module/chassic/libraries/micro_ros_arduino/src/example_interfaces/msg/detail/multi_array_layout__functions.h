@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/MultiArrayLayout.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/multi_array_layout.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__MULTI_ARRAY_LAYOUT__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__MULTI_ARRAY_LAYOUT__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__MultiArrayLayout__fini(example_interfaces__msg__MultiAr
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__MultiArrayLayout *
-example_interfaces__msg__MultiArrayLayout__create();
+example_interfaces__msg__MultiArrayLayout__create(void);
 
 /// Destroy msg/MultiArrayLayout message.
 /**

@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/LaserScan.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/laser_scan.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__LASER_SCAN__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__LASER_SCAN__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__LaserScan__fini(sensor_msgs__msg__LaserScan * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__LaserScan *
-sensor_msgs__msg__LaserScan__create();
+sensor_msgs__msg__LaserScan__create(void);
 
 /// Destroy msg/LaserScan message.
 /**

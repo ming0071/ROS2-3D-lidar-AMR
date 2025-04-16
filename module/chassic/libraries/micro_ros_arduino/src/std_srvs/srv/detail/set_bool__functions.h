@@ -2,6 +2,9 @@
 // with input from std_srvs:srv/SetBool.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_srvs/srv/set_bool.h"
+
+
 #ifndef STD_SRVS__SRV__DETAIL__SET_BOOL__FUNCTIONS_H_
 #define STD_SRVS__SRV__DETAIL__SET_BOOL__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ std_srvs__srv__SetBool_Request__fini(std_srvs__srv__SetBool_Request * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__SetBool_Request *
-std_srvs__srv__SetBool_Request__create();
+std_srvs__srv__SetBool_Request__create(void);
 
 /// Destroy srv/SetBool message.
 /**
@@ -259,7 +262,7 @@ std_srvs__srv__SetBool_Response__fini(std_srvs__srv__SetBool_Response * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__SetBool_Response *
-std_srvs__srv__SetBool_Response__create();
+std_srvs__srv__SetBool_Response__create(void);
 
 /// Destroy srv/SetBool message.
 /**
@@ -435,7 +438,7 @@ std_srvs__srv__SetBool_Event__fini(std_srvs__srv__SetBool_Event * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__SetBool_Event *
-std_srvs__srv__SetBool_Event__create();
+std_srvs__srv__SetBool_Event__create(void);
 
 /// Destroy srv/SetBool message.
 /**

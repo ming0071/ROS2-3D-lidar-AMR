@@ -2,6 +2,9 @@
 // with input from action_msgs:msg/GoalStatusArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "action_msgs/msg/goal_status_array.h"
+
+
 #ifndef ACTION_MSGS__MSG__DETAIL__GOAL_STATUS_ARRAY__FUNCTIONS_H_
 #define ACTION_MSGS__MSG__DETAIL__GOAL_STATUS_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ action_msgs__msg__GoalStatusArray__fini(action_msgs__msg__GoalStatusArray * msg)
  */
 ROSIDL_GENERATOR_C_PUBLIC_action_msgs
 action_msgs__msg__GoalStatusArray *
-action_msgs__msg__GoalStatusArray__create();
+action_msgs__msg__GoalStatusArray__create(void);
 
 /// Destroy msg/GoalStatusArray message.
 /**

@@ -2,6 +2,9 @@
 // with input from diagnostic_msgs:msg/DiagnosticArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "diagnostic_msgs/msg/diagnostic_array.h"
+
+
 #ifndef DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_ARRAY__TYPE_SUPPORT_H_
 #define DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_ARRAY__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   diagnostic_msgs,
   msg,
   DiagnosticArray
-)();
+)(void);
 
 #ifdef __cplusplus
 }

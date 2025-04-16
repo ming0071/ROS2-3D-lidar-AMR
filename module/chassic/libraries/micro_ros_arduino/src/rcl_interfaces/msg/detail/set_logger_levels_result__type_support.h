@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/SetLoggerLevelsResult.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/set_logger_levels_result.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__SET_LOGGER_LEVELS_RESULT__TYPE_SUPPORT_H_
 #define RCL_INTERFACES__MSG__DETAIL__SET_LOGGER_LEVELS_RESULT__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   rcl_interfaces,
   msg,
   SetLoggerLevelsResult
-)();
+)(void);
 
 #ifdef __cplusplus
 }

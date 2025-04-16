@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/PidState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/pid_state.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__PID_STATE__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__PID_STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__PidState__fini(control_msgs__msg__PidState * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__PidState *
-control_msgs__msg__PidState__create();
+control_msgs__msg__PidState__create(void);
 
 /// Destroy msg/PidState message.
 /**

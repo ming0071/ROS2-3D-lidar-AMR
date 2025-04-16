@@ -2,6 +2,9 @@
 // with input from std_srvs:srv/Trigger.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_srvs/srv/trigger.h"
+
+
 #ifndef STD_SRVS__SRV__DETAIL__TRIGGER__FUNCTIONS_H_
 #define STD_SRVS__SRV__DETAIL__TRIGGER__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ std_srvs__srv__Trigger_Request__fini(std_srvs__srv__Trigger_Request * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__Trigger_Request *
-std_srvs__srv__Trigger_Request__create();
+std_srvs__srv__Trigger_Request__create(void);
 
 /// Destroy srv/Trigger message.
 /**
@@ -259,7 +262,7 @@ std_srvs__srv__Trigger_Response__fini(std_srvs__srv__Trigger_Response * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__Trigger_Response *
-std_srvs__srv__Trigger_Response__create();
+std_srvs__srv__Trigger_Response__create(void);
 
 /// Destroy srv/Trigger message.
 /**
@@ -435,7 +438,7 @@ std_srvs__srv__Trigger_Event__fini(std_srvs__srv__Trigger_Event * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_srvs
 std_srvs__srv__Trigger_Event *
-std_srvs__srv__Trigger_Event__create();
+std_srvs__srv__Trigger_Event__create(void);
 
 /// Destroy srv/Trigger message.
 /**

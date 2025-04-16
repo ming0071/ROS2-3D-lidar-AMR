@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/WString.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/w_string.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__W_STRING__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__W_STRING__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__WString__fini(example_interfaces__msg__WString * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__WString *
-example_interfaces__msg__WString__create();
+example_interfaces__msg__WString__create(void);
 
 /// Destroy msg/WString message.
 /**

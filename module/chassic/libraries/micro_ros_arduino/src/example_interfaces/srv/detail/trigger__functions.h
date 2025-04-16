@@ -2,6 +2,9 @@
 // with input from example_interfaces:srv/Trigger.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/srv/trigger.h"
+
+
 #ifndef EXAMPLE_INTERFACES__SRV__DETAIL__TRIGGER__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__SRV__DETAIL__TRIGGER__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ example_interfaces__srv__Trigger_Request__fini(example_interfaces__srv__Trigger_
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__srv__Trigger_Request *
-example_interfaces__srv__Trigger_Request__create();
+example_interfaces__srv__Trigger_Request__create(void);
 
 /// Destroy srv/Trigger message.
 /**
@@ -259,7 +262,7 @@ example_interfaces__srv__Trigger_Response__fini(example_interfaces__srv__Trigger
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__srv__Trigger_Response *
-example_interfaces__srv__Trigger_Response__create();
+example_interfaces__srv__Trigger_Response__create(void);
 
 /// Destroy srv/Trigger message.
 /**
@@ -435,7 +438,7 @@ example_interfaces__srv__Trigger_Event__fini(example_interfaces__srv__Trigger_Ev
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__srv__Trigger_Event *
-example_interfaces__srv__Trigger_Event__create();
+example_interfaces__srv__Trigger_Event__create(void);
 
 /// Destroy srv/Trigger message.
 /**

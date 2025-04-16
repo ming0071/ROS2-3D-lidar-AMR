@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/InterfaceValue.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/interface_value.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__INTERFACE_VALUE__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__INTERFACE_VALUE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__InterfaceValue__fini(control_msgs__msg__InterfaceValue * msg)
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__InterfaceValue *
-control_msgs__msg__InterfaceValue__create();
+control_msgs__msg__InterfaceValue__create(void);
 
 /// Destroy msg/InterfaceValue message.
 /**

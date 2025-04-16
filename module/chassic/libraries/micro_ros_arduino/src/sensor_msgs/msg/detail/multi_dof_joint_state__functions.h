@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/MultiDOFJointState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/multi_dof_joint_state.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_STATE__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__MultiDOFJointState__fini(sensor_msgs__msg__MultiDOFJointState 
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__MultiDOFJointState *
-sensor_msgs__msg__MultiDOFJointState__create();
+sensor_msgs__msg__MultiDOFJointState__create(void);
 
 /// Destroy msg/MultiDOFJointState message.
 /**

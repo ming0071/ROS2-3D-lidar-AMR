@@ -2,6 +2,9 @@
 // with input from builtin_interfaces:msg/Duration.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "builtin_interfaces/msg/duration.h"
+
+
 #ifndef BUILTIN_INTERFACES__MSG__DETAIL__DURATION__FUNCTIONS_H_
 #define BUILTIN_INTERFACES__MSG__DETAIL__DURATION__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ builtin_interfaces__msg__Duration__fini(builtin_interfaces__msg__Duration * msg)
  */
 ROSIDL_GENERATOR_C_PUBLIC_builtin_interfaces
 builtin_interfaces__msg__Duration *
-builtin_interfaces__msg__Duration__create();
+builtin_interfaces__msg__Duration__create(void);
 
 /// Destroy msg/Duration message.
 /**

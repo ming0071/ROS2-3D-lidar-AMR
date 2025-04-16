@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/UInt8.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/u_int8.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__U_INT8__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__U_INT8__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__UInt8__fini(example_interfaces__msg__UInt8 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__UInt8 *
-example_interfaces__msg__UInt8__create();
+example_interfaces__msg__UInt8__create(void);
 
 /// Destroy msg/UInt8 message.
 /**

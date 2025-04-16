@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/QuaternionStamped.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/quaternion_stamped.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__QUATERNION_STAMPED__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__QUATERNION_STAMPED__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__QuaternionStamped__fini(geometry_msgs__msg__QuaternionStampe
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__QuaternionStamped *
-geometry_msgs__msg__QuaternionStamped__create();
+geometry_msgs__msg__QuaternionStamped__create(void);
 
 /// Destroy msg/QuaternionStamped message.
 /**

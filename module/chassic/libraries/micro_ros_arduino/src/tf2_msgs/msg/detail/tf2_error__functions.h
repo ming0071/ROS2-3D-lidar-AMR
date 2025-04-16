@@ -2,6 +2,9 @@
 // with input from tf2_msgs:msg/TF2Error.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "tf2_msgs/msg/tf2_error.h"
+
+
 #ifndef TF2_MSGS__MSG__DETAIL__TF2_ERROR__FUNCTIONS_H_
 #define TF2_MSGS__MSG__DETAIL__TF2_ERROR__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ tf2_msgs__msg__TF2Error__fini(tf2_msgs__msg__TF2Error * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__msg__TF2Error *
-tf2_msgs__msg__TF2Error__create();
+tf2_msgs__msg__TF2Error__create(void);
 
 /// Destroy msg/TF2Error message.
 /**

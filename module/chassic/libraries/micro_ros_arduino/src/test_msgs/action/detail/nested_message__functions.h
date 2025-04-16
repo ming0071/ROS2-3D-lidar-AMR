@@ -2,6 +2,9 @@
 // with input from test_msgs:action/NestedMessage.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/action/nested_message.h"
+
+
 #ifndef TEST_MSGS__ACTION__DETAIL__NESTED_MESSAGE__FUNCTIONS_H_
 #define TEST_MSGS__ACTION__DETAIL__NESTED_MESSAGE__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ test_msgs__action__NestedMessage_Goal__fini(test_msgs__action__NestedMessage_Goa
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_Goal *
-test_msgs__action__NestedMessage_Goal__create();
+test_msgs__action__NestedMessage_Goal__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -259,7 +262,7 @@ test_msgs__action__NestedMessage_Result__fini(test_msgs__action__NestedMessage_R
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_Result *
-test_msgs__action__NestedMessage_Result__create();
+test_msgs__action__NestedMessage_Result__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -435,7 +438,7 @@ test_msgs__action__NestedMessage_Feedback__fini(test_msgs__action__NestedMessage
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_Feedback *
-test_msgs__action__NestedMessage_Feedback__create();
+test_msgs__action__NestedMessage_Feedback__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -635,7 +638,7 @@ test_msgs__action__NestedMessage_SendGoal_Request__fini(test_msgs__action__Neste
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_SendGoal_Request *
-test_msgs__action__NestedMessage_SendGoal_Request__create();
+test_msgs__action__NestedMessage_SendGoal_Request__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -811,7 +814,7 @@ test_msgs__action__NestedMessage_SendGoal_Response__fini(test_msgs__action__Nest
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_SendGoal_Response *
-test_msgs__action__NestedMessage_SendGoal_Response__create();
+test_msgs__action__NestedMessage_SendGoal_Response__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -987,7 +990,7 @@ test_msgs__action__NestedMessage_SendGoal_Event__fini(test_msgs__action__NestedM
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_SendGoal_Event *
-test_msgs__action__NestedMessage_SendGoal_Event__create();
+test_msgs__action__NestedMessage_SendGoal_Event__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -1187,7 +1190,7 @@ test_msgs__action__NestedMessage_GetResult_Request__fini(test_msgs__action__Nest
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_GetResult_Request *
-test_msgs__action__NestedMessage_GetResult_Request__create();
+test_msgs__action__NestedMessage_GetResult_Request__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -1363,7 +1366,7 @@ test_msgs__action__NestedMessage_GetResult_Response__fini(test_msgs__action__Nes
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_GetResult_Response *
-test_msgs__action__NestedMessage_GetResult_Response__create();
+test_msgs__action__NestedMessage_GetResult_Response__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -1539,7 +1542,7 @@ test_msgs__action__NestedMessage_GetResult_Event__fini(test_msgs__action__Nested
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_GetResult_Event *
-test_msgs__action__NestedMessage_GetResult_Event__create();
+test_msgs__action__NestedMessage_GetResult_Event__create(void);
 
 /// Destroy action/NestedMessage message.
 /**
@@ -1715,7 +1718,7 @@ test_msgs__action__NestedMessage_FeedbackMessage__fini(test_msgs__action__Nested
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__action__NestedMessage_FeedbackMessage *
-test_msgs__action__NestedMessage_FeedbackMessage__create();
+test_msgs__action__NestedMessage_FeedbackMessage__create(void);
 
 /// Destroy action/NestedMessage message.
 /**

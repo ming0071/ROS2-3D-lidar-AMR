@@ -2,6 +2,9 @@
 // with input from trajectory_msgs:msg/MultiDOFJointTrajectory.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "trajectory_msgs/msg/multi_dof_joint_trajectory.h"
+
+
 #ifndef TRAJECTORY_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_TRAJECTORY__TYPE_SUPPORT_H_
 #define TRAJECTORY_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_TRAJECTORY__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   trajectory_msgs,
   msg,
   MultiDOFJointTrajectory
-)();
+)(void);
 
 #ifdef __cplusplus
 }

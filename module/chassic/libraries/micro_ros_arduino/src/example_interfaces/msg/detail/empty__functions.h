@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Empty.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/empty.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__EMPTY__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__EMPTY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Empty__fini(example_interfaces__msg__Empty * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Empty *
-example_interfaces__msg__Empty__create();
+example_interfaces__msg__Empty__create(void);
 
 /// Destroy msg/Empty message.
 /**

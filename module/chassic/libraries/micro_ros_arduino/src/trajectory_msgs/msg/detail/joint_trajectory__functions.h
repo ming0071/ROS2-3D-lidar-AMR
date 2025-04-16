@@ -2,6 +2,9 @@
 // with input from trajectory_msgs:msg/JointTrajectory.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "trajectory_msgs/msg/joint_trajectory.h"
+
+
 #ifndef TRAJECTORY_MSGS__MSG__DETAIL__JOINT_TRAJECTORY__FUNCTIONS_H_
 #define TRAJECTORY_MSGS__MSG__DETAIL__JOINT_TRAJECTORY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ trajectory_msgs__msg__JointTrajectory__fini(trajectory_msgs__msg__JointTrajector
  */
 ROSIDL_GENERATOR_C_PUBLIC_trajectory_msgs
 trajectory_msgs__msg__JointTrajectory *
-trajectory_msgs__msg__JointTrajectory__create();
+trajectory_msgs__msg__JointTrajectory__create(void);
 
 /// Destroy msg/JointTrajectory message.
 /**

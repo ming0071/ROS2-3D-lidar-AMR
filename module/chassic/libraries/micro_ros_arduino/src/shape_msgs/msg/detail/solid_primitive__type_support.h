@@ -2,6 +2,9 @@
 // with input from shape_msgs:msg/SolidPrimitive.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "shape_msgs/msg/solid_primitive.h"
+
+
 #ifndef SHAPE_MSGS__MSG__DETAIL__SOLID_PRIMITIVE__TYPE_SUPPORT_H_
 #define SHAPE_MSGS__MSG__DETAIL__SOLID_PRIMITIVE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   shape_msgs,
   msg,
   SolidPrimitive
-)();
+)(void);
 
 #ifdef __cplusplus
 }

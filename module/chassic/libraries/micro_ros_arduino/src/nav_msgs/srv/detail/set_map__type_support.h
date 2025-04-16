@@ -2,6 +2,9 @@
 // with input from nav_msgs:srv/SetMap.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/srv/set_map.h"
+
+
 #ifndef NAV_MSGS__SRV__DETAIL__SET_MAP__TYPE_SUPPORT_H_
 #define NAV_MSGS__SRV__DETAIL__SET_MAP__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   nav_msgs,
   srv,
   SetMap_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -37,7 +40,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   nav_msgs,
   srv,
   SetMap_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -50,7 +53,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   nav_msgs,
   srv,
   SetMap_Event
-)();
+)(void);
 
 #include "rosidl_runtime_c/service_type_support_struct.h"
 
@@ -62,7 +65,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   nav_msgs,
   srv,
   SetMap
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs

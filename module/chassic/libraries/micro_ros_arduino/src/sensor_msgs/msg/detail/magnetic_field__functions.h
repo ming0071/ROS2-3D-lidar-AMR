@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/MagneticField.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/magnetic_field.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__MAGNETIC_FIELD__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__MAGNETIC_FIELD__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__MagneticField__fini(sensor_msgs__msg__MagneticField * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__MagneticField *
-sensor_msgs__msg__MagneticField__create();
+sensor_msgs__msg__MagneticField__create(void);
 
 /// Destroy msg/MagneticField message.
 /**

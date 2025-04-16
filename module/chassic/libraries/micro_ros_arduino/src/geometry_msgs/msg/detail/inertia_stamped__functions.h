@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/InertiaStamped.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/inertia_stamped.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__INERTIA_STAMPED__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__INERTIA_STAMPED__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__InertiaStamped__fini(geometry_msgs__msg__InertiaStamped * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__InertiaStamped *
-geometry_msgs__msg__InertiaStamped__create();
+geometry_msgs__msg__InertiaStamped__create(void);
 
 /// Destroy msg/InertiaStamped message.
 /**

@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/Arrays.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/arrays.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__ARRAYS__STRUCT_H_
 #define TEST_MSGS__MSG__DETAIL__ARRAYS__STRUCT_H_
 

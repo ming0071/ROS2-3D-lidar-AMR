@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Int64.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/int64.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__INT64__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__INT64__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Int64__fini(std_msgs__msg__Int64 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Int64 *
-std_msgs__msg__Int64__create();
+std_msgs__msg__Int64__create(void);
 
 /// Destroy msg/Int64 message.
 /**

@@ -2,6 +2,9 @@
 // with input from shape_msgs:msg/MeshTriangle.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "shape_msgs/msg/mesh_triangle.h"
+
+
 #ifndef SHAPE_MSGS__MSG__DETAIL__MESH_TRIANGLE__FUNCTIONS_H_
 #define SHAPE_MSGS__MSG__DETAIL__MESH_TRIANGLE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ shape_msgs__msg__MeshTriangle__fini(shape_msgs__msg__MeshTriangle * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_shape_msgs
 shape_msgs__msg__MeshTriangle *
-shape_msgs__msg__MeshTriangle__create();
+shape_msgs__msg__MeshTriangle__create(void);
 
 /// Destroy msg/MeshTriangle message.
 /**

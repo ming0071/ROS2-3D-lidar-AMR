@@ -2,6 +2,9 @@
 // with input from trajectory_msgs:msg/MultiDOFJointTrajectory.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "trajectory_msgs/msg/multi_dof_joint_trajectory.h"
+
+
 #ifndef TRAJECTORY_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_TRAJECTORY__FUNCTIONS_H_
 #define TRAJECTORY_MSGS__MSG__DETAIL__MULTI_DOF_JOINT_TRAJECTORY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ trajectory_msgs__msg__MultiDOFJointTrajectory__fini(trajectory_msgs__msg__MultiD
  */
 ROSIDL_GENERATOR_C_PUBLIC_trajectory_msgs
 trajectory_msgs__msg__MultiDOFJointTrajectory *
-trajectory_msgs__msg__MultiDOFJointTrajectory__create();
+trajectory_msgs__msg__MultiDOFJointTrajectory__create(void);
 
 /// Destroy msg/MultiDOFJointTrajectory message.
 /**

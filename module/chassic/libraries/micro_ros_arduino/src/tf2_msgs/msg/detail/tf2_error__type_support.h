@@ -2,6 +2,9 @@
 // with input from tf2_msgs:msg/TF2Error.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "tf2_msgs/msg/tf2_error.h"
+
+
 #ifndef TF2_MSGS__MSG__DETAIL__TF2_ERROR__TYPE_SUPPORT_H_
 #define TF2_MSGS__MSG__DETAIL__TF2_ERROR__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   tf2_msgs,
   msg,
   TF2Error
-)();
+)(void);
 
 #ifdef __cplusplus
 }

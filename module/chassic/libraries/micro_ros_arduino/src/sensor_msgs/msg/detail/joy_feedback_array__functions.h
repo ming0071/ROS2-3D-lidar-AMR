@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/JoyFeedbackArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/joy_feedback_array.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__JOY_FEEDBACK_ARRAY__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__JOY_FEEDBACK_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__JoyFeedbackArray__fini(sensor_msgs__msg__JoyFeedbackArray * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__JoyFeedbackArray *
-sensor_msgs__msg__JoyFeedbackArray__create();
+sensor_msgs__msg__JoyFeedbackArray__create(void);
 
 /// Destroy msg/JoyFeedbackArray message.
 /**

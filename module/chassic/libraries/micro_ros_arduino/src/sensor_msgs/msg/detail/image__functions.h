@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/Image.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/image.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__IMAGE__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__IMAGE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__Image__fini(sensor_msgs__msg__Image * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__Image *
-sensor_msgs__msg__Image__create();
+sensor_msgs__msg__Image__create(void);
 
 /// Destroy msg/Image message.
 /**

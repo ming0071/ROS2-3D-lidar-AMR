@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:srv/GetTypeDescription.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/srv/get_type_description.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__SRV__DETAIL__GET_TYPE_DESCRIPTION__FUNCTIONS_H_
 #define TYPE_DESCRIPTION_INTERFACES__SRV__DETAIL__GET_TYPE_DESCRIPTION__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ type_description_interfaces__srv__GetTypeDescription_Request__fini(type_descript
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__srv__GetTypeDescription_Request *
-type_description_interfaces__srv__GetTypeDescription_Request__create();
+type_description_interfaces__srv__GetTypeDescription_Request__create(void);
 
 /// Destroy srv/GetTypeDescription message.
 /**
@@ -259,7 +262,7 @@ type_description_interfaces__srv__GetTypeDescription_Response__fini(type_descrip
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__srv__GetTypeDescription_Response *
-type_description_interfaces__srv__GetTypeDescription_Response__create();
+type_description_interfaces__srv__GetTypeDescription_Response__create(void);
 
 /// Destroy srv/GetTypeDescription message.
 /**
@@ -435,7 +438,7 @@ type_description_interfaces__srv__GetTypeDescription_Event__fini(type_descriptio
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__srv__GetTypeDescription_Event *
-type_description_interfaces__srv__GetTypeDescription_Event__create();
+type_description_interfaces__srv__GetTypeDescription_Event__create(void);
 
 /// Destroy srv/GetTypeDescription message.
 /**

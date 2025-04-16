@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Int64.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/int64.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__INT64__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__INT64__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Int64__fini(example_interfaces__msg__Int64 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Int64 *
-example_interfaces__msg__Int64__create();
+example_interfaces__msg__Int64__create(void);
 
 /// Destroy msg/Int64 message.
 /**

@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/CameraInfo.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/camera_info.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__CAMERA_INFO__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__CAMERA_INFO__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__CameraInfo__fini(sensor_msgs__msg__CameraInfo * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__CameraInfo *
-sensor_msgs__msg__CameraInfo__create();
+sensor_msgs__msg__CameraInfo__create(void);
 
 /// Destroy msg/CameraInfo message.
 /**

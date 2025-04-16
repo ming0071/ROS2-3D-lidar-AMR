@@ -2,6 +2,9 @@
 // with input from example_interfaces:action/Fibonacci.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/action/fibonacci.h"
+
+
 #ifndef EXAMPLE_INTERFACES__ACTION__DETAIL__FIBONACCI__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__ACTION__DETAIL__FIBONACCI__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ example_interfaces__action__Fibonacci_Goal__fini(example_interfaces__action__Fib
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_Goal *
-example_interfaces__action__Fibonacci_Goal__create();
+example_interfaces__action__Fibonacci_Goal__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -259,7 +262,7 @@ example_interfaces__action__Fibonacci_Result__fini(example_interfaces__action__F
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_Result *
-example_interfaces__action__Fibonacci_Result__create();
+example_interfaces__action__Fibonacci_Result__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -435,7 +438,7 @@ example_interfaces__action__Fibonacci_Feedback__fini(example_interfaces__action_
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_Feedback *
-example_interfaces__action__Fibonacci_Feedback__create();
+example_interfaces__action__Fibonacci_Feedback__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -635,7 +638,7 @@ example_interfaces__action__Fibonacci_SendGoal_Request__fini(example_interfaces_
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_SendGoal_Request *
-example_interfaces__action__Fibonacci_SendGoal_Request__create();
+example_interfaces__action__Fibonacci_SendGoal_Request__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -811,7 +814,7 @@ example_interfaces__action__Fibonacci_SendGoal_Response__fini(example_interfaces
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_SendGoal_Response *
-example_interfaces__action__Fibonacci_SendGoal_Response__create();
+example_interfaces__action__Fibonacci_SendGoal_Response__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -987,7 +990,7 @@ example_interfaces__action__Fibonacci_SendGoal_Event__fini(example_interfaces__a
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_SendGoal_Event *
-example_interfaces__action__Fibonacci_SendGoal_Event__create();
+example_interfaces__action__Fibonacci_SendGoal_Event__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -1187,7 +1190,7 @@ example_interfaces__action__Fibonacci_GetResult_Request__fini(example_interfaces
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_GetResult_Request *
-example_interfaces__action__Fibonacci_GetResult_Request__create();
+example_interfaces__action__Fibonacci_GetResult_Request__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -1363,7 +1366,7 @@ example_interfaces__action__Fibonacci_GetResult_Response__fini(example_interface
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_GetResult_Response *
-example_interfaces__action__Fibonacci_GetResult_Response__create();
+example_interfaces__action__Fibonacci_GetResult_Response__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -1539,7 +1542,7 @@ example_interfaces__action__Fibonacci_GetResult_Event__fini(example_interfaces__
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_GetResult_Event *
-example_interfaces__action__Fibonacci_GetResult_Event__create();
+example_interfaces__action__Fibonacci_GetResult_Event__create(void);
 
 /// Destroy action/Fibonacci message.
 /**
@@ -1715,7 +1718,7 @@ example_interfaces__action__Fibonacci_FeedbackMessage__fini(example_interfaces__
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__action__Fibonacci_FeedbackMessage *
-example_interfaces__action__Fibonacci_FeedbackMessage__create();
+example_interfaces__action__Fibonacci_FeedbackMessage__create(void);
 
 /// Destroy action/Fibonacci message.
 /**

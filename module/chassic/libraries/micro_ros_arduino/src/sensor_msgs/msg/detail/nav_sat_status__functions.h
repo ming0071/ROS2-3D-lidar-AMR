@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/NavSatStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/nav_sat_status.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__NAV_SAT_STATUS__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__NAV_SAT_STATUS__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__NavSatStatus__fini(sensor_msgs__msg__NavSatStatus * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__NavSatStatus *
-sensor_msgs__msg__NavSatStatus__create();
+sensor_msgs__msg__NavSatStatus__create(void);
 
 /// Destroy msg/NavSatStatus message.
 /**

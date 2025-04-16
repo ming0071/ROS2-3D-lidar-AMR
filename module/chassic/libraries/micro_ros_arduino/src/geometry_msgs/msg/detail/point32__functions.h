@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/Point32.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/point32.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__POINT32__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__POINT32__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__Point32__fini(geometry_msgs__msg__Point32 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__Point32 *
-geometry_msgs__msg__Point32__create();
+geometry_msgs__msg__Point32__create(void);
 
 /// Destroy msg/Point32 message.
 /**

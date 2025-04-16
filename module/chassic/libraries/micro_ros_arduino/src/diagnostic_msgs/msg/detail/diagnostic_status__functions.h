@@ -2,6 +2,9 @@
 // with input from diagnostic_msgs:msg/DiagnosticStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "diagnostic_msgs/msg/diagnostic_status.h"
+
+
 #ifndef DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_STATUS__FUNCTIONS_H_
 #define DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_STATUS__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ diagnostic_msgs__msg__DiagnosticStatus__fini(diagnostic_msgs__msg__DiagnosticSta
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__msg__DiagnosticStatus *
-diagnostic_msgs__msg__DiagnosticStatus__create();
+diagnostic_msgs__msg__DiagnosticStatus__create(void);
 
 /// Destroy msg/DiagnosticStatus message.
 /**

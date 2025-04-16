@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/TwistWithCovariance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/twist_with_covariance.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__TWIST_WITH_COVARIANCE__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__TWIST_WITH_COVARIANCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__TwistWithCovariance__fini(geometry_msgs__msg__TwistWithCovar
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__TwistWithCovariance *
-geometry_msgs__msg__TwistWithCovariance__create();
+geometry_msgs__msg__TwistWithCovariance__create(void);
 
 /// Destroy msg/TwistWithCovariance message.
 /**

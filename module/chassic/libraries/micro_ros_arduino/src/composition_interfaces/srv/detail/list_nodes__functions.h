@@ -2,6 +2,9 @@
 // with input from composition_interfaces:srv/ListNodes.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "composition_interfaces/srv/list_nodes.h"
+
+
 #ifndef COMPOSITION_INTERFACES__SRV__DETAIL__LIST_NODES__FUNCTIONS_H_
 #define COMPOSITION_INTERFACES__SRV__DETAIL__LIST_NODES__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ composition_interfaces__srv__ListNodes_Request__fini(composition_interfaces__srv
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__ListNodes_Request *
-composition_interfaces__srv__ListNodes_Request__create();
+composition_interfaces__srv__ListNodes_Request__create(void);
 
 /// Destroy srv/ListNodes message.
 /**
@@ -259,7 +262,7 @@ composition_interfaces__srv__ListNodes_Response__fini(composition_interfaces__sr
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__ListNodes_Response *
-composition_interfaces__srv__ListNodes_Response__create();
+composition_interfaces__srv__ListNodes_Response__create(void);
 
 /// Destroy srv/ListNodes message.
 /**
@@ -435,7 +438,7 @@ composition_interfaces__srv__ListNodes_Event__fini(composition_interfaces__srv__
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__ListNodes_Event *
-composition_interfaces__srv__ListNodes_Event__create();
+composition_interfaces__srv__ListNodes_Event__create(void);
 
 /// Destroy srv/ListNodes message.
 /**

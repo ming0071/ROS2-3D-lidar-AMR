@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/KeyValue.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/key_value.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__KEY_VALUE__TYPE_SUPPORT_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__KEY_VALUE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   type_description_interfaces,
   msg,
   KeyValue
-)();
+)(void);
 
 #ifdef __cplusplus
 }

@@ -2,6 +2,9 @@
 // with input from diagnostic_msgs:msg/KeyValue.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "diagnostic_msgs/msg/key_value.h"
+
+
 #ifndef DIAGNOSTIC_MSGS__MSG__DETAIL__KEY_VALUE__FUNCTIONS_H_
 #define DIAGNOSTIC_MSGS__MSG__DETAIL__KEY_VALUE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ diagnostic_msgs__msg__KeyValue__fini(diagnostic_msgs__msg__KeyValue * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__msg__KeyValue *
-diagnostic_msgs__msg__KeyValue__create();
+diagnostic_msgs__msg__KeyValue__create(void);
 
 /// Destroy msg/KeyValue message.
 /**

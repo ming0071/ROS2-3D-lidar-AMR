@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:srv/SetLoggerLevels.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/srv/set_logger_levels.h"
+
+
 #ifndef RCL_INTERFACES__SRV__DETAIL__SET_LOGGER_LEVELS__FUNCTIONS_H_
 #define RCL_INTERFACES__SRV__DETAIL__SET_LOGGER_LEVELS__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ rcl_interfaces__srv__SetLoggerLevels_Request__fini(rcl_interfaces__srv__SetLogge
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__SetLoggerLevels_Request *
-rcl_interfaces__srv__SetLoggerLevels_Request__create();
+rcl_interfaces__srv__SetLoggerLevels_Request__create(void);
 
 /// Destroy srv/SetLoggerLevels message.
 /**
@@ -259,7 +262,7 @@ rcl_interfaces__srv__SetLoggerLevels_Response__fini(rcl_interfaces__srv__SetLogg
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__SetLoggerLevels_Response *
-rcl_interfaces__srv__SetLoggerLevels_Response__create();
+rcl_interfaces__srv__SetLoggerLevels_Response__create(void);
 
 /// Destroy srv/SetLoggerLevels message.
 /**
@@ -435,7 +438,7 @@ rcl_interfaces__srv__SetLoggerLevels_Event__fini(rcl_interfaces__srv__SetLoggerL
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__SetLoggerLevels_Event *
-rcl_interfaces__srv__SetLoggerLevels_Event__create();
+rcl_interfaces__srv__SetLoggerLevels_Event__create(void);
 
 /// Destroy srv/SetLoggerLevels message.
 /**

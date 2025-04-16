@@ -2,6 +2,9 @@
 // with input from nav_msgs:msg/MapMetaData.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/msg/map_meta_data.h"
+
+
 #ifndef NAV_MSGS__MSG__DETAIL__MAP_META_DATA__FUNCTIONS_H_
 #define NAV_MSGS__MSG__DETAIL__MAP_META_DATA__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ nav_msgs__msg__MapMetaData__fini(nav_msgs__msg__MapMetaData * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__msg__MapMetaData *
-nav_msgs__msg__MapMetaData__create();
+nav_msgs__msg__MapMetaData__create(void);
 
 /// Destroy msg/MapMetaData message.
 /**

@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/UnboundedSequences.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/unbounded_sequences.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__UNBOUNDED_SEQUENCES__FUNCTIONS_H_
 #define TEST_MSGS__MSG__DETAIL__UNBOUNDED_SEQUENCES__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ test_msgs__msg__UnboundedSequences__fini(test_msgs__msg__UnboundedSequences * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__msg__UnboundedSequences *
-test_msgs__msg__UnboundedSequences__create();
+test_msgs__msg__UnboundedSequences__create(void);
 
 /// Destroy msg/UnboundedSequences message.
 /**

@@ -401,16 +401,17 @@ RCL_WARN_UNUSED
 rcl_ret_t
 rcl_names_and_types_fini(rcl_names_and_types_t * names_and_types);
 
-/// Return a list of available nodes in the ROS graph.
+/// Return a list of node names and their associated namespaces in the ROS graph.
 /**
  * The `node` parameter must point to a valid node.
  *
- * The `node_names` parameter must be allocated and zero initialized.
- * `node_names` is the output for this function, and contains allocated memory.
+ * The `node_names` and `node_namespaces` parameters must be allocated and zero initialized.
+ * `node_names` and `node_namespaces` are the output for this function,
+ * and contain allocated memory.
  * Use rcutils_get_zero_initialized_string_array() for initializing an empty
  * rcutils_string_array_t struct.
- * This `node_names` struct should therefore be passed to rcutils_string_array_fini()
- * when it is no longer needed.
+ * These `node_names` and `node_namespaces` structs should therefore be passed
+ * to rcutils_string_array_fini() when they are no longer needed.
  * Failing to do so will result in leaked memory.
  *
  * Example:
@@ -418,12 +419,18 @@ rcl_names_and_types_fini(rcl_names_and_types_t * names_and_types);
  * ```c
  * rcutils_string_array_t node_names =
  *   rcutils_get_zero_initialized_string_array();
- * rcl_ret_t ret = rcl_get_node_names(node, &node_names);
+ * rcutils_string_array_t node_namespaces =
+ *   rcutils_get_zero_initialized_string_array();
+ * rcl_ret_t ret = rcl_get_node_names(node, &node_names, &node_namespaces);
  * if (ret != RCL_RET_OK) {
  *   // ... error handling
  * }
  * // ... use the node_names struct, and when done:
  * rcutils_ret_t rcutils_ret = rcutils_string_array_fini(&node_names);
+ * if (rcutils_ret != RCUTILS_RET_OK) {
+ *   // ... error handling
+ * }
+ * rcutils_ret_t rcutils_ret = rcutils_string_array_fini(&node_namespaces);
  * if (rcutils_ret != RCUTILS_RET_OK) {
  *   // ... error handling
  * }
@@ -458,7 +465,7 @@ rcl_get_node_names(
   rcutils_string_array_t * node_names,
   rcutils_string_array_t * node_namespaces);
 
-/// Return a list of available nodes in the ROS graph, including their enclave names.
+/// Return a list of node names and their associated namespaces and enclaves in the ROS graph.
 /**
  * An rcl_get_node_names() equivalent, but including in its output the enclave
  * name the node is using.
@@ -498,7 +505,8 @@ rcl_get_node_names_with_enclaves(
  *
  * The `topic_name` parameter must not be `NULL`, and must not be an empty string.
  * It should also follow the topic name rules.
- * \todo TODO(wjwwood): link to the topic name rules.
+ *
+ * See: https://design.ros2.org/articles/topic_and_service_names.html
  *
  * The `count` parameter must point to a valid bool.
  * The `count` parameter is the output for this function and will be set.
@@ -543,7 +551,8 @@ rcl_count_publishers(
  *
  * The `topic_name` parameter must not be `NULL`, and must not be an empty string.
  * It should also follow the topic name rules.
- * \todo TODO(wjwwood): link to the topic name rules.
+ *
+ * See: https://design.ros2.org/articles/topic_and_service_names.html
  *
  * The `count` parameter must point to a valid bool.
  * The `count` parameter is the output for this function and will be set.
@@ -580,6 +589,98 @@ rcl_ret_t
 rcl_count_subscribers(
   const rcl_node_t * node,
   const char * topic_name,
+  size_t * count);
+
+/// Return the number of clients on a given service.
+/**
+ * The `node` parameter must point to a valid node.
+ *
+ * The `service_name` parameter must not be `NULL`, and must not be an empty string.
+ * It should also follow the service name rules.
+ *
+ * See: https://design.ros2.org/articles/topic_and_service_names.html
+ *
+ * The `count` parameter must point to a valid size_t.
+ * The `count` parameter is the output for this function and will be set.
+ *
+ * In the event that error handling needs to allocate memory, this function
+ * will try to use the node's allocator.
+ *
+ * The service name is not automatically remapped by this function.
+ * If there is a client created with service name `foo` and remap rule `foo:=bar` then calling
+ * this with `service_name` set to `bar` will return a count of 1, and with `service_name` set to `foo`
+ * will return a count of 0.
+ * /sa rcl_remap_service_name()
+ *
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | Yes
+ * Thread-Safe        | No
+ * Uses Atomics       | No
+ * Lock-Free          | Maybe [1]
+ * <i>[1] implementation may need to protect the data structure with a lock</i>
+ *
+ * \param[in] node the handle to the node being used to query the ROS graph
+ * \param[in] service_name the name of the service in question
+ * \param[out] count number of clients on the given service
+ * \return #RCL_RET_OK if the query was successful, or
+ * \return #RCL_RET_NODE_INVALID if the node is invalid, or
+ * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
+ * \return #RCL_RET_ERROR if an unspecified error occurs.
+ */
+RCL_PUBLIC
+RCL_WARN_UNUSED
+rcl_ret_t
+rcl_count_clients(
+  const rcl_node_t * node,
+  const char * service_name,
+  size_t * count);
+
+/// Return the number of servers on a given service.
+/**
+ * The `node` parameter must point to a valid node.
+ *
+ * The `service_name` parameter must not be `NULL`, and must not be an empty string.
+ * It should also follow the service name rules.
+ *
+ * See: https://design.ros2.org/articles/topic_and_service_names.html
+ *
+ * The `count` parameter must point to a valid size_t.
+ * The `count` parameter is the output for this function and will be set.
+ *
+ * In the event that error handling needs to allocate memory, this function
+ * will try to use the node's allocator.
+ *
+ * The service name is not automatically remapped by this function.
+ * If there is a server created with service name `foo` and remap rule `foo:=bar` then calling
+ * this with `service_name` set to `bar` will return a count of 1, and with `service_name` set to `foo`
+ * will return a count of 0.
+ * /sa rcl_remap_service_name()
+ *
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | Yes
+ * Thread-Safe        | No
+ * Uses Atomics       | No
+ * Lock-Free          | Maybe [1]
+ * <i>[1] implementation may need to protect the data structure with a lock</i>
+ *
+ * \param[in] node the handle to the node being used to query the ROS graph
+ * \param[in] service_name the name of the service in question
+ * \param[out] count number of services on the given service
+ * \return #RCL_RET_OK if the query was successful, or
+ * \return #RCL_RET_NODE_INVALID if the node is invalid, or
+ * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
+ * \return #RCL_RET_ERROR if an unspecified error occurs.
+ */
+RCL_PUBLIC
+RCL_WARN_UNUSED
+rcl_ret_t
+rcl_count_services(
+  const rcl_node_t * node,
+  const char * service_name,
   size_t * count);
 
 /// Wait for there to be a specified number of publishers on a given topic.

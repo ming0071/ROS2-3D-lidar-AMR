@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/JointControllerState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/joint_controller_state.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__JOINT_CONTROLLER_STATE__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__JOINT_CONTROLLER_STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__JointControllerState__fini(control_msgs__msg__JointController
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__JointControllerState *
-control_msgs__msg__JointControllerState__create();
+control_msgs__msg__JointControllerState__create(void);
 
 /// Destroy msg/JointControllerState message.
 /**

@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Int16.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/int16.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__INT16__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__INT16__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Int16__fini(std_msgs__msg__Int16 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Int16 *
-std_msgs__msg__Int16__create();
+std_msgs__msg__Int16__create(void);
 
 /// Destroy msg/Int16 message.
 /**

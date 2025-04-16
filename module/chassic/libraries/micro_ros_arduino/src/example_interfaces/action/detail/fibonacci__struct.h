@@ -2,6 +2,9 @@
 // with input from example_interfaces:action/Fibonacci.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/action/fibonacci.h"
+
+
 #ifndef EXAMPLE_INTERFACES__ACTION__DETAIL__FIBONACCI__STRUCT_H_
 #define EXAMPLE_INTERFACES__ACTION__DETAIL__FIBONACCI__STRUCT_H_
 

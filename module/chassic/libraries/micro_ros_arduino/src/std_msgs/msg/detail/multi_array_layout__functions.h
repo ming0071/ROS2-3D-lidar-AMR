@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/MultiArrayLayout.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/multi_array_layout.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__MULTI_ARRAY_LAYOUT__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__MULTI_ARRAY_LAYOUT__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__MultiArrayLayout__fini(std_msgs__msg__MultiArrayLayout * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__MultiArrayLayout *
-std_msgs__msg__MultiArrayLayout__create();
+std_msgs__msg__MultiArrayLayout__create(void);
 
 /// Destroy msg/MultiArrayLayout message.
 /**

@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/ChannelFloat32.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/channel_float32.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__CHANNEL_FLOAT32__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__CHANNEL_FLOAT32__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__ChannelFloat32__fini(sensor_msgs__msg__ChannelFloat32 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__ChannelFloat32 *
-sensor_msgs__msg__ChannelFloat32__create();
+sensor_msgs__msg__ChannelFloat32__create(void);
 
 /// Destroy msg/ChannelFloat32 message.
 /**

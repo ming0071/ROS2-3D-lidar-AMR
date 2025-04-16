@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:srv/ChangeState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/srv/change_state.h"
+
+
 #ifndef LIFECYCLE_MSGS__SRV__DETAIL__CHANGE_STATE__FUNCTIONS_H_
 #define LIFECYCLE_MSGS__SRV__DETAIL__CHANGE_STATE__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ lifecycle_msgs__srv__ChangeState_Request__fini(lifecycle_msgs__srv__ChangeState_
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__ChangeState_Request *
-lifecycle_msgs__srv__ChangeState_Request__create();
+lifecycle_msgs__srv__ChangeState_Request__create(void);
 
 /// Destroy srv/ChangeState message.
 /**
@@ -259,7 +262,7 @@ lifecycle_msgs__srv__ChangeState_Response__fini(lifecycle_msgs__srv__ChangeState
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__ChangeState_Response *
-lifecycle_msgs__srv__ChangeState_Response__create();
+lifecycle_msgs__srv__ChangeState_Response__create(void);
 
 /// Destroy srv/ChangeState message.
 /**
@@ -435,7 +438,7 @@ lifecycle_msgs__srv__ChangeState_Event__fini(lifecycle_msgs__srv__ChangeState_Ev
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__ChangeState_Event *
-lifecycle_msgs__srv__ChangeState_Event__create();
+lifecycle_msgs__srv__ChangeState_Event__create(void);
 
 /// Destroy srv/ChangeState message.
 /**

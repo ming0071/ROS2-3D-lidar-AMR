@@ -2,6 +2,9 @@
 // with input from composition_interfaces:srv/UnloadNode.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "composition_interfaces/srv/unload_node.h"
+
+
 #ifndef COMPOSITION_INTERFACES__SRV__DETAIL__UNLOAD_NODE__FUNCTIONS_H_
 #define COMPOSITION_INTERFACES__SRV__DETAIL__UNLOAD_NODE__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ composition_interfaces__srv__UnloadNode_Request__fini(composition_interfaces__sr
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__UnloadNode_Request *
-composition_interfaces__srv__UnloadNode_Request__create();
+composition_interfaces__srv__UnloadNode_Request__create(void);
 
 /// Destroy srv/UnloadNode message.
 /**
@@ -259,7 +262,7 @@ composition_interfaces__srv__UnloadNode_Response__fini(composition_interfaces__s
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__UnloadNode_Response *
-composition_interfaces__srv__UnloadNode_Response__create();
+composition_interfaces__srv__UnloadNode_Response__create(void);
 
 /// Destroy srv/UnloadNode message.
 /**
@@ -435,7 +438,7 @@ composition_interfaces__srv__UnloadNode_Event__fini(composition_interfaces__srv_
  */
 ROSIDL_GENERATOR_C_PUBLIC_composition_interfaces
 composition_interfaces__srv__UnloadNode_Event *
-composition_interfaces__srv__UnloadNode_Event__create();
+composition_interfaces__srv__UnloadNode_Event__create(void);
 
 /// Destroy srv/UnloadNode message.
 /**

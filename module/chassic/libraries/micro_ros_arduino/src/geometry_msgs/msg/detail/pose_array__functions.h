@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/PoseArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/pose_array.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__POSE_ARRAY__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__POSE_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__PoseArray__fini(geometry_msgs__msg__PoseArray * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__PoseArray *
-geometry_msgs__msg__PoseArray__create();
+geometry_msgs__msg__PoseArray__create(void);
 
 /// Destroy msg/PoseArray message.
 /**

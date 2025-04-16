@@ -2,6 +2,9 @@
 // with input from test_msgs:srv/Arrays.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/srv/arrays.h"
+
+
 #ifndef TEST_MSGS__SRV__DETAIL__ARRAYS__FUNCTIONS_H_
 #define TEST_MSGS__SRV__DETAIL__ARRAYS__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ test_msgs__srv__Arrays_Request__fini(test_msgs__srv__Arrays_Request * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__srv__Arrays_Request *
-test_msgs__srv__Arrays_Request__create();
+test_msgs__srv__Arrays_Request__create(void);
 
 /// Destroy srv/Arrays message.
 /**
@@ -259,7 +262,7 @@ test_msgs__srv__Arrays_Response__fini(test_msgs__srv__Arrays_Response * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__srv__Arrays_Response *
-test_msgs__srv__Arrays_Response__create();
+test_msgs__srv__Arrays_Response__create(void);
 
 /// Destroy srv/Arrays message.
 /**
@@ -435,7 +438,7 @@ test_msgs__srv__Arrays_Event__fini(test_msgs__srv__Arrays_Event * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__srv__Arrays_Event *
-test_msgs__srv__Arrays_Event__create();
+test_msgs__srv__Arrays_Event__create(void);
 
 /// Destroy srv/Arrays message.
 /**

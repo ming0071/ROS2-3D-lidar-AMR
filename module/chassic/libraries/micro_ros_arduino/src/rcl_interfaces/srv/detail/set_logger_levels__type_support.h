@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:srv/SetLoggerLevels.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/srv/set_logger_levels.h"
+
+
 #ifndef RCL_INTERFACES__SRV__DETAIL__SET_LOGGER_LEVELS__TYPE_SUPPORT_H_
 #define RCL_INTERFACES__SRV__DETAIL__SET_LOGGER_LEVELS__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   rcl_interfaces,
   srv,
   SetLoggerLevels_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -37,7 +40,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   rcl_interfaces,
   srv,
   SetLoggerLevels_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -50,7 +53,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   rcl_interfaces,
   srv,
   SetLoggerLevels_Event
-)();
+)(void);
 
 #include "rosidl_runtime_c/service_type_support_struct.h"
 
@@ -62,7 +65,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   rcl_interfaces,
   srv,
   SetLoggerLevels
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces

@@ -2,6 +2,9 @@
 // with input from diagnostic_msgs:msg/DiagnosticArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "diagnostic_msgs/msg/diagnostic_array.h"
+
+
 #ifndef DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_ARRAY__FUNCTIONS_H_
 #define DIAGNOSTIC_MSGS__MSG__DETAIL__DIAGNOSTIC_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ diagnostic_msgs__msg__DiagnosticArray__fini(diagnostic_msgs__msg__DiagnosticArra
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__msg__DiagnosticArray *
-diagnostic_msgs__msg__DiagnosticArray__create();
+diagnostic_msgs__msg__DiagnosticArray__create(void);
 
 /// Destroy msg/DiagnosticArray message.
 /**

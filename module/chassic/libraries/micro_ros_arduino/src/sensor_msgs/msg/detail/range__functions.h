@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/Range.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/range.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__RANGE__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__RANGE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__Range__fini(sensor_msgs__msg__Range * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__Range *
-sensor_msgs__msg__Range__create();
+sensor_msgs__msg__Range__create(void);
 
 /// Destroy msg/Range message.
 /**

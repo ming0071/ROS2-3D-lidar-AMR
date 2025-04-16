@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/PointField.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/point_field.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__POINT_FIELD__TYPE_SUPPORT_H_
 #define SENSOR_MSGS__MSG__DETAIL__POINT_FIELD__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   sensor_msgs,
   msg,
   PointField
-)();
+)(void);
 
 #ifdef __cplusplus
 }

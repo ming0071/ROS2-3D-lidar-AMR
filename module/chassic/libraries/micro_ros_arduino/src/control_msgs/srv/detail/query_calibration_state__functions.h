@@ -2,6 +2,9 @@
 // with input from control_msgs:srv/QueryCalibrationState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/srv/query_calibration_state.h"
+
+
 #ifndef CONTROL_MSGS__SRV__DETAIL__QUERY_CALIBRATION_STATE__FUNCTIONS_H_
 #define CONTROL_MSGS__SRV__DETAIL__QUERY_CALIBRATION_STATE__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ control_msgs__srv__QueryCalibrationState_Request__fini(control_msgs__srv__QueryC
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__srv__QueryCalibrationState_Request *
-control_msgs__srv__QueryCalibrationState_Request__create();
+control_msgs__srv__QueryCalibrationState_Request__create(void);
 
 /// Destroy srv/QueryCalibrationState message.
 /**
@@ -259,7 +262,7 @@ control_msgs__srv__QueryCalibrationState_Response__fini(control_msgs__srv__Query
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__srv__QueryCalibrationState_Response *
-control_msgs__srv__QueryCalibrationState_Response__create();
+control_msgs__srv__QueryCalibrationState_Response__create(void);
 
 /// Destroy srv/QueryCalibrationState message.
 /**
@@ -435,7 +438,7 @@ control_msgs__srv__QueryCalibrationState_Event__fini(control_msgs__srv__QueryCal
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__srv__QueryCalibrationState_Event *
-control_msgs__srv__QueryCalibrationState_Event__create();
+control_msgs__srv__QueryCalibrationState_Event__create(void);
 
 /// Destroy srv/QueryCalibrationState message.
 /**

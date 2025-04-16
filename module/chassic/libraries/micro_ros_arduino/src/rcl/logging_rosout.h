@@ -91,7 +91,7 @@ rcl_logging_rosout_init(
 RCL_PUBLIC
 RCL_WARN_UNUSED
 rcl_ret_t
-rcl_logging_rosout_fini();
+rcl_logging_rosout_fini(void);
 
 /// Creates a rosout publisher for a node and registers it to be used by the logging system
 /**
@@ -213,7 +213,7 @@ rcl_logging_rosout_output_handler(
  * \param[in] sublogger_name a sublogger name
  * \return #RCL_RET_OK if the subordinate logger was created successfully, or
  * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
- * \return #RCL_RET_SUBLOGGER_ALREADY_EXIST if the subordinate logger already exists, or
+ * \return #RCL_RET_NOT_FOUND if the parent logger does not exist, or
  * \return #RCL_RET_BAD_ALLOC if allocating memory failed, or
  * \return #RCL_RET_ERROR if an unspecified error occurs.
  */
@@ -242,6 +242,7 @@ rcl_logging_rosout_add_sublogger(
  * \param[in] sublogger_name a sublogger name
  * \return #RCL_RET_OK if the subordinate logger was finalized successfully, or
  * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
+ * \return #RCL_RET_NOT_FOUND if the sublogger does not exist, or
  * \return #RCL_RET_BAD_ALLOC if allocating memory failed, or
  * \return #RCL_RET_ERROR if an unspecified error occurs.
  */

@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/KeyValue.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/key_value.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__KEY_VALUE__FUNCTIONS_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__KEY_VALUE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ type_description_interfaces__msg__KeyValue__fini(type_description_interfaces__ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__msg__KeyValue *
-type_description_interfaces__msg__KeyValue__create();
+type_description_interfaces__msg__KeyValue__create(void);
 
 /// Destroy msg/KeyValue message.
 /**

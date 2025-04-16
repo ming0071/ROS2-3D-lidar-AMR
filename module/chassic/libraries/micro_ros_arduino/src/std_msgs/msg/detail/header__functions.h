@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Header.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/header.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__HEADER__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__HEADER__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Header__fini(std_msgs__msg__Header * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Header *
-std_msgs__msg__Header__create();
+std_msgs__msg__Header__create(void);
 
 /// Destroy msg/Header message.
 /**

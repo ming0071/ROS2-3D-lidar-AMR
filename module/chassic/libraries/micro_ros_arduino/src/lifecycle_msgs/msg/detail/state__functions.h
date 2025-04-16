@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:msg/State.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/msg/state.h"
+
+
 #ifndef LIFECYCLE_MSGS__MSG__DETAIL__STATE__FUNCTIONS_H_
 #define LIFECYCLE_MSGS__MSG__DETAIL__STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ lifecycle_msgs__msg__State__fini(lifecycle_msgs__msg__State * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__msg__State *
-lifecycle_msgs__msg__State__create();
+lifecycle_msgs__msg__State__create(void);
 
 /// Destroy msg/State message.
 /**

@@ -2,6 +2,9 @@
 // with input from shape_msgs:msg/SolidPrimitive.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "shape_msgs/msg/solid_primitive.h"
+
+
 #ifndef SHAPE_MSGS__MSG__DETAIL__SOLID_PRIMITIVE__FUNCTIONS_H_
 #define SHAPE_MSGS__MSG__DETAIL__SOLID_PRIMITIVE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ shape_msgs__msg__SolidPrimitive__fini(shape_msgs__msg__SolidPrimitive * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_shape_msgs
 shape_msgs__msg__SolidPrimitive *
-shape_msgs__msg__SolidPrimitive__create();
+shape_msgs__msg__SolidPrimitive__create(void);
 
 /// Destroy msg/SolidPrimitive message.
 /**

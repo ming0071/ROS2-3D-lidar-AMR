@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Float32MultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/float32_multi_array.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__FLOAT32_MULTI_ARRAY__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__FLOAT32_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Float32MultiArray__fini(example_interfaces__msg__Float3
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Float32MultiArray *
-example_interfaces__msg__Float32MultiArray__create();
+example_interfaces__msg__Float32MultiArray__create(void);
 
 /// Destroy msg/Float32MultiArray message.
 /**

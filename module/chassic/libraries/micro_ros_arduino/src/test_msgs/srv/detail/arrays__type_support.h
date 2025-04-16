@@ -2,6 +2,9 @@
 // with input from test_msgs:srv/Arrays.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/srv/arrays.h"
+
+
 #ifndef TEST_MSGS__SRV__DETAIL__ARRAYS__TYPE_SUPPORT_H_
 #define TEST_MSGS__SRV__DETAIL__ARRAYS__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   test_msgs,
   srv,
   Arrays_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -37,7 +40,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   test_msgs,
   srv,
   Arrays_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -50,7 +53,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   test_msgs,
   srv,
   Arrays_Event
-)();
+)(void);
 
 #include "rosidl_runtime_c/service_type_support_struct.h"
 
@@ -62,7 +65,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   test_msgs,
   srv,
   Arrays
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs

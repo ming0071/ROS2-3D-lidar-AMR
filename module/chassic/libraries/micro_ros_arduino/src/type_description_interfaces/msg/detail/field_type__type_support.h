@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/FieldType.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/field_type.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__FIELD_TYPE__TYPE_SUPPORT_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__FIELD_TYPE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   type_description_interfaces,
   msg,
   FieldType
-)();
+)(void);
 
 #ifdef __cplusplus
 }

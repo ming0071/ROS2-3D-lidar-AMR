@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Bool.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/bool.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__BOOL__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__BOOL__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Bool__fini(example_interfaces__msg__Bool * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Bool *
-example_interfaces__msg__Bool__create();
+example_interfaces__msg__Bool__create(void);
 
 /// Destroy msg/Bool message.
 /**

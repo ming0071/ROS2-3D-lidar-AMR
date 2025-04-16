@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/JointState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/joint_state.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__JOINT_STATE__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__JOINT_STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__JointState__fini(sensor_msgs__msg__JointState * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__JointState *
-sensor_msgs__msg__JointState__create();
+sensor_msgs__msg__JointState__create(void);
 
 /// Destroy msg/JointState message.
 /**

@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Float64.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/float64.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__FLOAT64__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__FLOAT64__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Float64__fini(std_msgs__msg__Float64 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Float64 *
-std_msgs__msg__Float64__create();
+std_msgs__msg__Float64__create(void);
 
 /// Destroy msg/Float64 message.
 /**

@@ -2,6 +2,9 @@
 // with input from visualization_msgs:msg/ImageMarker.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "visualization_msgs/msg/image_marker.h"
+
+
 #ifndef VISUALIZATION_MSGS__MSG__DETAIL__IMAGE_MARKER__FUNCTIONS_H_
 #define VISUALIZATION_MSGS__MSG__DETAIL__IMAGE_MARKER__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ visualization_msgs__msg__ImageMarker__fini(visualization_msgs__msg__ImageMarker 
  */
 ROSIDL_GENERATOR_C_PUBLIC_visualization_msgs
 visualization_msgs__msg__ImageMarker *
-visualization_msgs__msg__ImageMarker__create();
+visualization_msgs__msg__ImageMarker__create(void);
 
 /// Destroy msg/ImageMarker message.
 /**

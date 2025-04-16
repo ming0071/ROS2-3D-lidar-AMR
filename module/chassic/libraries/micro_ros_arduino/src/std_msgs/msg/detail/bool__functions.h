@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Bool.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/bool.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__BOOL__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__BOOL__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Bool__fini(std_msgs__msg__Bool * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Bool *
-std_msgs__msg__Bool__create();
+std_msgs__msg__Bool__create(void);
 
 /// Destroy msg/Bool message.
 /**

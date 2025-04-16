@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/Pose2D.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/pose2_d.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__POSE2_D__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__POSE2_D__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__Pose2D__fini(geometry_msgs__msg__Pose2D * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__Pose2D *
-geometry_msgs__msg__Pose2D__create();
+geometry_msgs__msg__Pose2D__create(void);
 
 /// Destroy msg/Pose2D message.
 /**

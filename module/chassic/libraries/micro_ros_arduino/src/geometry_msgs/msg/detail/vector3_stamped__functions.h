@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/Vector3Stamped.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/vector3_stamped.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__VECTOR3_STAMPED__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__VECTOR3_STAMPED__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__Vector3Stamped__fini(geometry_msgs__msg__Vector3Stamped * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__Vector3Stamped *
-geometry_msgs__msg__Vector3Stamped__create();
+geometry_msgs__msg__Vector3Stamped__create(void);
 
 /// Destroy msg/Vector3Stamped message.
 /**

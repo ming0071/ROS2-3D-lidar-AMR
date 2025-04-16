@@ -2,6 +2,9 @@
 // with input from nav_msgs:msg/Path.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/msg/path.h"
+
+
 #ifndef NAV_MSGS__MSG__DETAIL__PATH__FUNCTIONS_H_
 #define NAV_MSGS__MSG__DETAIL__PATH__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ nav_msgs__msg__Path__fini(nav_msgs__msg__Path * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__msg__Path *
-nav_msgs__msg__Path__create();
+nav_msgs__msg__Path__create(void);
 
 /// Destroy msg/Path message.
 /**

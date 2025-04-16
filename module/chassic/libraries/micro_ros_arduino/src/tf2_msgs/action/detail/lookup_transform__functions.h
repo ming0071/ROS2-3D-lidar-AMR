@@ -2,6 +2,9 @@
 // with input from tf2_msgs:action/LookupTransform.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "tf2_msgs/action/lookup_transform.h"
+
+
 #ifndef TF2_MSGS__ACTION__DETAIL__LOOKUP_TRANSFORM__FUNCTIONS_H_
 #define TF2_MSGS__ACTION__DETAIL__LOOKUP_TRANSFORM__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ tf2_msgs__action__LookupTransform_Goal__fini(tf2_msgs__action__LookupTransform_G
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_Goal *
-tf2_msgs__action__LookupTransform_Goal__create();
+tf2_msgs__action__LookupTransform_Goal__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -259,7 +262,7 @@ tf2_msgs__action__LookupTransform_Result__fini(tf2_msgs__action__LookupTransform
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_Result *
-tf2_msgs__action__LookupTransform_Result__create();
+tf2_msgs__action__LookupTransform_Result__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -435,7 +438,7 @@ tf2_msgs__action__LookupTransform_Feedback__fini(tf2_msgs__action__LookupTransfo
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_Feedback *
-tf2_msgs__action__LookupTransform_Feedback__create();
+tf2_msgs__action__LookupTransform_Feedback__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -635,7 +638,7 @@ tf2_msgs__action__LookupTransform_SendGoal_Request__fini(tf2_msgs__action__Looku
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_SendGoal_Request *
-tf2_msgs__action__LookupTransform_SendGoal_Request__create();
+tf2_msgs__action__LookupTransform_SendGoal_Request__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -811,7 +814,7 @@ tf2_msgs__action__LookupTransform_SendGoal_Response__fini(tf2_msgs__action__Look
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_SendGoal_Response *
-tf2_msgs__action__LookupTransform_SendGoal_Response__create();
+tf2_msgs__action__LookupTransform_SendGoal_Response__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -987,7 +990,7 @@ tf2_msgs__action__LookupTransform_SendGoal_Event__fini(tf2_msgs__action__LookupT
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_SendGoal_Event *
-tf2_msgs__action__LookupTransform_SendGoal_Event__create();
+tf2_msgs__action__LookupTransform_SendGoal_Event__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -1187,7 +1190,7 @@ tf2_msgs__action__LookupTransform_GetResult_Request__fini(tf2_msgs__action__Look
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_GetResult_Request *
-tf2_msgs__action__LookupTransform_GetResult_Request__create();
+tf2_msgs__action__LookupTransform_GetResult_Request__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -1363,7 +1366,7 @@ tf2_msgs__action__LookupTransform_GetResult_Response__fini(tf2_msgs__action__Loo
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_GetResult_Response *
-tf2_msgs__action__LookupTransform_GetResult_Response__create();
+tf2_msgs__action__LookupTransform_GetResult_Response__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -1539,7 +1542,7 @@ tf2_msgs__action__LookupTransform_GetResult_Event__fini(tf2_msgs__action__Lookup
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_GetResult_Event *
-tf2_msgs__action__LookupTransform_GetResult_Event__create();
+tf2_msgs__action__LookupTransform_GetResult_Event__create(void);
 
 /// Destroy action/LookupTransform message.
 /**
@@ -1715,7 +1718,7 @@ tf2_msgs__action__LookupTransform_FeedbackMessage__fini(tf2_msgs__action__Lookup
  */
 ROSIDL_GENERATOR_C_PUBLIC_tf2_msgs
 tf2_msgs__action__LookupTransform_FeedbackMessage *
-tf2_msgs__action__LookupTransform_FeedbackMessage__create();
+tf2_msgs__action__LookupTransform_FeedbackMessage__create(void);
 
 /// Destroy action/LookupTransform message.
 /**

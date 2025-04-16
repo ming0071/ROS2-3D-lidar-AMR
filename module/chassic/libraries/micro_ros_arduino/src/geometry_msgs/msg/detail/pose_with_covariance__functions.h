@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/PoseWithCovariance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/pose_with_covariance.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__POSE_WITH_COVARIANCE__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__POSE_WITH_COVARIANCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__PoseWithCovariance__fini(geometry_msgs__msg__PoseWithCovaria
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__PoseWithCovariance *
-geometry_msgs__msg__PoseWithCovariance__create();
+geometry_msgs__msg__PoseWithCovariance__create(void);
 
 /// Destroy msg/PoseWithCovariance message.
 /**

@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/TransformStamped.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/transform_stamped.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__TRANSFORM_STAMPED__STRUCT_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__TRANSFORM_STAMPED__STRUCT_H_
 
@@ -30,7 +33,7 @@ extern "C"
   * to the coordinate frame child_frame_id at the time of header.stamp
   *
   * This message is mostly used by the
-  * <a href="https://index.ros.org/p/tf2/">tf2</a> package.
+  * <a href="https://docs.ros.org/en/rolling/p/tf2/">tf2</a> package.
   * See its documentation for more information.
   *
   * The child_frame_id is necessary in addition to the frame_id

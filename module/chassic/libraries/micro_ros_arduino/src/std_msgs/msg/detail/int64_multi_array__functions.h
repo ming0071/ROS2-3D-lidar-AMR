@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Int64MultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/int64_multi_array.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__INT64_MULTI_ARRAY__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__INT64_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Int64MultiArray__fini(std_msgs__msg__Int64MultiArray * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Int64MultiArray *
-std_msgs__msg__Int64MultiArray__create();
+std_msgs__msg__Int64MultiArray__create(void);
 
 /// Destroy msg/Int64MultiArray message.
 /**

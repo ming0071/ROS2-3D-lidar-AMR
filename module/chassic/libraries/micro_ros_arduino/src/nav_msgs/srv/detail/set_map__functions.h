@@ -2,6 +2,9 @@
 // with input from nav_msgs:srv/SetMap.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/srv/set_map.h"
+
+
 #ifndef NAV_MSGS__SRV__DETAIL__SET_MAP__FUNCTIONS_H_
 #define NAV_MSGS__SRV__DETAIL__SET_MAP__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ nav_msgs__srv__SetMap_Request__fini(nav_msgs__srv__SetMap_Request * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__SetMap_Request *
-nav_msgs__srv__SetMap_Request__create();
+nav_msgs__srv__SetMap_Request__create(void);
 
 /// Destroy srv/SetMap message.
 /**
@@ -259,7 +262,7 @@ nav_msgs__srv__SetMap_Response__fini(nav_msgs__srv__SetMap_Response * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__SetMap_Response *
-nav_msgs__srv__SetMap_Response__create();
+nav_msgs__srv__SetMap_Response__create(void);
 
 /// Destroy srv/SetMap message.
 /**
@@ -435,7 +438,7 @@ nav_msgs__srv__SetMap_Event__fini(nav_msgs__srv__SetMap_Event * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__SetMap_Event *
-nav_msgs__srv__SetMap_Event__create();
+nav_msgs__srv__SetMap_Event__create(void);
 
 /// Destroy srv/SetMap message.
 /**

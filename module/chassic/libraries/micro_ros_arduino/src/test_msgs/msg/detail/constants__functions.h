@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/Constants.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/constants.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__CONSTANTS__FUNCTIONS_H_
 #define TEST_MSGS__MSG__DETAIL__CONSTANTS__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ test_msgs__msg__Constants__fini(test_msgs__msg__Constants * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__msg__Constants *
-test_msgs__msg__Constants__create();
+test_msgs__msg__Constants__create(void);
 
 /// Destroy msg/Constants message.
 /**

@@ -2,6 +2,9 @@
 // with input from statistics_msgs:msg/StatisticDataType.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "statistics_msgs/msg/statistic_data_type.h"
+
+
 #ifndef STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_TYPE__FUNCTIONS_H_
 #define STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_TYPE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ statistics_msgs__msg__StatisticDataType__fini(statistics_msgs__msg__StatisticDat
  */
 ROSIDL_GENERATOR_C_PUBLIC_statistics_msgs
 statistics_msgs__msg__StatisticDataType *
-statistics_msgs__msg__StatisticDataType__create();
+statistics_msgs__msg__StatisticDataType__create(void);
 
 /// Destroy msg/StatisticDataType message.
 /**

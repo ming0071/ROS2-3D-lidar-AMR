@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Int64MultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/int64_multi_array.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__INT64_MULTI_ARRAY__TYPE_SUPPORT_H_
 #define STD_MSGS__MSG__DETAIL__INT64_MULTI_ARRAY__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   std_msgs,
   msg,
   Int64MultiArray
-)();
+)(void);
 
 #ifdef __cplusplus
 }

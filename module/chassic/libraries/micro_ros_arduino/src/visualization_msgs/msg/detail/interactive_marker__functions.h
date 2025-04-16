@@ -2,6 +2,9 @@
 // with input from visualization_msgs:msg/InteractiveMarker.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "visualization_msgs/msg/interactive_marker.h"
+
+
 #ifndef VISUALIZATION_MSGS__MSG__DETAIL__INTERACTIVE_MARKER__FUNCTIONS_H_
 #define VISUALIZATION_MSGS__MSG__DETAIL__INTERACTIVE_MARKER__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ visualization_msgs__msg__InteractiveMarker__fini(visualization_msgs__msg__Intera
  */
 ROSIDL_GENERATOR_C_PUBLIC_visualization_msgs
 visualization_msgs__msg__InteractiveMarker *
-visualization_msgs__msg__InteractiveMarker__create();
+visualization_msgs__msg__InteractiveMarker__create(void);
 
 /// Destroy msg/InteractiveMarker message.
 /**

@@ -2,6 +2,9 @@
 // with input from control_msgs:action/SingleJointPosition.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/action/single_joint_position.h"
+
+
 #ifndef CONTROL_MSGS__ACTION__DETAIL__SINGLE_JOINT_POSITION__TYPE_SUPPORT_H_
 #define CONTROL_MSGS__ACTION__DETAIL__SINGLE_JOINT_POSITION__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__ACTION_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition
-)();
+)(void);
 
 #include "rosidl_runtime_c/message_type_support_struct.h"
 
@@ -36,7 +39,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_Goal
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -49,7 +52,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_Result
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -62,7 +65,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_Feedback
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -75,7 +78,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_SendGoal_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -88,7 +91,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_SendGoal_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -101,7 +104,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_SendGoal_Event
-)();
+)(void);
 
 #include "rosidl_runtime_c/service_type_support_struct.h"
 
@@ -113,7 +116,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_SendGoal
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
@@ -152,7 +155,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_GetResult_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -165,7 +168,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_GetResult_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -178,7 +181,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_GetResult_Event
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/service_type_support_struct.h"
@@ -191,7 +194,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_GetResult
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
@@ -230,7 +233,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   action,
   SingleJointPosition_FeedbackMessage
-)();
+)(void);
 
 #ifdef __cplusplus
 }

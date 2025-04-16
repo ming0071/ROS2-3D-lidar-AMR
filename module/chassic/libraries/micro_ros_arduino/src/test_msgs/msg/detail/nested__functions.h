@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/Nested.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/nested.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__NESTED__FUNCTIONS_H_
 #define TEST_MSGS__MSG__DETAIL__NESTED__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ test_msgs__msg__Nested__fini(test_msgs__msg__Nested * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__msg__Nested *
-test_msgs__msg__Nested__create();
+test_msgs__msg__Nested__create(void);
 
 /// Destroy msg/Nested message.
 /**

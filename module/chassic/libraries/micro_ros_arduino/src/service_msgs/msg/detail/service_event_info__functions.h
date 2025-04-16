@@ -2,6 +2,9 @@
 // with input from service_msgs:msg/ServiceEventInfo.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "service_msgs/msg/service_event_info.h"
+
+
 #ifndef SERVICE_MSGS__MSG__DETAIL__SERVICE_EVENT_INFO__FUNCTIONS_H_
 #define SERVICE_MSGS__MSG__DETAIL__SERVICE_EVENT_INFO__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ service_msgs__msg__ServiceEventInfo__fini(service_msgs__msg__ServiceEventInfo * 
  */
 ROSIDL_GENERATOR_C_PUBLIC_service_msgs
 service_msgs__msg__ServiceEventInfo *
-service_msgs__msg__ServiceEventInfo__create();
+service_msgs__msg__ServiceEventInfo__create(void);
 
 /// Destroy msg/ServiceEventInfo message.
 /**

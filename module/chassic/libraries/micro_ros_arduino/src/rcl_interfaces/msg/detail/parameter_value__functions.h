@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/ParameterValue.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/parameter_value.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__PARAMETER_VALUE__FUNCTIONS_H_
 #define RCL_INTERFACES__MSG__DETAIL__PARAMETER_VALUE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rcl_interfaces__msg__ParameterValue__fini(rcl_interfaces__msg__ParameterValue * 
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__msg__ParameterValue *
-rcl_interfaces__msg__ParameterValue__create();
+rcl_interfaces__msg__ParameterValue__create(void);
 
 /// Destroy msg/ParameterValue message.
 /**

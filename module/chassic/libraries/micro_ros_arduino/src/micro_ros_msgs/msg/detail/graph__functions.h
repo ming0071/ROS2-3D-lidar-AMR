@@ -2,6 +2,9 @@
 // with input from micro_ros_msgs:msg/Graph.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "micro_ros_msgs/msg/graph.h"
+
+
 #ifndef MICRO_ROS_MSGS__MSG__DETAIL__GRAPH__FUNCTIONS_H_
 #define MICRO_ROS_MSGS__MSG__DETAIL__GRAPH__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ micro_ros_msgs__msg__Graph__fini(micro_ros_msgs__msg__Graph * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_micro_ros_msgs
 micro_ros_msgs__msg__Graph *
-micro_ros_msgs__msg__Graph__create();
+micro_ros_msgs__msg__Graph__create(void);
 
 /// Destroy msg/Graph message.
 /**

@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/RelativeHumidity.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/relative_humidity.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__RELATIVE_HUMIDITY__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__RELATIVE_HUMIDITY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__RelativeHumidity__fini(sensor_msgs__msg__RelativeHumidity * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__RelativeHumidity *
-sensor_msgs__msg__RelativeHumidity__create();
+sensor_msgs__msg__RelativeHumidity__create(void);
 
 /// Destroy msg/RelativeHumidity message.
 /**

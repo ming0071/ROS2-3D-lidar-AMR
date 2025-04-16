@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:srv/GetAvailableStates.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/srv/get_available_states.h"
+
+
 #ifndef LIFECYCLE_MSGS__SRV__DETAIL__GET_AVAILABLE_STATES__FUNCTIONS_H_
 #define LIFECYCLE_MSGS__SRV__DETAIL__GET_AVAILABLE_STATES__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ lifecycle_msgs__srv__GetAvailableStates_Request__fini(lifecycle_msgs__srv__GetAv
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableStates_Request *
-lifecycle_msgs__srv__GetAvailableStates_Request__create();
+lifecycle_msgs__srv__GetAvailableStates_Request__create(void);
 
 /// Destroy srv/GetAvailableStates message.
 /**
@@ -259,7 +262,7 @@ lifecycle_msgs__srv__GetAvailableStates_Response__fini(lifecycle_msgs__srv__GetA
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableStates_Response *
-lifecycle_msgs__srv__GetAvailableStates_Response__create();
+lifecycle_msgs__srv__GetAvailableStates_Response__create(void);
 
 /// Destroy srv/GetAvailableStates message.
 /**
@@ -435,7 +438,7 @@ lifecycle_msgs__srv__GetAvailableStates_Event__fini(lifecycle_msgs__srv__GetAvai
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableStates_Event *
-lifecycle_msgs__srv__GetAvailableStates_Event__create();
+lifecycle_msgs__srv__GetAvailableStates_Event__create(void);
 
 /// Destroy srv/GetAvailableStates message.
 /**

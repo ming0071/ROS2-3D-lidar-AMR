@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/PointCloud2.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/point_cloud2.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__POINT_CLOUD2__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__POINT_CLOUD2__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__PointCloud2__fini(sensor_msgs__msg__PointCloud2 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__PointCloud2 *
-sensor_msgs__msg__PointCloud2__create();
+sensor_msgs__msg__PointCloud2__create(void);
 
 /// Destroy msg/PointCloud2 message.
 /**

@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/ByteMultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/byte_multi_array.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__BYTE_MULTI_ARRAY__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__BYTE_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__ByteMultiArray__fini(example_interfaces__msg__ByteMulti
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__ByteMultiArray *
-example_interfaces__msg__ByteMultiArray__create();
+example_interfaces__msg__ByteMultiArray__create(void);
 
 /// Destroy msg/ByteMultiArray message.
 /**

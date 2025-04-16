@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/DynamicJointState.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/dynamic_joint_state.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__DYNAMIC_JOINT_STATE__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__DYNAMIC_JOINT_STATE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__DynamicJointState__fini(control_msgs__msg__DynamicJointState 
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__DynamicJointState *
-control_msgs__msg__DynamicJointState__create();
+control_msgs__msg__DynamicJointState__create(void);
 
 /// Destroy msg/DynamicJointState message.
 /**

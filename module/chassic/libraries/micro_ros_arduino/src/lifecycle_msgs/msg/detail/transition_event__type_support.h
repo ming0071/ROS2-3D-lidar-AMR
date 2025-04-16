@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:msg/TransitionEvent.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/msg/transition_event.h"
+
+
 #ifndef LIFECYCLE_MSGS__MSG__DETAIL__TRANSITION_EVENT__TYPE_SUPPORT_H_
 #define LIFECYCLE_MSGS__MSG__DETAIL__TRANSITION_EVENT__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   lifecycle_msgs,
   msg,
   TransitionEvent
-)();
+)(void);
 
 #ifdef __cplusplus
 }

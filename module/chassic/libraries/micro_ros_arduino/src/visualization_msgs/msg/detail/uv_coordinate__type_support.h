@@ -2,6 +2,9 @@
 // with input from visualization_msgs:msg/UVCoordinate.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "visualization_msgs/msg/uv_coordinate.h"
+
+
 #ifndef VISUALIZATION_MSGS__MSG__DETAIL__UV_COORDINATE__TYPE_SUPPORT_H_
 #define VISUALIZATION_MSGS__MSG__DETAIL__UV_COORDINATE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   visualization_msgs,
   msg,
   UVCoordinate
-)();
+)(void);
 
 #ifdef __cplusplus
 }

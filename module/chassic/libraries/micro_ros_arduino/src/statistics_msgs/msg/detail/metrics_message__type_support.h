@@ -2,6 +2,9 @@
 // with input from statistics_msgs:msg/MetricsMessage.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "statistics_msgs/msg/metrics_message.h"
+
+
 #ifndef STATISTICS_MSGS__MSG__DETAIL__METRICS_MESSAGE__TYPE_SUPPORT_H_
 #define STATISTICS_MSGS__MSG__DETAIL__METRICS_MESSAGE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   statistics_msgs,
   msg,
   MetricsMessage
-)();
+)(void);
 
 #ifdef __cplusplus
 }

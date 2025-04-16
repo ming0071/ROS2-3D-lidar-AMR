@@ -2,6 +2,9 @@
 // with input from action_msgs:srv/CancelGoal.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "action_msgs/srv/cancel_goal.h"
+
+
 #ifndef ACTION_MSGS__SRV__DETAIL__CANCEL_GOAL__FUNCTIONS_H_
 #define ACTION_MSGS__SRV__DETAIL__CANCEL_GOAL__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ action_msgs__srv__CancelGoal_Request__fini(action_msgs__srv__CancelGoal_Request 
  */
 ROSIDL_GENERATOR_C_PUBLIC_action_msgs
 action_msgs__srv__CancelGoal_Request *
-action_msgs__srv__CancelGoal_Request__create();
+action_msgs__srv__CancelGoal_Request__create(void);
 
 /// Destroy srv/CancelGoal message.
 /**
@@ -259,7 +262,7 @@ action_msgs__srv__CancelGoal_Response__fini(action_msgs__srv__CancelGoal_Respons
  */
 ROSIDL_GENERATOR_C_PUBLIC_action_msgs
 action_msgs__srv__CancelGoal_Response *
-action_msgs__srv__CancelGoal_Response__create();
+action_msgs__srv__CancelGoal_Response__create(void);
 
 /// Destroy srv/CancelGoal message.
 /**
@@ -435,7 +438,7 @@ action_msgs__srv__CancelGoal_Event__fini(action_msgs__srv__CancelGoal_Event * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_action_msgs
 action_msgs__srv__CancelGoal_Event *
-action_msgs__srv__CancelGoal_Event__create();
+action_msgs__srv__CancelGoal_Event__create(void);
 
 /// Destroy srv/CancelGoal message.
 /**

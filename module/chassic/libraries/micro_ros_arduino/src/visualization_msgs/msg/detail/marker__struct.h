@@ -2,6 +2,9 @@
 // with input from visualization_msgs:msg/Marker.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "visualization_msgs/msg/marker.h"
+
+
 #ifndef VISUALIZATION_MSGS__MSG__DETAIL__MARKER__STRUCT_H_
 #define VISUALIZATION_MSGS__MSG__DETAIL__MARKER__STRUCT_H_
 
@@ -86,6 +89,12 @@ enum
 enum
 {
   visualization_msgs__msg__Marker__TRIANGLE_LIST = 11l
+};
+
+/// Constant 'ARROW_STRIP'.
+enum
+{
+  visualization_msgs__msg__Marker__ARROW_STRIP = 12l
 };
 
 /// Constant 'ADD'.
@@ -174,7 +183,7 @@ typedef struct visualization_msgs__msg__Marker
   builtin_interfaces__msg__Duration lifetime;
   /// If this marker should be frame-locked, i.e. retransformed into its frame every timestep.
   bool frame_locked;
-  /// Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, etc.)
+  /// Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, ARROW_STRIP, etc.)
   geometry_msgs__msg__Point__Sequence points;
   /// Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, etc.)
   /// The number of colors provided must either be 0 or equal to the number of points provided.

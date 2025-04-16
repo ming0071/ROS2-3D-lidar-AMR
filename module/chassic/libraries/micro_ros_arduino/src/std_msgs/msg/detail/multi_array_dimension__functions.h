@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/MultiArrayDimension.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/multi_array_dimension.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__MULTI_ARRAY_DIMENSION__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__MULTI_ARRAY_DIMENSION__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__MultiArrayDimension__fini(std_msgs__msg__MultiArrayDimension * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__MultiArrayDimension *
-std_msgs__msg__MultiArrayDimension__create();
+std_msgs__msg__MultiArrayDimension__create(void);
 
 /// Destroy msg/MultiArrayDimension message.
 /**

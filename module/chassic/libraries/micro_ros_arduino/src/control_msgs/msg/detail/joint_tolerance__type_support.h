@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/JointTolerance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/joint_tolerance.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__JOINT_TOLERANCE__TYPE_SUPPORT_H_
 #define CONTROL_MSGS__MSG__DETAIL__JOINT_TOLERANCE__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   control_msgs,
   msg,
   JointTolerance
-)();
+)(void);
 
 #ifdef __cplusplus
 }

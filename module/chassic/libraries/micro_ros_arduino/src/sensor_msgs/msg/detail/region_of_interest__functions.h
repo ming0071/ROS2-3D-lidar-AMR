@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/RegionOfInterest.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/region_of_interest.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__REGION_OF_INTEREST__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__REGION_OF_INTEREST__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__RegionOfInterest__fini(sensor_msgs__msg__RegionOfInterest * ms
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__RegionOfInterest *
-sensor_msgs__msg__RegionOfInterest__create();
+sensor_msgs__msg__RegionOfInterest__create(void);
 
 /// Destroy msg/RegionOfInterest message.
 /**

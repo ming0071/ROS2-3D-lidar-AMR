@@ -2,6 +2,9 @@
 // with input from statistics_msgs:msg/StatisticDataPoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "statistics_msgs/msg/statistic_data_point.h"
+
+
 #ifndef STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_POINT__FUNCTIONS_H_
 #define STATISTICS_MSGS__MSG__DETAIL__STATISTIC_DATA_POINT__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ statistics_msgs__msg__StatisticDataPoint__fini(statistics_msgs__msg__StatisticDa
  */
 ROSIDL_GENERATOR_C_PUBLIC_statistics_msgs
 statistics_msgs__msg__StatisticDataPoint *
-statistics_msgs__msg__StatisticDataPoint__create();
+statistics_msgs__msg__StatisticDataPoint__create(void);
 
 /// Destroy msg/StatisticDataPoint message.
 /**

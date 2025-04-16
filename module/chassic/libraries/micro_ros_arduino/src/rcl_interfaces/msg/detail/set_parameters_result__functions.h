@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/SetParametersResult.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/set_parameters_result.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__SET_PARAMETERS_RESULT__FUNCTIONS_H_
 #define RCL_INTERFACES__MSG__DETAIL__SET_PARAMETERS_RESULT__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rcl_interfaces__msg__SetParametersResult__fini(rcl_interfaces__msg__SetParameter
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__msg__SetParametersResult *
-rcl_interfaces__msg__SetParametersResult__create();
+rcl_interfaces__msg__SetParametersResult__create(void);
 
 /// Destroy msg/SetParametersResult message.
 /**

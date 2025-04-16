@@ -104,7 +104,7 @@ rcl_get_zero_initialized_subscription(void);
  * ```
  *
  * The rosidl_message_type_support_t object contains message type specific
- * information used to publish messages.
+ * information used to subscribe to messages.
  *
  * The topic name must be a c string which follows the topic and service name
  * format rules for unexpanded names, also known as non-fully qualified names:
@@ -209,7 +209,7 @@ rcl_subscription_fini(rcl_subscription_t * subscription, rcl_node_t * node);
  * - qos = rmw_qos_profile_default
  * - allocator = rcl_get_default_allocator()
  * - rmw_subscription_options = rmw_get_default_subscription_options();
- * - disable_loaned_message = false, true only if ROS_DISABLE_LOANED_MESSAGES=1
+ * - disable_loaned_message = true, false only if ROS_DISABLE_LOANED_MESSAGES=0
  *
  * \return A structure containing the default options for a subscription.
  */

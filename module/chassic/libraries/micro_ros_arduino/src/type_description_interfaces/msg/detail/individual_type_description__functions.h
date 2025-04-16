@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/IndividualTypeDescription.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/individual_type_description.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__INDIVIDUAL_TYPE_DESCRIPTION__FUNCTIONS_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__INDIVIDUAL_TYPE_DESCRIPTION__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ type_description_interfaces__msg__IndividualTypeDescription__fini(type_descripti
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__msg__IndividualTypeDescription *
-type_description_interfaces__msg__IndividualTypeDescription__create();
+type_description_interfaces__msg__IndividualTypeDescription__create(void);
 
 /// Destroy msg/IndividualTypeDescription message.
 /**

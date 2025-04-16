@@ -2,6 +2,9 @@
 // with input from shape_msgs:msg/Plane.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "shape_msgs/msg/plane.h"
+
+
 #ifndef SHAPE_MSGS__MSG__DETAIL__PLANE__FUNCTIONS_H_
 #define SHAPE_MSGS__MSG__DETAIL__PLANE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ shape_msgs__msg__Plane__fini(shape_msgs__msg__Plane * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_shape_msgs
 shape_msgs__msg__Plane *
-shape_msgs__msg__Plane__create();
+shape_msgs__msg__Plane__create(void);
 
 /// Destroy msg/Plane message.
 /**

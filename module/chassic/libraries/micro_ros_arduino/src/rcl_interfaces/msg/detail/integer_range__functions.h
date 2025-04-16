@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/IntegerRange.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/integer_range.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__INTEGER_RANGE__FUNCTIONS_H_
 #define RCL_INTERFACES__MSG__DETAIL__INTEGER_RANGE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rcl_interfaces__msg__IntegerRange__fini(rcl_interfaces__msg__IntegerRange * msg)
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__msg__IntegerRange *
-rcl_interfaces__msg__IntegerRange__create();
+rcl_interfaces__msg__IntegerRange__create(void);
 
 /// Destroy msg/IntegerRange message.
 /**

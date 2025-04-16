@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:srv/DescribeParameters.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/srv/describe_parameters.h"
+
+
 #ifndef RCL_INTERFACES__SRV__DETAIL__DESCRIBE_PARAMETERS__FUNCTIONS_H_
 #define RCL_INTERFACES__SRV__DETAIL__DESCRIBE_PARAMETERS__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ rcl_interfaces__srv__DescribeParameters_Request__fini(rcl_interfaces__srv__Descr
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__DescribeParameters_Request *
-rcl_interfaces__srv__DescribeParameters_Request__create();
+rcl_interfaces__srv__DescribeParameters_Request__create(void);
 
 /// Destroy srv/DescribeParameters message.
 /**
@@ -259,7 +262,7 @@ rcl_interfaces__srv__DescribeParameters_Response__fini(rcl_interfaces__srv__Desc
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__DescribeParameters_Response *
-rcl_interfaces__srv__DescribeParameters_Response__create();
+rcl_interfaces__srv__DescribeParameters_Response__create(void);
 
 /// Destroy srv/DescribeParameters message.
 /**
@@ -435,7 +438,7 @@ rcl_interfaces__srv__DescribeParameters_Event__fini(rcl_interfaces__srv__Describ
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__srv__DescribeParameters_Event *
-rcl_interfaces__srv__DescribeParameters_Event__create();
+rcl_interfaces__srv__DescribeParameters_Event__create(void);
 
 /// Destroy srv/DescribeParameters message.
 /**

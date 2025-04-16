@@ -2,6 +2,9 @@
 // with input from sensor_msgs:srv/SetCameraInfo.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/srv/set_camera_info.h"
+
+
 #ifndef SENSOR_MSGS__SRV__DETAIL__SET_CAMERA_INFO__TYPE_SUPPORT_H_
 #define SENSOR_MSGS__SRV__DETAIL__SET_CAMERA_INFO__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   sensor_msgs,
   srv,
   SetCameraInfo_Request
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -37,7 +40,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   sensor_msgs,
   srv,
   SetCameraInfo_Response
-)();
+)(void);
 
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
@@ -50,7 +53,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   sensor_msgs,
   srv,
   SetCameraInfo_Event
-)();
+)(void);
 
 #include "rosidl_runtime_c/service_type_support_struct.h"
 
@@ -62,7 +65,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(
   sensor_msgs,
   srv,
   SetCameraInfo
-)();
+)(void);
 
 // Forward declare the function to create a service event message for this type.
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs

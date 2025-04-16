@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Empty.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/empty.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__EMPTY__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__EMPTY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Empty__fini(std_msgs__msg__Empty * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Empty *
-std_msgs__msg__Empty__create();
+std_msgs__msg__Empty__create(void);
 
 /// Destroy msg/Empty message.
 /**

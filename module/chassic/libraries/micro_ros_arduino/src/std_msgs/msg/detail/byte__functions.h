@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/Byte.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/byte.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__BYTE__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__BYTE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__Byte__fini(std_msgs__msg__Byte * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__Byte *
-std_msgs__msg__Byte__create();
+std_msgs__msg__Byte__create(void);
 
 /// Destroy msg/Byte message.
 /**

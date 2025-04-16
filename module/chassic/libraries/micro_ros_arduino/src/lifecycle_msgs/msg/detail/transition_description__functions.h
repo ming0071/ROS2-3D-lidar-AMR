@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:msg/TransitionDescription.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/msg/transition_description.h"
+
+
 #ifndef LIFECYCLE_MSGS__MSG__DETAIL__TRANSITION_DESCRIPTION__FUNCTIONS_H_
 #define LIFECYCLE_MSGS__MSG__DETAIL__TRANSITION_DESCRIPTION__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ lifecycle_msgs__msg__TransitionDescription__fini(lifecycle_msgs__msg__Transition
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__msg__TransitionDescription *
-lifecycle_msgs__msg__TransitionDescription__create();
+lifecycle_msgs__msg__TransitionDescription__create(void);
 
 /// Destroy msg/TransitionDescription message.
 /**

@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Int64MultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/int64_multi_array.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__INT64_MULTI_ARRAY__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__INT64_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Int64MultiArray__fini(example_interfaces__msg__Int64Mul
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Int64MultiArray *
-example_interfaces__msg__Int64MultiArray__create();
+example_interfaces__msg__Int64MultiArray__create(void);
 
 /// Destroy msg/Int64MultiArray message.
 /**

@@ -31,6 +31,7 @@ extern "C"
 #include "rcl/macros.h"
 #include "rcl/time.h"
 #include "rcl/types.h"
+#include "rcutils/logging_macros.h"
 #include "rmw/rmw.h"
 
 typedef struct rcl_timer_impl_s rcl_timer_impl_t;
@@ -49,6 +50,13 @@ typedef struct rcl_timer_on_reset_callback_data_s
   const void * user_data;
   size_t reset_counter;
 } rcl_timer_on_reset_callback_data_t;
+
+/// Structure which encapsulates timer information when called.
+typedef struct rcl_timer_call_info_s
+{
+  rcl_time_point_value_t expected_call_time;
+  rcl_time_point_value_t actual_call_time;
+} rcl_timer_call_info_t;
 
 /// User callback signature for timers.
 /**
@@ -125,8 +133,8 @@ rcl_get_zero_initialized_timer(void);
  * // ... error handling
  *
  * rcl_timer_t timer = rcl_get_zero_initialized_timer();
- * ret = rcl_timer_init(
- *   &timer, &clock, context, RCL_MS_TO_NS(100), my_timer_callback, allocator);
+ * ret = rcl_timer_init2(
+ *   &timer, &clock, context, RCL_MS_TO_NS(100), my_timer_callback, allocator, true);
  * // ... error handling, use the timer with a wait set, or poll it manually, then cleanup
  * ret = rcl_timer_fini(&timer);
  * // ... error handling
@@ -151,6 +159,7 @@ rcl_get_zero_initialized_timer(void);
  * \param[in] period the duration between calls to the callback in nanoseconds
  * \param[in] callback the user defined function to be called every period
  * \param[in] allocator the allocator to use for allocations
+ * \param[in] autostart the state of the timer at initialization
  * \return #RCL_RET_OK if the timer was initialized successfully, or
  * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
  * \return #RCL_RET_ALREADY_INIT if the timer was already initialized, or
@@ -159,6 +168,22 @@ rcl_get_zero_initialized_timer(void);
  */
 RCL_PUBLIC
 RCL_WARN_UNUSED
+rcl_ret_t
+rcl_timer_init2(
+  rcl_timer_t * timer,
+  rcl_clock_t * clock,
+  rcl_context_t * context,
+  int64_t period,
+  const rcl_timer_callback_t callback,
+  rcl_allocator_t allocator,
+  bool autostart);
+
+/**
+ * \deprecated `rcl_timer_init` implementation was removed.
+ *   Refer to `rcl_timer_init2`.
+ */
+RCL_PUBLIC
+RCUTILS_DEPRECATED_WITH_MSG("Call rcl_timer_init2 instead")
 rcl_ret_t
 rcl_timer_init(
   rcl_timer_t * timer,
@@ -243,6 +268,34 @@ RCL_WARN_UNUSED
 rcl_ret_t
 rcl_timer_call(rcl_timer_t * timer);
 
+/// Same as rcl_timer_call() except that it also retrieves the actual and expected call time.
+/**
+ * Same as rcl_timer_call() except that it also retrieves the actual and expected call time.
+ *
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | Yes [1]
+ * Uses Atomics       | Yes
+ * Lock-Free          | Yes [2]
+ * <i>[1] user callback might not be thread-safe</i>
+ *
+ * <i>[2] if `atomic_is_lock_free()` returns true for `atomic_int_least64_t`</i>
+ *
+ * \param[inout] timer the handle to the timer to call
+ * \param[out] call_info the struct in which the actual and expected call times are stored
+ * \return #RCL_RET_OK if the timer was called successfully, or
+ * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
+ * \return #RCL_RET_TIMER_INVALID if the timer->impl is invalid, or
+ * \return #RCL_RET_TIMER_CANCELED if the timer has been canceled, or
+ * \return #RCL_RET_ERROR an unspecified error occur.
+ */
+RCL_PUBLIC
+RCL_WARN_UNUSED
+rcl_ret_t
+rcl_timer_call_with_info(rcl_timer_t * timer, rcl_timer_call_info_t * call_info);
+
 /// Retrieve the clock of the timer.
 /**
  * This function retrieves the clock pointer and copies it into the given variable.
@@ -266,7 +319,7 @@ rcl_timer_call(rcl_timer_t * timer);
 RCL_PUBLIC
 RCL_WARN_UNUSED
 rcl_ret_t
-rcl_timer_clock(rcl_timer_t * timer, rcl_clock_t ** clock);
+rcl_timer_clock(const rcl_timer_t * timer, rcl_clock_t ** clock);
 
 /// Calculates whether or not the timer should be called.
 /**
@@ -333,6 +386,30 @@ RCL_PUBLIC
 RCL_WARN_UNUSED
 rcl_ret_t
 rcl_timer_get_time_until_next_call(const rcl_timer_t * timer, int64_t * time_until_next_call);
+
+/// Retrieve the time when the next call to rcl_timer_call() shall occur.
+/**
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | Yes
+ * Uses Atomics       | Yes
+ * Lock-Free          | Yes [1]
+ * <i>[1] if `atomic_is_lock_free()` returns true for `atomic_int_least64_t`</i>
+ *
+ * \param[in] timer the handle to the timer that is being queried
+ * \param[out] next_call_time the output variable for the result
+ * \return #RCL_RET_OK if the timer until next call was successfully calculated, or
+ * \return #RCL_RET_INVALID_ARGUMENT if any arguments are invalid, or
+ * \return #RCL_RET_TIMER_INVALID if the timer->impl is invalid, or
+ * \return #RCL_RET_TIMER_CANCELED if the timer is canceled, or
+ * \return #RCL_RET_ERROR an unspecified error occur.
+ */
+RCL_PUBLIC
+RCL_WARN_UNUSED
+rcl_ret_t
+rcl_timer_get_next_call_time(const rcl_timer_t * timer, int64_t * next_call_time);
 
 /// Retrieve the time since the previous call to rcl_timer_call() occurred.
 /**

@@ -2,6 +2,9 @@
 // with input from statistics_msgs:msg/MetricsMessage.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "statistics_msgs/msg/metrics_message.h"
+
+
 #ifndef STATISTICS_MSGS__MSG__DETAIL__METRICS_MESSAGE__FUNCTIONS_H_
 #define STATISTICS_MSGS__MSG__DETAIL__METRICS_MESSAGE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ statistics_msgs__msg__MetricsMessage__fini(statistics_msgs__msg__MetricsMessage 
  */
 ROSIDL_GENERATOR_C_PUBLIC_statistics_msgs
 statistics_msgs__msg__MetricsMessage *
-statistics_msgs__msg__MetricsMessage__create();
+statistics_msgs__msg__MetricsMessage__create(void);
 
 /// Destroy msg/MetricsMessage message.
 /**

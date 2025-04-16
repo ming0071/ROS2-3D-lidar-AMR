@@ -2,6 +2,9 @@
 // with input from example_interfaces:msg/Float32.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "example_interfaces/msg/float32.h"
+
+
 #ifndef EXAMPLE_INTERFACES__MSG__DETAIL__FLOAT32__FUNCTIONS_H_
 #define EXAMPLE_INTERFACES__MSG__DETAIL__FLOAT32__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ example_interfaces__msg__Float32__fini(example_interfaces__msg__Float32 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_example_interfaces
 example_interfaces__msg__Float32 *
-example_interfaces__msg__Float32__create();
+example_interfaces__msg__Float32__create(void);
 
 /// Destroy msg/Float32 message.
 /**

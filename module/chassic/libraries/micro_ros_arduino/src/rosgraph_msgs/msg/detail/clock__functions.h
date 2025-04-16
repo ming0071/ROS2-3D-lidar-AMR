@@ -2,6 +2,9 @@
 // with input from rosgraph_msgs:msg/Clock.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rosgraph_msgs/msg/clock.h"
+
+
 #ifndef ROSGRAPH_MSGS__MSG__DETAIL__CLOCK__FUNCTIONS_H_
 #define ROSGRAPH_MSGS__MSG__DETAIL__CLOCK__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rosgraph_msgs__msg__Clock__fini(rosgraph_msgs__msg__Clock * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_rosgraph_msgs
 rosgraph_msgs__msg__Clock *
-rosgraph_msgs__msg__Clock__create();
+rosgraph_msgs__msg__Clock__create(void);
 
 /// Destroy msg/Clock message.
 /**

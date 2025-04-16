@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/ByteMultiArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/byte_multi_array.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__BYTE_MULTI_ARRAY__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__BYTE_MULTI_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__ByteMultiArray__fini(std_msgs__msg__ByteMultiArray * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__ByteMultiArray *
-std_msgs__msg__ByteMultiArray__create();
+std_msgs__msg__ByteMultiArray__create(void);
 
 /// Destroy msg/ByteMultiArray message.
 /**

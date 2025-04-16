@@ -2,6 +2,9 @@
 // with input from control_msgs:msg/GripperCommand.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "control_msgs/msg/gripper_command.h"
+
+
 #ifndef CONTROL_MSGS__MSG__DETAIL__GRIPPER_COMMAND__FUNCTIONS_H_
 #define CONTROL_MSGS__MSG__DETAIL__GRIPPER_COMMAND__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ control_msgs__msg__GripperCommand__fini(control_msgs__msg__GripperCommand * msg)
  */
 ROSIDL_GENERATOR_C_PUBLIC_control_msgs
 control_msgs__msg__GripperCommand *
-control_msgs__msg__GripperCommand__create();
+control_msgs__msg__GripperCommand__create(void);
 
 /// Destroy msg/GripperCommand message.
 /**

@@ -2,6 +2,9 @@
 // with input from lifecycle_msgs:srv/GetAvailableTransitions.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "lifecycle_msgs/srv/get_available_transitions.h"
+
+
 #ifndef LIFECYCLE_MSGS__SRV__DETAIL__GET_AVAILABLE_TRANSITIONS__FUNCTIONS_H_
 #define LIFECYCLE_MSGS__SRV__DETAIL__GET_AVAILABLE_TRANSITIONS__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ lifecycle_msgs__srv__GetAvailableTransitions_Request__fini(lifecycle_msgs__srv__
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableTransitions_Request *
-lifecycle_msgs__srv__GetAvailableTransitions_Request__create();
+lifecycle_msgs__srv__GetAvailableTransitions_Request__create(void);
 
 /// Destroy srv/GetAvailableTransitions message.
 /**
@@ -259,7 +262,7 @@ lifecycle_msgs__srv__GetAvailableTransitions_Response__fini(lifecycle_msgs__srv_
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableTransitions_Response *
-lifecycle_msgs__srv__GetAvailableTransitions_Response__create();
+lifecycle_msgs__srv__GetAvailableTransitions_Response__create(void);
 
 /// Destroy srv/GetAvailableTransitions message.
 /**
@@ -435,7 +438,7 @@ lifecycle_msgs__srv__GetAvailableTransitions_Event__fini(lifecycle_msgs__srv__Ge
  */
 ROSIDL_GENERATOR_C_PUBLIC_lifecycle_msgs
 lifecycle_msgs__srv__GetAvailableTransitions_Event *
-lifecycle_msgs__srv__GetAvailableTransitions_Event__create();
+lifecycle_msgs__srv__GetAvailableTransitions_Event__create(void);
 
 /// Destroy srv/GetAvailableTransitions message.
 /**

@@ -2,6 +2,9 @@
 // with input from diagnostic_msgs:srv/SelfTest.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "diagnostic_msgs/srv/self_test.h"
+
+
 #ifndef DIAGNOSTIC_MSGS__SRV__DETAIL__SELF_TEST__FUNCTIONS_H_
 #define DIAGNOSTIC_MSGS__SRV__DETAIL__SELF_TEST__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ diagnostic_msgs__srv__SelfTest_Request__fini(diagnostic_msgs__srv__SelfTest_Requ
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__srv__SelfTest_Request *
-diagnostic_msgs__srv__SelfTest_Request__create();
+diagnostic_msgs__srv__SelfTest_Request__create(void);
 
 /// Destroy srv/SelfTest message.
 /**
@@ -259,7 +262,7 @@ diagnostic_msgs__srv__SelfTest_Response__fini(diagnostic_msgs__srv__SelfTest_Res
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__srv__SelfTest_Response *
-diagnostic_msgs__srv__SelfTest_Response__create();
+diagnostic_msgs__srv__SelfTest_Response__create(void);
 
 /// Destroy srv/SelfTest message.
 /**
@@ -435,7 +438,7 @@ diagnostic_msgs__srv__SelfTest_Event__fini(diagnostic_msgs__srv__SelfTest_Event 
  */
 ROSIDL_GENERATOR_C_PUBLIC_diagnostic_msgs
 diagnostic_msgs__srv__SelfTest_Event *
-diagnostic_msgs__srv__SelfTest_Event__create();
+diagnostic_msgs__srv__SelfTest_Event__create(void);
 
 /// Destroy srv/SelfTest message.
 /**

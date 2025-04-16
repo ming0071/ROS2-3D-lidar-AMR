@@ -2,6 +2,9 @@
 // with input from nav_msgs:msg/Odometry.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/msg/odometry.h"
+
+
 #ifndef NAV_MSGS__MSG__DETAIL__ODOMETRY__FUNCTIONS_H_
 #define NAV_MSGS__MSG__DETAIL__ODOMETRY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ nav_msgs__msg__Odometry__fini(nav_msgs__msg__Odometry * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__msg__Odometry *
-nav_msgs__msg__Odometry__create();
+nav_msgs__msg__Odometry__create(void);
 
 /// Destroy msg/Odometry message.
 /**

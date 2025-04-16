@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/LoggerLevel.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/logger_level.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__LOGGER_LEVEL__FUNCTIONS_H_
 #define RCL_INTERFACES__MSG__DETAIL__LOGGER_LEVEL__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rcl_interfaces__msg__LoggerLevel__fini(rcl_interfaces__msg__LoggerLevel * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__msg__LoggerLevel *
-rcl_interfaces__msg__LoggerLevel__create();
+rcl_interfaces__msg__LoggerLevel__create(void);
 
 /// Destroy msg/LoggerLevel message.
 /**

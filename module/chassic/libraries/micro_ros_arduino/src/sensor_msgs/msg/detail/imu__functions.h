@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/Imu.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/imu.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__IMU__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__IMU__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__Imu__fini(sensor_msgs__msg__Imu * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__Imu *
-sensor_msgs__msg__Imu__create();
+sensor_msgs__msg__Imu__create(void);
 
 /// Destroy msg/Imu message.
 /**

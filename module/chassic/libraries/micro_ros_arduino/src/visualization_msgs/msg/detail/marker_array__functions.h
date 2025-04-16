@@ -2,6 +2,9 @@
 // with input from visualization_msgs:msg/MarkerArray.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "visualization_msgs/msg/marker_array.h"
+
+
 #ifndef VISUALIZATION_MSGS__MSG__DETAIL__MARKER_ARRAY__FUNCTIONS_H_
 #define VISUALIZATION_MSGS__MSG__DETAIL__MARKER_ARRAY__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ visualization_msgs__msg__MarkerArray__fini(visualization_msgs__msg__MarkerArray 
  */
 ROSIDL_GENERATOR_C_PUBLIC_visualization_msgs
 visualization_msgs__msg__MarkerArray *
-visualization_msgs__msg__MarkerArray__create();
+visualization_msgs__msg__MarkerArray__create(void);
 
 /// Destroy msg/MarkerArray message.
 /**

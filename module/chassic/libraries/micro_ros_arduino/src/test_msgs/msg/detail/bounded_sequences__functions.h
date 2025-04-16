@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/BoundedSequences.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/bounded_sequences.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__BOUNDED_SEQUENCES__FUNCTIONS_H_
 #define TEST_MSGS__MSG__DETAIL__BOUNDED_SEQUENCES__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ test_msgs__msg__BoundedSequences__fini(test_msgs__msg__BoundedSequences * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__msg__BoundedSequences *
-test_msgs__msg__BoundedSequences__create();
+test_msgs__msg__BoundedSequences__create(void);
 
 /// Destroy msg/BoundedSequences message.
 /**

@@ -2,6 +2,9 @@
 // with input from nav_msgs:srv/GetPlan.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/srv/get_plan.h"
+
+
 #ifndef NAV_MSGS__SRV__DETAIL__GET_PLAN__FUNCTIONS_H_
 #define NAV_MSGS__SRV__DETAIL__GET_PLAN__FUNCTIONS_H_
 
@@ -83,7 +86,7 @@ nav_msgs__srv__GetPlan_Request__fini(nav_msgs__srv__GetPlan_Request * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__GetPlan_Request *
-nav_msgs__srv__GetPlan_Request__create();
+nav_msgs__srv__GetPlan_Request__create(void);
 
 /// Destroy srv/GetPlan message.
 /**
@@ -259,7 +262,7 @@ nav_msgs__srv__GetPlan_Response__fini(nav_msgs__srv__GetPlan_Response * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__GetPlan_Response *
-nav_msgs__srv__GetPlan_Response__create();
+nav_msgs__srv__GetPlan_Response__create(void);
 
 /// Destroy srv/GetPlan message.
 /**
@@ -435,7 +438,7 @@ nav_msgs__srv__GetPlan_Event__fini(nav_msgs__srv__GetPlan_Event * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__srv__GetPlan_Event *
-nav_msgs__srv__GetPlan_Event__create();
+nav_msgs__srv__GetPlan_Event__create(void);
 
 /// Destroy srv/GetPlan message.
 /**

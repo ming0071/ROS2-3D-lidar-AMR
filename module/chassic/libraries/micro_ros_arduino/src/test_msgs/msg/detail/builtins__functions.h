@@ -2,6 +2,9 @@
 // with input from test_msgs:msg/Builtins.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "test_msgs/msg/builtins.h"
+
+
 #ifndef TEST_MSGS__MSG__DETAIL__BUILTINS__FUNCTIONS_H_
 #define TEST_MSGS__MSG__DETAIL__BUILTINS__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ test_msgs__msg__Builtins__fini(test_msgs__msg__Builtins * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_test_msgs
 test_msgs__msg__Builtins *
-test_msgs__msg__Builtins__create();
+test_msgs__msg__Builtins__create(void);
 
 /// Destroy msg/Builtins message.
 /**

@@ -2,6 +2,9 @@
 // with input from nav_msgs:msg/OccupancyGrid.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "nav_msgs/msg/occupancy_grid.h"
+
+
 #ifndef NAV_MSGS__MSG__DETAIL__OCCUPANCY_GRID__FUNCTIONS_H_
 #define NAV_MSGS__MSG__DETAIL__OCCUPANCY_GRID__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ nav_msgs__msg__OccupancyGrid__fini(nav_msgs__msg__OccupancyGrid * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_nav_msgs
 nav_msgs__msg__OccupancyGrid *
-nav_msgs__msg__OccupancyGrid__create();
+nav_msgs__msg__OccupancyGrid__create(void);
 
 /// Destroy msg/OccupancyGrid message.
 /**

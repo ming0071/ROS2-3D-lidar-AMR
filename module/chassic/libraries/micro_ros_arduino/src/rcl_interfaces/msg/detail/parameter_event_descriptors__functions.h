@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/ParameterEventDescriptors.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/parameter_event_descriptors.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__PARAMETER_EVENT_DESCRIPTORS__FUNCTIONS_H_
 #define RCL_INTERFACES__MSG__DETAIL__PARAMETER_EVENT_DESCRIPTORS__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ rcl_interfaces__msg__ParameterEventDescriptors__fini(rcl_interfaces__msg__Parame
  */
 ROSIDL_GENERATOR_C_PUBLIC_rcl_interfaces
 rcl_interfaces__msg__ParameterEventDescriptors *
-rcl_interfaces__msg__ParameterEventDescriptors__create();
+rcl_interfaces__msg__ParameterEventDescriptors__create(void);
 
 /// Destroy msg/ParameterEventDescriptors message.
 /**

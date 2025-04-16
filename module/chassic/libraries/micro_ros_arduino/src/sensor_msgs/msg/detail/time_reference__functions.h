@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/TimeReference.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/time_reference.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__TIME_REFERENCE__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__TIME_REFERENCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__TimeReference__fini(sensor_msgs__msg__TimeReference * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__TimeReference *
-sensor_msgs__msg__TimeReference__create();
+sensor_msgs__msg__TimeReference__create(void);
 
 /// Destroy msg/TimeReference message.
 /**

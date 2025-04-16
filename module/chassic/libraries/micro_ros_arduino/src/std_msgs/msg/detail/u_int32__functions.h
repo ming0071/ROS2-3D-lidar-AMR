@@ -2,6 +2,9 @@
 // with input from std_msgs:msg/UInt32.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "std_msgs/msg/u_int32.h"
+
+
 #ifndef STD_MSGS__MSG__DETAIL__U_INT32__FUNCTIONS_H_
 #define STD_MSGS__MSG__DETAIL__U_INT32__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ std_msgs__msg__UInt32__fini(std_msgs__msg__UInt32 * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_std_msgs
 std_msgs__msg__UInt32 *
-std_msgs__msg__UInt32__create();
+std_msgs__msg__UInt32__create(void);
 
 /// Destroy msg/UInt32 message.
 /**

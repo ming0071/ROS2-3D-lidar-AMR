@@ -2,6 +2,9 @@
 // with input from geometry_msgs:msg/AccelWithCovariance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "geometry_msgs/msg/accel_with_covariance.h"
+
+
 #ifndef GEOMETRY_MSGS__MSG__DETAIL__ACCEL_WITH_COVARIANCE__FUNCTIONS_H_
 #define GEOMETRY_MSGS__MSG__DETAIL__ACCEL_WITH_COVARIANCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ geometry_msgs__msg__AccelWithCovariance__fini(geometry_msgs__msg__AccelWithCovar
  */
 ROSIDL_GENERATOR_C_PUBLIC_geometry_msgs
 geometry_msgs__msg__AccelWithCovariance *
-geometry_msgs__msg__AccelWithCovariance__create();
+geometry_msgs__msg__AccelWithCovariance__create(void);
 
 /// Destroy msg/AccelWithCovariance message.
 /**

@@ -2,6 +2,9 @@
 // with input from sensor_msgs:msg/PointField.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "sensor_msgs/msg/point_field.h"
+
+
 #ifndef SENSOR_MSGS__MSG__DETAIL__POINT_FIELD__FUNCTIONS_H_
 #define SENSOR_MSGS__MSG__DETAIL__POINT_FIELD__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ sensor_msgs__msg__PointField__fini(sensor_msgs__msg__PointField * msg);
  */
 ROSIDL_GENERATOR_C_PUBLIC_sensor_msgs
 sensor_msgs__msg__PointField *
-sensor_msgs__msg__PointField__create();
+sensor_msgs__msg__PointField__create(void);
 
 /// Destroy msg/PointField message.
 /**

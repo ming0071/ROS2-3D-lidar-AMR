@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/FieldType.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/field_type.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__FIELD_TYPE__FUNCTIONS_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__FIELD_TYPE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ type_description_interfaces__msg__FieldType__fini(type_description_interfaces__m
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__msg__FieldType *
-type_description_interfaces__msg__FieldType__create();
+type_description_interfaces__msg__FieldType__create(void);
 
 /// Destroy msg/FieldType message.
 /**

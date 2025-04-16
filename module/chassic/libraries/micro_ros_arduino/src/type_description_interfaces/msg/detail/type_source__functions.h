@@ -2,6 +2,9 @@
 // with input from type_description_interfaces:msg/TypeSource.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "type_description_interfaces/msg/type_source.h"
+
+
 #ifndef TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__TYPE_SOURCE__FUNCTIONS_H_
 #define TYPE_DESCRIPTION_INTERFACES__MSG__DETAIL__TYPE_SOURCE__FUNCTIONS_H_
 
@@ -59,7 +62,7 @@ type_description_interfaces__msg__TypeSource__fini(type_description_interfaces__
  */
 ROSIDL_GENERATOR_C_PUBLIC_type_description_interfaces
 type_description_interfaces__msg__TypeSource *
-type_description_interfaces__msg__TypeSource__create();
+type_description_interfaces__msg__TypeSource__create(void);
 
 /// Destroy msg/TypeSource message.
 /**

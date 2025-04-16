@@ -2,6 +2,9 @@
 // with input from rcl_interfaces:msg/Log.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "rcl_interfaces/msg/log.h"
+
+
 #ifndef RCL_INTERFACES__MSG__DETAIL__LOG__TYPE_SUPPORT_H_
 #define RCL_INTERFACES__MSG__DETAIL__LOG__TYPE_SUPPORT_H_
 
@@ -24,7 +27,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
   rcl_interfaces,
   msg,
   Log
-)();
+)(void);
 
 #ifdef __cplusplus
 }
