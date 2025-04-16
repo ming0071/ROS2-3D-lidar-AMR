@@ -6,3 +6,4 @@
 # .vscode/
 bagfile/*.bag
 map/*.pcd
+map/ROS/*.pcd
