@@ -88,7 +88,7 @@ def generate_launch_description():
         [
             velodyne_driver_node,
             velodyne_transform_node,
-            velodyne_laserscan_node,
+            # velodyne_laserscan_node,
             launch.actions.RegisterEventHandler(
                 event_handler=launch.event_handlers.OnProcessExit(
                     target_action=velodyne_driver_node,
