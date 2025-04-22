@@ -7,7 +7,7 @@ velodyne_driver_node:
         read_once: false
         read_fast: false
         repeat_delay: 0.0
-        frame_id: VLP16_link
+        frame_id: velodyne
         model: VLP16
         rpm: 600.0
         port: 2368

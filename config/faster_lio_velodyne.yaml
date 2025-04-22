@@ -8,8 +8,8 @@
     cube_side_length: 1000.0
     runtime_pos_log_enable: false
     map_file_path: "/home/scl/ros2_ws/src/scl_amr/map/test.pcd"
-    baselinkFrame: "odom"
-    odometryFrame: "base_link"
+    baselinkFrame: "base_link"
+    odometryFrame: "odom"
 
     common:
       lid_topic: "/velodyne_points"

@@ -59,12 +59,12 @@
   </link>
 
   <!--velodyne VLP16 link-->
-  <joint name="VLP16_joint" type="fixed">
+  <joint name="velodyne" type="fixed">
     <parent link="base_link"/>
-    <child link="VLP16_link" />
+    <child link="velodyne" />
     <origin xyz="0.35 0 1.26" rpy="0 0 0"/>
   </joint>
-  <link name="VLP16_link">
+  <link name="velodyne">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
