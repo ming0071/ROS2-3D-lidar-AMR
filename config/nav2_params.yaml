@@ -94,64 +94,23 @@ controller_server:
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.25
       yaw_goal_tolerance: 0.25
-    # # DWB controller parameters
-    # FollowPath:
-    #   plugin: "dwb_core::DWBLocalPlanner"
-    #   debug_trajectory_details: True
-    #   min_vel_x: 0.0
-    #   min_vel_y: 0.0
-    #   max_vel_x: 0.5
-    #   max_vel_y: 0.0
-    #   max_vel_theta: 1.0
-    #   min_speed_xy: 0.0
-    #   max_speed_xy: 0.5
-    #   min_speed_theta: 0.0
-    #   acc_lim_x: 3.0
-    #   acc_lim_y: 0.0
-    #   acc_lim_theta: 3.2
-    #   decel_lim_x: -2.5
-    #   decel_lim_y: 0.0
-    #   decel_lim_theta: -3.2
-    #   vx_samples: 20
-    #   vy_samples: 5
-    #   vtheta_samples: 20
-    #   sim_time: 1.7
-    #   linear_granularity: 0.05
-    #   angular_granularity: 0.025
-    #   transform_tolerance: 0.2
-    #   xy_goal_tolerance: 0.25
-    #   trans_stopped_velocity: 0.25
-    #   short_circuit_trajectory_evaluation: True
-    #   limit_vel_cmd_in_traj: False
-    #   stateful: True
-    #   critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-    #   BaseObstacle.scale: 0.02
-    #   PathAlign.scale: 32.0
-    #   GoalAlign.scale: 24.0
-    #   PathAlign.forward_point_distance: 0.1
-    #   GoalAlign.forward_point_distance: 0.1
-    #   PathDist.scale: 32.0
-    #   GoalDist.scale: 24.0
-    #   RotateToGoal.scale: 32.0
-    #   RotateToGoal.slowing_factor: 5.0
-    #   RotateToGoal.lookahead_time: -1.0
-    # MPPI controller parameters
     FollowPath:
       plugin: "nav2_mppi_controller::MPPIController"
-      time_steps: 15
+      time_steps: 56
       model_dt: 0.1
-      batch_size: 1000
-      ax_max: 3.0
-      ax_min: -3.0
-      ay_max: 3.0
-      az_max: 3.5
-      vx_std: 0.3
-      vy_std: 0.3
+      batch_size: 2000
+      vx_std: 0.2
+      vy_std: 0.0
       wz_std: 0.4
       vx_max: 0.5
-      vx_min: -0.35
-      vy_max: 0.5
+      vx_min: -0.5
+      vy_max: 0.0
       wz_max: 1.9
+      ax_max: 2.75
+      ax_min: -2.75
+      ay_min: 0.0
+      ay_max: 0.0
+      az_max: 3.5
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
@@ -164,7 +123,7 @@ controller_server:
         trajectory_step: 5
         time_step: 3
       AckermannConstraints:
-        min_turning_r: 0.2
+        min_turning_r: 0.05
       critics: [
         "ConstraintCritic", "CostCritic", "GoalCritic",
         "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic",
@@ -181,7 +140,7 @@ controller_server:
       GoalAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 3.0
+        cost_weight: 6.0  # try 6.0, but 5.0 is ok
         threshold_to_consider: 0.5
       PreferForwardCritic:
         enabled: true
@@ -216,11 +175,11 @@ controller_server:
       PathAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 2.0
+        cost_weight: 5.0
         offset_from_furthest: 4
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
-        mode: 0
+        mode: 0   # The default is 0: a large error is allowed. Change to 1: Force angle alignment
       # TwirlingCritic:
       #   enabled: true
       #   twirling_cost_power: 1
@@ -319,13 +278,14 @@ map_saver:
 planner_server:
   ros__parameters:
     expected_planner_frequency: 20.0
+    use_sim_time: false
     planner_plugins: ["GridBased"]
-    costmap_update_timeout: 1.0
     GridBased:
-      plugin: "nav2_navfn_planner::NavfnPlanner"
-      tolerance: 0.5
-      use_astar: false
-      allow_unknown: true
+      plugin: "nav2_theta_star_planner::ThetaStarPlanner" # In Iron and older versions, "/" was used instead of "::"
+      how_many_corners: 8
+      w_euc_cost: 1.0
+      w_traversal_cost: 2.0
+      w_heuristic_cost: 1.0
 
 smoother_server:
   ros__parameters:

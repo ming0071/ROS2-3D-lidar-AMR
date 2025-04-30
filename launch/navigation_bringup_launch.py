@@ -18,25 +18,13 @@ from launch_ros.descriptions import ParameterFile
 from nav2_common.launch import RewrittenYaml, ReplaceString
 
 
-def source_setup_files():
-    """Source the required setup files before running the launch file."""
-    setup_commands = [
-        "source ~/nav2_ws/install/setup.bash",
-        "source ~/ros2_ws/install/setup.bash",
-    ]
-    for command in setup_commands:
-        subprocess.run(command, shell=True, check=True, executable="/bin/bash")
-
-
 def generate_launch_description():
-    # Source setup files
-    source_setup_files()
 
     # Get the launch directory
     scl_amr_dir = get_package_share_directory("scl_amr")
     # bringup_dir = get_package_share_directory("nav2_bringup")
     # launch_dir = os.path.join(bringup_dir, "launch")
-    rviz_config_dir = os.path.join(scl_amr_dir, "rviz", "nav2_hdl.rviz")
+    rviz_config_dir = os.path.join(scl_amr_dir, "rviz", "nav2_scl.rviz")
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration("namespace")
