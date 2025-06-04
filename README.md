@@ -4,7 +4,7 @@ I have a [detailed article](https://hackmd.io/@ming0071/ROS2-notebook/%2F%40ming
 
 ## Sensor 
 - Velodyne VLP-16 Puck 3D LiDAR
-- Hokuyo
+- Hokuyo *2
 - IMU CH110
 
 ## Chassis control
@@ -24,10 +24,10 @@ I have a [detailed article](https://hackmd.io/@ming0071/ROS2-notebook/%2F%40ming
     - micro_ros_msgs
     - serial_imu
 - SLAM:
-    - FAST_LIO
-    - livox_ros_driver2
+    - DLIO
 - Localization:
-    - Hdl-Localization-ROS2-Humble
+    - AMCL
+    - DLIO
 - Navigation2:
     - local planner : MPPI
-    - global planner
+    - global planner : theta*
