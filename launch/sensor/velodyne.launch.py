@@ -73,11 +73,11 @@ def generate_launch_description():
                     plugin='velodyne_pointcloud::Transform',
                     name='velodyne_transform_node',
                     parameters=[convert_params]),
-                ComposableNode(
-                    package='velodyne_laserscan',
-                    plugin='velodyne_laserscan::VelodyneLaserScan',
-                    name='velodyne_laserscan_node',
-                    parameters=[laserscan_params]),
+                # ComposableNode(
+                #     package='velodyne_laserscan',
+                #     plugin='velodyne_laserscan::VelodyneLaserScan',
+                #     name='velodyne_laserscan_node',
+                #     parameters=[laserscan_params]),
             ],
             output='both',
     )
