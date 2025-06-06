@@ -21,7 +21,7 @@ from nav2_common.launch import RewrittenYaml, ReplaceString
 def generate_launch_description():
 
     # Get the launch directory
-    scl_amr_dir = get_package_share_directory("scl_amr")
+    scl_amr_dir = get_package_share_directory("scl_amr") 
     # bringup_dir = get_package_share_directory("nav2_bringup")
     # launch_dir = os.path.join(bringup_dir, "launch")
     rviz_config_dir = os.path.join(scl_amr_dir, "rviz", "nav2_scl.rviz")
