@@ -23,7 +23,7 @@ I have a [detailed article](https://hackmd.io/@ming0071/ROS2-notebook/%2F%40ming
     - micro_ros_agent
     - micro_ros_msgs
     - serial_imu
-- SLAM:
+- Mapping:
     - DLIO
 - Localization:
     - AMCL
