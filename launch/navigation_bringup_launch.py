@@ -30,7 +30,7 @@ def generate_launch_description():
     namespace = LaunchConfiguration("namespace")
     use_namespace = LaunchConfiguration("use_namespace")
     map_yaml_file = LaunchConfiguration(
-        "map", default=os.path.join(scl_amr_dir, "map", "lio_2.yaml")
+        "map", default=os.path.join(scl_amr_dir, "map", "b1.yaml")
     )
     use_sim_time = LaunchConfiguration("use_sim_time", default="false")
     params_file = LaunchConfiguration(

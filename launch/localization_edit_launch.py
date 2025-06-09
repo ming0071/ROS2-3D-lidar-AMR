@@ -73,7 +73,7 @@ def generate_launch_description():
     )
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
-        'map', default_value='/home/scl/ros2_ws/src/scl_amr/map/lio_2.yaml', description='Full path to map yaml file to load'
+        'map', default_value='/home/scl/ros2_ws/src/scl_amr/map/b1.yaml', description='Full path to map yaml file to load'
     )
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
