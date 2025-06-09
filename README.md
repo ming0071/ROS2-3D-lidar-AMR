@@ -29,5 +29,6 @@ I have a [detailed article](https://hackmd.io/@ming0071/ROS2-notebook/%2F%40ming
     - AMCL
     - DLIO
 - Navigation2:
+    - 2d map : [pointcloud_to_2dmap_ros](https://github.com/m11312045/pointcloud_to_2dmap_ros/tree/ros2)
     - local planner : MPPI
     - global planner : theta*
