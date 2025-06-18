@@ -9,7 +9,7 @@ def generate_launch_description():
     nav2_yaml = os.path.join(
         get_package_share_directory("scl_amr"), "config", "amcl.yaml"
     )
-    map_file = os.path.join(get_package_share_directory("scl_amr"), "map", "lio_2.yaml")
+    map_file = os.path.join(get_package_share_directory("scl_amr"), "map", "b1.yaml")
 
     return LaunchDescription(
         [
