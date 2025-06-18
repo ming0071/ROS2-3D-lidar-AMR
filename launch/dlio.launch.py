@@ -19,7 +19,7 @@ def generate_launch_description():
     scl_pkg = FindPackageShare('scl_amr')
 
     # Set default arguments
-    rviz = LaunchConfiguration('rviz', default='true')
+    rviz = LaunchConfiguration('rviz', default='false')
     pointcloud_topic = LaunchConfiguration('pointcloud_topic', default='velodyne_points')
     imu_topic = LaunchConfiguration('imu_topic', default='imu_data')
 
@@ -41,8 +41,8 @@ def generate_launch_description():
     )
 
     # Load parameters
-    dlio_yaml_path = PathJoinSubstitution([scl_pkg, 'cfg', 'dlio.yaml'])
-    dlio_params_yaml_path = PathJoinSubstitution([scl_pkg, 'cfg', 'params.yaml'])
+    dlio_yaml_path = PathJoinSubstitution([scl_pkg, 'config', 'dlio_setting.yaml'])
+    dlio_params_yaml_path = PathJoinSubstitution([scl_pkg, 'config', 'dlio_params.yaml'])
 
     # DLIO Odometry Node
     dlio_odom_node = Node(

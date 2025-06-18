@@ -35,7 +35,7 @@
     odom/preprocessing/voxelFilter/res: 0.25   # original: 0.25
 
     odom/keyframe/threshD: 1.0    # original: 1.0
-    odom/keyframe/threshR: 30   # original: 45  unit:degree
+    odom/keyframe/threshR: 30.0   # original: 45  unit:degree
 
     odom/submap/keyframe/knn: 10
     odom/submap/keyframe/kcv: 10
