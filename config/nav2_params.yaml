@@ -72,7 +72,7 @@ controller_server:
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.001
     min_theta_velocity_threshold: 0.001
-    failure_tolerance: 0.5
+    failure_tolerance: 0.3
     progress_checker_plugins: ["progress_checker"]
     goal_checker_plugins: ["general_goal_checker"] # "precise_goal_checker"
     controller_plugins: ["FollowPath"]
@@ -137,16 +137,16 @@ controller_server:
         enabled: true
         cost_power: 1
         cost_weight: 5.0
-        threshold_to_consider: 1.4
+        threshold_to_consider: 1.4    # ori : 1.4, check : 2.0 
       GoalAngleCritic:
         enabled: true
         cost_power: 1
         cost_weight: 20.0   # 13.0
-        threshold_to_consider: 0.5
+        threshold_to_consider: 0.5    # ori : 0.5, check : 1.0
       PreferForwardCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 7.0
+        cost_weight: 5.0               # ori : 5.0
         threshold_to_consider: 0.5
       ObstaclesCritic:
         enabled: true
@@ -170,7 +170,7 @@ controller_server:
       PathAlignCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 20.0   # 14.0
+        cost_weight: 20.0                 # ori :10.0
         max_path_occupancy_ratio: 0.05
         trajectory_point_step: 4
         threshold_to_consider: 0.5
@@ -185,7 +185,7 @@ controller_server:
       PathAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 2.0
+        cost_weight: 2.0                 # ori : 2.2
         offset_from_furthest: 4
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
@@ -398,8 +398,8 @@ velocity_smoother:
     smoothing_frequency: 20.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.3, 0.0, 2.5]     # x, y, z
-    min_velocity: [-0.3, 0.0, -2.5]   # x, y, z
+    max_velocity: [0.35, 0.0, 2.5]     # x, y, z
+    min_velocity: [-0.35, 0.0, -2.5]   # x, y, z
     max_accel: [3.0, 0.0, 3.0]
     max_decel: [-3.0, 0.0, -3.0]
     odom_topic: "odom"

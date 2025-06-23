@@ -27,13 +27,24 @@ public:
       tf_buffer_(this->get_clock()),
       tf_listener_(tf_buffer_)
     {
-        declare_parameter("x", 0.0);
-        declare_parameter("y", 0.0);
-        declare_parameter("z", 0.0);
-        declare_parameter("qx", 0.0);
-        declare_parameter("qy", 0.0);
-        declare_parameter("qz", 0.0);
-        declare_parameter("qw", 1.0);
+        declare_parameter("mode", 1);   // 0:start , 1: goal
+
+        declare_parameter("start.x", -1.76);
+        declare_parameter("start.y", -0.83);
+        declare_parameter("start.z", 0.0);
+        declare_parameter("start.qx", 0.0);
+        declare_parameter("start.qy", 0.0);
+        declare_parameter("start.qz", 1.0);
+        declare_parameter("start.qw", 0.0);
+
+        declare_parameter("goal.x", 6.71);
+        declare_parameter("goal.y", -0.59);
+        declare_parameter("goal.z", 0.0);
+        declare_parameter("goal.qx", 0.0);
+        declare_parameter("goal.qy", 0.0);
+        declare_parameter("goal.qz", 0.0);
+        declare_parameter("goal.qw", 1.0);
+
         declare_parameter("log_csv", "default_log.csv");
 
         std::string log_filename;
@@ -75,30 +86,27 @@ private:
 
     void send_goal()
     {
-        double x = get_parameter("x").as_double();
-        double y = get_parameter("y").as_double();
-        double z = get_parameter("z").as_double();
-        double qx = get_parameter("qx").as_double();
-        double qy = get_parameter("qy").as_double();
-        double qz = get_parameter("qz").as_double();
-        double qw = get_parameter("qw").as_double();
+        int mode = get_parameter("mode").as_int();
+        std::string base = (mode == 0) ? "start" : "goal";
 
         NavigateToPose::Goal goal_msg;
         goal_msg.pose.header.frame_id = "map";
         goal_msg.pose.header.stamp = now();
-        goal_msg.pose.pose.position.x = x;
-        goal_msg.pose.pose.position.y = y;
-        goal_msg.pose.pose.position.z = z;
-        goal_msg.pose.pose.orientation.x = qx;
-        goal_msg.pose.pose.orientation.y = qy;
-        goal_msg.pose.pose.orientation.z = qz;
-        goal_msg.pose.pose.orientation.w = qw;
+
+        goal_msg.pose.pose.position.x = get_parameter(base + ".x").as_double();
+        goal_msg.pose.pose.position.y = get_parameter(base + ".y").as_double();
+        goal_msg.pose.pose.position.z = get_parameter(base + ".z").as_double();
+        goal_msg.pose.pose.orientation.x = get_parameter(base + ".qx").as_double();
+        goal_msg.pose.pose.orientation.y = get_parameter(base + ".qy").as_double();
+        goal_msg.pose.pose.orientation.z = get_parameter(base + ".qz").as_double();
+        goal_msg.pose.pose.orientation.w = get_parameter(base + ".qw").as_double();
+
 
         auto options = rclcpp_action::Client<NavigateToPose>::SendGoalOptions();
         options.result_callback = std::bind(&NavigateAndLogNode::result_callback, this, std::placeholders::_1);
 
         nav_action_client_->async_send_goal(goal_msg, options);
-        RCLCPP_INFO(this->get_logger(), "Goal sent: [%.2f, %.2f, %.2f]", x, y, z);
+        RCLCPP_INFO(this->get_logger(), "Goal sent");
 
         log_active_ = true;
         log_timer_ = this->create_wall_timer(200ms, std::bind(&NavigateAndLogNode::log_pose, this));
