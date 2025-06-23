@@ -20,23 +20,15 @@ find_package(rclcpp_action REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 # ========================================
-# ⬇️ Build your two nodes
+# ⬇️ Build mine node
 # ========================================
 add_executable(goal_publisher src/goal_publisher.cpp)
-ament_target_dependencies(goal_publisher
+ament_target_dependencies(goal_publisher_and_log
   rclcpp
   geometry_msgs
   nav2_msgs
   rclcpp_action
-)
-
-add_executable(pose_logger src/pose_logger.cpp)
-ament_target_dependencies(pose_logger
-  rclcpp
-  geometry_msgs
   tf2_ros
-  nav2_msgs
-  rclcpp_action
 )
 
 # ========================================

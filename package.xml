@@ -13,7 +13,7 @@
   <!-- Exec dependencies for pose_logger & goal_publisher -->
   <depend>rclcpp</depend>
   <depend>geometry_msgs</depend>
-  <!-- <depend>nav2_msgs</depend> -->     <!-- Nav2 in other workspace -->
+  <!-- <depend>nav2_msgs</depend> -->     <!-- cuz Nav2 in other workspace -->
   <depend>rclcpp_action</depend>
   <depend>tf2_ros</depend>
 

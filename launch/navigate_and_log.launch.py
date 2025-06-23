@@ -8,16 +8,14 @@ def generate_launch_description():
             executable='goal_publisher',
             name='goal_publisher_node',
             parameters=[{
-                'goal_x': 6.4,
-                'goal_y': -0.4,
-                'goal_yaw': 0.0,
+                'x': 6.4,
+                'y': -0.4,
+                'z': 0.0,
+                'qx': 0.0,
+                'qy': 0.0,
+                'qz': 0.0,
+                'qw': 1.0
             }],
             output='screen'
-        ),
-        # Node(
-        #     package='scl_amr',
-        #     executable='pose_logger',
-        #     name='pose_logger_node',
-        #     output='screen'
-        # )
+        )
     ])
