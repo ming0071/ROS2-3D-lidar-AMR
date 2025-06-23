@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <cmath>
 
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
@@ -33,8 +34,12 @@ public:
         declare_parameter("qy", 0.0);
         declare_parameter("qz", 0.0);
         declare_parameter("qw", 1.0);
+        declare_parameter("log_csv", "default_log.csv");
 
-        log_file_path_ = "/home/scl/ros2_ws/src/scl_amr/data/Path/log.txt";
+        std::string log_filename;
+        get_parameter("log_csv", log_filename);
+        log_file_path_ = "/home/scl/ros2_ws/src/scl_amr/data/Path/" + log_filename;
+
         log_active_ = false;
 
         nav_action_client_ = rclcpp_action::create_client<NavigateToPose>(this, "/navigate_to_pose");
@@ -108,8 +113,8 @@ private:
                 tf_buffer_.lookupTransform("map", "base_link", tf2::TimePointZero);
 
             std::ostringstream ss;
-            ss <<  tf_msg.transform.translation.x << ", "
-               << tf_msg.transform.translation.y ;
+            ss << tf_msg.transform.translation.x << ","
+               << tf_msg.transform.translation.y;
 
             log_data_.push_back(ss.str());
             RCLCPP_INFO(this->get_logger(), "Logged: %s", ss.str().c_str());
@@ -126,6 +131,30 @@ private:
 
         if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
             RCLCPP_INFO(this->get_logger(), "Navigation succeeded. Saving log...");
+
+            // 印出最終位置（x, y, yaw）
+            try {
+                auto tf_msg = tf_buffer_.lookupTransform("map", "base_link", tf2::TimePointZero);
+                double x = tf_msg.transform.translation.x;
+                double y = tf_msg.transform.translation.y;
+
+                double qx = tf_msg.transform.rotation.x;
+                double qy = tf_msg.transform.rotation.y;
+                double qz = tf_msg.transform.rotation.z;
+                double qw = tf_msg.transform.rotation.w;
+
+                double siny_cosp = 2.0 * (qw * qz + qx * qy);
+                double cosy_cosp = 1.0 - 2.0 * (qy * qy + qz * qz);
+                double yaw_rad = std::atan2(siny_cosp, cosy_cosp);
+                double yaw_deg = yaw_rad * 180.0 / M_PI;
+
+                RCLCPP_INFO(this->get_logger(),
+                    "Final pose: x = %.3f, y = %.3f, θ = %.2f°", x, y, yaw_deg);
+
+            } catch (const tf2::TransformException & ex) {
+                RCLCPP_WARN(this->get_logger(), "TF Error on final pose: %s", ex.what());
+            }
+
             write_log_to_file();
         } else {
             RCLCPP_WARN(this->get_logger(), "Navigation failed. Discarding log.");
@@ -137,9 +166,12 @@ private:
     void write_log_to_file()
     {
         std::ofstream file(log_file_path_, std::ios::out);
+        file << "x,y\n";  // CSV header
+
         for (const auto & line : log_data_) {
-            file << line << std::endl;
+            file << line << "\n";
         }
+
         file.close();
         RCLCPP_INFO(this->get_logger(), "Log saved to %s", log_file_path_.c_str());
     }

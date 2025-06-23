@@ -5,7 +5,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='scl_amr',
-            executable='goal_publisher',
+            executable='goal_publisher_and_log',
             name='goal_publisher_node',
             parameters=[{
                 'x': 6.4,
@@ -14,7 +14,8 @@ def generate_launch_description():
                 'qx': 0.0,
                 'qy': 0.0,
                 'qz': 0.0,
-                'qw': 1.0
+                'qw': 1.0,
+                "log_csv": "nav_log_0623-1.csv"
             }],
             output='screen'
         )

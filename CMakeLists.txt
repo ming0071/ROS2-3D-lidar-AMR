@@ -22,7 +22,7 @@ find_package(rclcpp_action REQUIRED)
 # ========================================
 # ⬇️ Build mine node
 # ========================================
-add_executable(goal_publisher src/goal_publisher.cpp)
+add_executable(goal_publisher_and_log src/goal_publisher_and_log.cpp)
 ament_target_dependencies(goal_publisher_and_log
   rclcpp
   geometry_msgs
@@ -35,8 +35,7 @@ ament_target_dependencies(goal_publisher_and_log
 # ⬇️ Install executables
 # ========================================
 install(TARGETS
-  goal_publisher
-  pose_logger
+  goal_publisher_and_log
   DESTINATION lib/${PROJECT_NAME}
 )
 
