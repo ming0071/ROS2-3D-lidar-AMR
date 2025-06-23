@@ -4,13 +4,23 @@
   <name>scl_amr</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="scl@todo.todo">scl</maintainer>
+  <maintainer email="ja99181@gmail.com">ming</maintainer>
   <license>Apache-2.0</license>
 
+  <!-- Build tool -->
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- Exec dependencies for pose_logger & goal_publisher -->
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <!-- <depend>nav2_msgs</depend> -->     <!-- Nav2 in other workspace -->
+  <depend>rclcpp_action</depend>
+  <depend>tf2_ros</depend>
+
+  <!-- You already had this -->
   <exec_depend>urg_node2</exec_depend>
 
+  <!-- Testing -->
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

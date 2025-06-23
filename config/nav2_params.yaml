@@ -129,10 +129,10 @@ controller_server:
         "ConstraintCritic", "CostCritic", "GoalCritic",
         "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic",
         "PathAngleCritic", "PreferForwardCritic", "ObstaclesCritic" , "TwirlingCritic"]
-      ConstraintCritic:
+      ConstraintCritic:   
         enabled: true
         cost_power: 1
-        cost_weight: 4.0
+        cost_weight: 4.0  # no ?
       GoalCritic:
         enabled: true
         cost_power: 1
