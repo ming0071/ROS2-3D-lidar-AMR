@@ -11,8 +11,8 @@
 #include "tf2_ros/transform_listener.h"
 #include "tf2_ros/buffer.h"
 #include "geometry_msgs/msg/transform_stamped.hpp"
-#include "geometry_msgs/msg/quaternion.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
+#include "nav2_msgs/srv/clear_entire_costmap.hpp"
 
 using namespace std::chrono_literals;
 
@@ -21,6 +21,7 @@ class NavigateAndLogNode : public rclcpp::Node
 public:
     using NavigateToPose = nav2_msgs::action::NavigateToPose;
     using GoalHandle = rclcpp_action::ClientGoalHandle<NavigateToPose>;
+    using ClearCostmap = nav2_msgs::srv::ClearEntireCostmap;
 
     NavigateAndLogNode()
     : Node("navigate_and_log_node"),
@@ -54,21 +55,21 @@ public:
         log_active_ = false;
 
         nav_action_client_ = rclcpp_action::create_client<NavigateToPose>(this, "/navigate_to_pose");
+        costmap_client_ = this->create_client<ClearCostmap>("/global_costmap/clear_entirely_global_costmap");
 
         wait_timer_ = this->create_wall_timer(1s, std::bind(&NavigateAndLogNode::wait_for_server, this));
     }
 
 private:
-    // TF
     tf2_ros::Buffer tf_buffer_;
     tf2_ros::TransformListener tf_listener_;
 
-    // Action Client
     rclcpp_action::Client<NavigateToPose>::SharedPtr nav_action_client_;
+    rclcpp::Client<ClearCostmap>::SharedPtr costmap_client_;
+
     rclcpp::TimerBase::SharedPtr wait_timer_;
     rclcpp::TimerBase::SharedPtr log_timer_;
 
-    // Log
     bool log_active_;
     std::string log_file_path_;
     std::vector<std::string> log_data_;
@@ -100,7 +101,6 @@ private:
         goal_msg.pose.pose.orientation.y = get_parameter(base + ".qy").as_double();
         goal_msg.pose.pose.orientation.z = get_parameter(base + ".qz").as_double();
         goal_msg.pose.pose.orientation.w = get_parameter(base + ".qw").as_double();
-
 
         auto options = rclcpp_action::Client<NavigateToPose>::SendGoalOptions();
         options.result_callback = std::bind(&NavigateAndLogNode::result_callback, this, std::placeholders::_1);
@@ -140,7 +140,6 @@ private:
         if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
             RCLCPP_INFO(this->get_logger(), "Navigation succeeded. Saving log...");
 
-            // 印出最終位置（x, y, yaw）
             try {
                 auto tf_msg = tf_buffer_.lookupTransform("map", "base_link", tf2::TimePointZero);
                 double x = tf_msg.transform.translation.x;
@@ -157,13 +156,31 @@ private:
                 double yaw_deg = yaw_rad * 180.0 / M_PI;
 
                 RCLCPP_INFO(this->get_logger(),
-                    "Final pose: x = %.3f, y = %.3f, θ = %.2f°", x, y, yaw_deg);
+                    "\033[1;34mFinal pose: x = %.3f, y = %.3f, θ = %.2f°\033[0m",
+                    x, y, yaw_deg);
 
             } catch (const tf2::TransformException & ex) {
                 RCLCPP_WARN(this->get_logger(), "TF Error on final pose: %s", ex.what());
             }
 
             write_log_to_file();
+
+            // 清除 costmap
+            if (!costmap_client_->wait_for_service(2s)) {
+                RCLCPP_WARN(this->get_logger(), "Costmap service not available.");
+            } else {
+                auto request = std::make_shared<ClearCostmap::Request>();
+                auto future = costmap_client_->async_send_request(request);
+
+                if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), future, 2s)
+                    != rclcpp::FutureReturnCode::SUCCESS)
+                {
+                    RCLCPP_WARN(this->get_logger(), "Failed to call clear costmap service");
+                } else {
+                    RCLCPP_INFO(this->get_logger(), "Successfully cleared global costmap.");
+                }
+            }
+
         } else {
             RCLCPP_WARN(this->get_logger(), "Navigation failed. Discarding log.");
         }
@@ -174,12 +191,10 @@ private:
     void write_log_to_file()
     {
         std::ofstream file(log_file_path_, std::ios::out);
-        file << "x,y\n";  // CSV header
-
+        file << "x,y\n";
         for (const auto & line : log_data_) {
             file << line << "\n";
         }
-
         file.close();
         RCLCPP_INFO(this->get_logger(), "Log saved to %s", log_file_path_.c_str());
     }

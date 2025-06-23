@@ -30,7 +30,7 @@ def generate_launch_description():
     )
     text = "[Hey Bro] Press the reset button on the OpenCR to start the chassis program !"
     final_message = TimerAction(
-        period=7.0,     # float
+        period=6.5,     # float
         actions=[LogInfo(msg="\033[1;34m" + text + "\033[0m")],
     )
 
