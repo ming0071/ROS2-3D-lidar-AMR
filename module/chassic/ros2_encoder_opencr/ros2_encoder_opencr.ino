@@ -7,7 +7,7 @@
 #include "ros_driver.h"     // Custom driver for initializing and managing ROS communication
 #include "pid_v1.h"         // Custom driver for PID control to regulate motor speed
 
-#define AUTO_STOP_INTERVAL 1500 // Time (in milliseconds) to stop motors if no new command is received
+#define AUTO_STOP_INTERVAL 800 // Time (in milliseconds) to stop motors if no new command is received
 
 int moving; // Flag indicating whether PID is active
 
