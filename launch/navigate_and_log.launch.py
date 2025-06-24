@@ -1,14 +1,21 @@
 from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+
 
 def generate_launch_description():
     return LaunchDescription([
+
+        # 可被外部指定的參數宣告
+        DeclareLaunchArgument('mode', default_value='0'),    # 0:start , 1: goal
+
         Node(
             package='scl_amr',
             executable='goal_publisher_and_log',
             name='goal_publisher_node',
             parameters=[{
-                "mode": 0,      # 0:start , 1: goal
+                'mode': LaunchConfiguration('mode'),     
                 
                 "start.x": -1.76,
                 'start.y': -0.83,
