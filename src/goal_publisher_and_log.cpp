@@ -82,6 +82,7 @@ private:
         }
 
         wait_timer_->cancel();
+        clear_costmap();
         send_goal();
     }
 
@@ -164,22 +165,7 @@ private:
             }
 
             write_log_to_file();
-
-            // 清除 costmap
-            if (!costmap_client_->wait_for_service(2s)) {
-                RCLCPP_WARN(this->get_logger(), "Costmap service not available.");
-            } else {
-                auto request = std::make_shared<ClearCostmap::Request>();
-                auto future = costmap_client_->async_send_request(request);
-
-                if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), future, 2s)
-                    != rclcpp::FutureReturnCode::SUCCESS)
-                {
-                    RCLCPP_WARN(this->get_logger(), "Failed to call clear costmap service");
-                } else {
-                    RCLCPP_INFO(this->get_logger(), "Successfully cleared global costmap.");
-                }
-            }
+            clear_costmap();
 
         } else {
             RCLCPP_WARN(this->get_logger(), "Navigation failed. Discarding log.");
@@ -197,6 +183,24 @@ private:
         }
         file.close();
         RCLCPP_INFO(this->get_logger(), "Log saved to %s", log_file_path_.c_str());
+    }
+
+    void clear_costmap(){
+        if (!costmap_client_->wait_for_service(2s)) {
+                RCLCPP_WARN(this->get_logger(), "Costmap service not available.");
+            } else {
+                auto request = std::make_shared<ClearCostmap::Request>();
+                auto future = costmap_client_->async_send_request(request);
+
+                if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), future, 2s)
+                    != rclcpp::FutureReturnCode::SUCCESS)
+                {
+                    RCLCPP_WARN(this->get_logger(), "Failed to call clear costmap service");
+                } else {
+                    RCLCPP_INFO(this->get_logger(), "Successfully cleared global costmap.");
+                }
+            }
+
     }
 };
 
