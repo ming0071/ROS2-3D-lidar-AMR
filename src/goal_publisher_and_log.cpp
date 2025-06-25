@@ -77,7 +77,11 @@ private:
 
     bool log_active_;
     std::string log_file_path_;
-    std::vector<std::string> log_data_;
+    std::vector<std::pair<double, double>> log_data_;
+
+    std::chrono::steady_clock::time_point start_time_;
+    double total_distance_ = 0.0;
+    double goal_x_, goal_y_;
 
     void wait_for_server()
     {
@@ -107,12 +111,16 @@ private:
         goal_msg.pose.pose.orientation.z = get_parameter(base + ".qz").as_double();
         goal_msg.pose.pose.orientation.w = get_parameter(base + ".qw").as_double();
 
+        goal_x_ = goal_msg.pose.pose.position.x;
+        goal_y_ = goal_msg.pose.pose.position.y;
+
         auto options = rclcpp_action::Client<NavigateToPose>::SendGoalOptions();
         options.result_callback = std::bind(&NavigateAndLogNode::result_callback, this, std::placeholders::_1);
 
         nav_action_client_->async_send_goal(goal_msg, options);
         RCLCPP_INFO(this->get_logger(), "Goal sent");
 
+        start_time_ = std::chrono::steady_clock::now();
         log_active_ = true;
         log_timer_ = this->create_wall_timer(200ms, std::bind(&NavigateAndLogNode::log_pose, this));
     }
@@ -125,12 +133,17 @@ private:
             geometry_msgs::msg::TransformStamped tf_msg =
                 tf_buffer_.lookupTransform("map", "base_link", tf2::TimePointZero);
 
-            std::ostringstream ss;
-            ss << tf_msg.transform.translation.x << ","
-               << tf_msg.transform.translation.y;
+            double x = tf_msg.transform.translation.x;
+            double y = tf_msg.transform.translation.y;
 
-            log_data_.push_back(ss.str());
-            RCLCPP_INFO(this->get_logger(), "Logged: %s", ss.str().c_str());
+            if (!log_data_.empty()) {
+                double dx = x - log_data_.back().first;
+                double dy = y - log_data_.back().second;
+                total_distance_ += std::hypot(dx, dy);
+            }
+
+            log_data_.emplace_back(x, y);
+            RCLCPP_INFO(this->get_logger(), "Logged: %.3f, %.3f", x, y);
 
         } catch (const tf2::TransformException & ex) {
             RCLCPP_WARN(this->get_logger(), "TF lookup failed: %s", ex.what());
@@ -220,9 +233,22 @@ private:
     void write_log_to_file()
     {
         std::ofstream file(log_file_path_, std::ios::out);
-        file << "x,y\n";
-        for (const auto & line : log_data_) {
-            file << line << "\n";
+        file << "x,y,goal_x,goal_y,distance,spend_time\n";
+
+        auto end_time = std::chrono::steady_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::duration<double>>(end_time - start_time_);
+        double elapsed_time = duration.count();
+
+        for (size_t i = 0; i < log_data_.size(); ++i) {
+            const auto & pt = log_data_[i];
+            file << std::fixed << std::setprecision(2)
+                 << pt.first << "," << pt.second;
+
+            if (i == 0) {
+                file << "," << goal_x_ << "," << goal_y_ << ","
+                     << total_distance_ << "," << elapsed_time;
+            }
+            file << "\n";
         }
         file.close();
         RCLCPP_INFO(this->get_logger(), "Log saved to %s", log_file_path_.c_str());
