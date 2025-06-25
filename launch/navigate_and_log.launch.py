@@ -17,7 +17,7 @@ def generate_launch_description():
             parameters=[{
                 'mode': LaunchConfiguration('mode'),     
                 
-                "start.x": -1.76,
+                "start.x": -1.84,
                 'start.y': -0.83,
                 'start.z': 0.0,
                 'start.qx': 0.0,
@@ -25,8 +25,8 @@ def generate_launch_description():
                 'start.qz': 1.0,
                 'start.qw': 0.0,
                 
-                'goal.x': 6.71,
-                'goal.y': -0.59,
+                'goal.x': 6.68,
+                'goal.y': -0.57,
                 'goal.z': 0.0,
                 'goal.qx': 0.0,
                 'goal.qy': 0.0,
