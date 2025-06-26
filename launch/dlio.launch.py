@@ -19,7 +19,7 @@ def generate_launch_description():
     scl_pkg = FindPackageShare('scl_amr')
 
     # Set default arguments
-    rviz = LaunchConfiguration('rviz', default='true')
+    rviz = LaunchConfiguration('rviz', default='false')
     pointcloud_topic = LaunchConfiguration('pointcloud_topic', default='velodyne_points')
     imu_topic = LaunchConfiguration('imu_topic', default='imu_data')
 

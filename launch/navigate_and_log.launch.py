@@ -9,6 +9,7 @@ def generate_launch_description():
 
         # 可被外部指定的參數宣告
         DeclareLaunchArgument('mode', default_value='0'),    # 0:start , 1: goal
+        DeclareLaunchArgument('log_csv', default_value='6.csv'), 
 
         Node(
             package='scl_amr',
@@ -17,23 +18,23 @@ def generate_launch_description():
             parameters=[{
                 'mode': LaunchConfiguration('mode'),     
                 
-                "start.x": -1.84,
-                'start.y': -0.83,
+                "start.x": -6.29,
+                'start.y': -2.75,
                 'start.z': 0.0,
                 'start.qx': 0.0,
                 'start.qy': 0.0,
                 'start.qz': 1.0,
                 'start.qw': 0.0,
                 
-                'goal.x': 6.71,
-                'goal.y': -0.57,
+                'goal.x': 2.17,
+                'goal.y': -2.54,
                 'goal.z': 0.0,
                 'goal.qx': 0.0,
                 'goal.qy': 0.0,
                 'goal.qz': 0.0,
                 'goal.qw': 1.0,
 
-                "log_csv": "goal.csv"
+                'log_csv': LaunchConfiguration('log_csv')
             }],
             output='screen'
         )
