@@ -7,3 +7,5 @@ bagfile/
 bagfile/*.bag
 map/*.pcd
 map/ROS/*.pcd
+map/b1 vehicle/*.pcd
+map/b1 no vehicle/*.pcd

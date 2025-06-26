@@ -16,9 +16,9 @@ def generate_launch_description():
                 {"map_width": 1300},
                 {"map_height": 700},
                 {"min_points_in_pix": 2},
-                {"max_points_in_pix": 7},
+                {"max_points_in_pix": 5},
                 {"min_height": 0.5},
-                {"max_height": 2.0},    # max hight of floor: 2.5
+                {"max_height": 2.5},    # max hight of floor: 2.5
                 {"dest_directory": "/home/scl/ros2_ws/src/scl_amr/map"},
                 {"input_pcd": f"/home/scl/ros2_ws/src/scl_amr/map/{map_name}.pcd"},
                 {"map_name": map_name}
