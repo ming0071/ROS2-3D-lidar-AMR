@@ -25,7 +25,7 @@ def generate_launch_description():
                 'start.qz': 1.0,
                 'start.qw': 0.0,
                 
-                'goal.x': 6.68,
+                'goal.x': 6.71,
                 'goal.y': -0.57,
                 'goal.z': 0.0,
                 'goal.qx': 0.0,
