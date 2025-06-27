@@ -108,18 +108,32 @@ void setTargetTicksPerFrame(int left, int right)
 // Convert twist commands to motor target pulses
 void twistToPulseAndServo(double linearVel, double angularVel)
 {
-  // Ignore invalid commands for Ackermann steering
-  if (linearVel == 0)
+  double vLeft = 0.0;
+  double vRight = 0.0;
+
+  // Case 1: Both linear and angular velocities are zero → stop motion
+  if (linearVel == 0.0 && angularVel == 0.0) {
+    setTargetTicksPerFrame(0, 0); // Set motor ticks to zero
     return;
+  }
 
-  // Kinematic calculation for Ackermann steering
-  double vLeft = (1 - (wheelBase * angularVel) / (2 * linearVel)) * linearVel;
-  double vRight = (1 + (wheelBase * angularVel) / (2 * linearVel)) * linearVel;
+  // Case 2: In-place rotation (linearVel = 0 but angularVel ≠ 0)
+  if (linearVel == 0.0) {
+    vLeft = -angularVel * wheelBase / 2.0;
+    vRight = angularVel * wheelBase / 2.0;
+  } 
+  else {
+    // Case 3: Normal motion (including curved paths)
+    vLeft = (1 - (wheelBase * angularVel) / (2.0 * linearVel)) * linearVel;
+    vRight = (1 + (wheelBase * angularVel) / (2.0 * linearVel)) * linearVel;
+  }
 
-  twistTemp.leftPulsePerInterval = static_cast<int>((vLeft * (encoderResolution / (PI * wheelDiameter))) / pidRate);
-  twistTemp.rightPulsePerInterval = static_cast<int>((vRight * (encoderResolution / (PI * wheelDiameter))) / pidRate);
+  // Convert wheel velocities to encoder ticks per control interval
+  int leftTicks = static_cast<int>((vLeft * (encoderResolution / (PI * wheelDiameter))) / pidRate);
+  int rightTicks = static_cast<int>((vRight * (encoderResolution / (PI * wheelDiameter))) / pidRate);
 
-  setTargetTicksPerFrame(twistTemp.leftPulsePerInterval, twistTemp.rightPulsePerInterval);
+  // Send the target ticks to motor control
+  setTargetTicksPerFrame(leftTicks, rightTicks);
 }
 
 #endif
