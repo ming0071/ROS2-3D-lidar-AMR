@@ -9,7 +9,7 @@ def generate_launch_description():
 
         # 可被外部指定的參數宣告
         DeclareLaunchArgument('mode', default_value='0'),    # 0:start , 1: goal
-        DeclareLaunchArgument('log_csv', default_value='6.csv'), 
+        DeclareLaunchArgument('log_csv', default_value='goal.csv'), 
 
         Node(
             package='scl_amr',
