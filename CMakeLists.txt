@@ -24,9 +24,9 @@ find_package(tf2_ros REQUIRED)
 add_executable(single_navigate_and_log_node src/single_navigate_and_log_node.cpp)
 ament_target_dependencies(single_navigate_and_log_node
   rclcpp
-  geometry_msgs
-  nav2_msgs
   rclcpp_action
+  nav2_msgs
+  geometry_msgs
   tf2_ros
 )
 
@@ -37,6 +37,7 @@ ament_target_dependencies(multi_navigate_and_log_node
   rclcpp_action
   nav2_msgs
   geometry_msgs
+  tf2_ros
 )
 
 # ========================================
