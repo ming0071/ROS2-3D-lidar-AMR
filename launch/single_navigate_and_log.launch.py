@@ -13,7 +13,7 @@ def generate_launch_description():
 
         Node(
             package='scl_amr',
-            executable='goal_publisher_and_log',
+            executable='single_navigate_and_log_node',
             name='goal_publisher_node',
             parameters=[{
                 'mode': LaunchConfiguration('mode'),     

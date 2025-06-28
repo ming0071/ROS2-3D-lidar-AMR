@@ -82,7 +82,7 @@ private:
 
         std::string filename;
         get_parameter("log_csv", filename);
-        log_file_path_ = "/home/scl/ros2_ws/src/scl_amr/data/Path/" + filename;
+        log_file_path_ = "/home/scl/ros2_ws/src/scl_amr/data/singlePath/" + filename;
     }
 
     // Initialize clients, publishers

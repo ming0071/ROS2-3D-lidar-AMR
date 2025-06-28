@@ -186,7 +186,7 @@ controller_server:
       PathAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 4.0                 # ori : 2.2
+        cost_weight: 2.2                 # ori : 2.2
         offset_from_furthest: 4
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
@@ -396,17 +396,17 @@ waypoint_follower:
 
 velocity_smoother:
   ros__parameters:
-    smoothing_frequency: 20.0
+    smoothing_frequency: 10.0
     scale_velocities: False
-    feedback: "OPEN_LOOP"
+    feedback: "CLOSED_LOOP"   # CLOSED_LOOP reference is odom, OPEN_LOOP reference is /cmd_vel
     max_velocity: [0.5, 0.0, 3.0]     # x, y, z
     min_velocity: [-0.2, 0.0, -3.0]   # x, y, z
     max_accel: [2.5, 0.0, 5.0]
     max_decel: [-2.5, 0.0, -5.0]
     odom_topic: "odom"
     odom_duration: 0.1
-    deadband_velocity: [0.0, 0.0, 0.0]
-    velocity_timeout: 1.0
+    deadband_velocity: [0.01, 0.0, 0.01]  # avoid jitter. x, y, z
+    velocity_timeout: 0.8
 
 collision_monitor:
   ros__parameters:
