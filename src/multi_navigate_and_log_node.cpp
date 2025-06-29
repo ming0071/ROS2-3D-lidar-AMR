@@ -66,18 +66,41 @@ private:
   {
     geometry_msgs::msg::PoseStamped pose;
     pose.header.frame_id = "map";
+    // 1
+    pose.pose.position.x = 2.38;
+    pose.pose.position.y = -2.59;
+    pose.pose.orientation.z = 0.0;
     pose.pose.orientation.w = 1.0;
-
-    pose.pose.position.x = -4.07;
-    pose.pose.position.y = -3.65;
     waypoints_.push_back(pose);
-
-    pose.pose.position.x = -1.72;
-    pose.pose.position.y = -2.17;
+    // 2
+    pose.pose.position.x = 13.86;
+    pose.pose.position.y = 8.92;
+    pose.pose.orientation.z = 0.0;
+    pose.pose.orientation.w = 1.0;
     waypoints_.push_back(pose);
-
-    pose.pose.position.x = 2.16;
-    pose.pose.position.y = -2.51;
+    // 3
+    pose.pose.position.x = 45.23;
+    pose.pose.position.y = 3.76;
+    pose.pose.orientation.z = -0.68;
+    pose.pose.orientation.w = 0.73;
+    waypoints_.push_back(pose);
+    // 4
+    pose.pose.position.x = 12.97;
+    pose.pose.position.y = -2.63;
+    pose.pose.orientation.z = 1.0;
+    pose.pose.orientation.w = 0.0;
+    waypoints_.push_back(pose);
+    // 5
+    pose.pose.position.x = 1.47;
+    pose.pose.position.y = 8.30;
+    pose.pose.orientation.z = 1.0;
+    pose.pose.orientation.w = 0.0;
+    waypoints_.push_back(pose);
+    // 6
+    pose.pose.position.x = -27.93;
+    pose.pose.position.y = -0.91;
+    pose.pose.orientation.z = -0.68;
+    pose.pose.orientation.w = 0.72;
     waypoints_.push_back(pose);
   }
 
