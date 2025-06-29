@@ -60,7 +60,7 @@ private:
   geometry_msgs::msg::Point last_recorded_point_;
   bool first_odom_received_ = false;
 
-  const std::string kCsvPath = "/home/scl/ros2_ws/src/scl_amr/data/multiPath/goal.csv";
+  const std::string kCsvPath = "/home/scl/ros2_ws/src/scl_amr/data/multiPath/2.csv";
 
   void initializeWaypoints()
   {
@@ -111,6 +111,7 @@ private:
       end_time_ = this->now();
       final_goal_pose_ = waypoints_.back().pose;
       writeTrajectoryToCsv();
+      printFinalPose();
       clearCostmap();
       return;
     }
@@ -168,6 +169,28 @@ private:
 
     current_index_++;
     sendNextGoal();
+  }
+
+  void printFinalPose()
+  {
+    try {
+      auto tf = tf_buffer_->lookupTransform("map", "base_link", tf2::TimePointZero);
+      double x = tf.transform.translation.x;
+      double y = tf.transform.translation.y;
+
+      double qx = tf.transform.rotation.x;
+      double qy = tf.transform.rotation.y;
+      double qz = tf.transform.rotation.z;
+      double qw = tf.transform.rotation.w;
+
+      double yaw = std::atan2(2.0 * (qw * qz + qx * qy),
+                              1.0 - 2.0 * (qy * qy + qz * qz));
+
+      RCLCPP_INFO(this->get_logger(), "\033[1;34mFinal pose: x = %.3f, y = %.3f, θ = %.2f°\033[0m",
+                  x, y, yaw * 180.0 / M_PI);
+    } catch (const tf2::TransformException &ex) {
+      RCLCPP_WARN(this->get_logger(), "TF error in final pose: %s", ex.what());
+    }
   }
 
   void clearCostmap()
