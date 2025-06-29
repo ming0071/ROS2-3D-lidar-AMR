@@ -1,5 +1,5 @@
-folder_path = 'data/Path/';  % 檔案資料夾
-num_files = 9;
+folder_path = 'data/singlePath/'; 
+num_files = 10;
 
 figure;
 hold on;
