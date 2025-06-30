@@ -108,12 +108,12 @@ controller_server:
       vy_std: 0.0
       wz_std: 0.4   # ori : 0.4
       vx_max: 0.5
-      vx_min: -0.3  
+      vx_min: -0.25  
       vy_max: 0.0
       wz_max: 2.0 
       wz_min: -2.0  # ori : 1.9
       ax_max: 3.0   
-      ax_min: -2.0  
+      ax_min: -1.8  
       ay_min: 0.0
       ay_max: 0.0
       az_max: 3.5   # ori : 3.5
@@ -404,9 +404,9 @@ velocity_smoother:
     scale_velocities: False
     feedback: "CLOSED_LOOP"   # CLOSED_LOOP reference is odom, OPEN_LOOP reference is /cmd_vel
     max_velocity: [0.5, 0.0, 2.0]     # x, y, z
-    min_velocity: [-0.3, 0.0, -2.0]   # x, y, z
+    min_velocity: [-0.35, 0.0, -2.0]   # x, y, z
     max_accel: [3.0, 0.0, 3.5]
-    max_decel: [-2.0, 0.0, -3.5]
+    max_decel: [-1.8, 0.0, -3.5]
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.03, 0.0, 0.05]  # avoid jitter. x, y, z

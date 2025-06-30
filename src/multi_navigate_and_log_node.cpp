@@ -39,6 +39,7 @@ public:
       RCLCPP_INFO(this->get_logger(), "Waiting for action server...");
     }
 
+    declareAndReadParameters();
     initializeWaypoints();
     sendNextGoal();
   }
@@ -60,7 +61,15 @@ private:
   geometry_msgs::msg::Point last_recorded_point_;
   bool first_odom_received_ = false;
 
-  const std::string kCsvPath = "/home/scl/ros2_ws/src/scl_amr/data/multiPath/2.csv";
+  std::string log_file_path_;
+
+  void declareAndReadParameters()
+  {
+    this->declare_parameter<std::string>("log_csv", "goal.csv");
+    std::string filename;
+    this->get_parameter("log_csv", filename);
+    log_file_path_ = "/home/scl/ros2_ws/src/scl_amr/data/multiPath/" + filename;
+  }
 
   void initializeWaypoints()
   {
@@ -240,10 +249,10 @@ private:
 
   void writeTrajectoryToCsv()
   {
-    std::ofstream file(kCsvPath);
+    std::ofstream file(log_file_path_);
 
     if (!file.is_open()) {
-      RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", kCsvPath.c_str());
+      RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", log_file_path_.c_str());
       return;
     }
 
@@ -263,7 +272,7 @@ private:
     }
 
     file.close();
-    RCLCPP_INFO(this->get_logger(), "Trajectory saved to: %s", kCsvPath.c_str());
+    RCLCPP_INFO(this->get_logger(), "Trajectory saved to: %s", log_file_path_.c_str());
   }
 };
 
