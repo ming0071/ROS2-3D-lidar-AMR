@@ -4,11 +4,11 @@ amcl:
     # Since DLIO provides high-precision odometry, we assume low odom error.
     # Low alpha values reduce injected noise, allowing particles to follow DLIO output closely.
     # AMCL acts mainly as a slow map-to-odom corrector, not primary localization.
-    alpha1: 0.01
-    alpha2: 0.01
-    alpha3: 0.01
-    alpha4: 0.01
-    alpha5: 0.01
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+    alpha5: 0.2
     base_frame_id: "base_link"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
@@ -104,19 +104,18 @@ controller_server:
       time_steps: 36
       model_dt: 0.1
       batch_size: 2000
+      ax_max: 3.0
+      ax_min: -1.8
+      ay_max: 0.0
+      ay_min: 0.0
+      az_max: 3.5   # this
       vx_std: 0.2
       vy_std: 0.0
-      wz_std: 0.4   # ori : 0.4
+      wz_std: 0.6    # this
       vx_max: 0.5
-      vx_min: -0.25  
+      vx_min: -0.25
       vy_max: 0.0
-      wz_max: 2.0 
-      wz_min: -2.0  # ori : 1.9
-      ax_max: 3.0   
-      ax_min: -1.8  
-      ay_min: 0.0
-      ay_max: 0.0
-      az_max: 3.5   # ori : 3.5
+      wz_max: 2.0    # this
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
@@ -403,10 +402,10 @@ velocity_smoother:
     smoothing_frequency: 10.0
     scale_velocities: False
     feedback: "CLOSED_LOOP"   # CLOSED_LOOP reference is odom, OPEN_LOOP reference is /cmd_vel
-    max_velocity: [0.5, 0.0, 2.0]     # x, y, z
-    min_velocity: [-0.35, 0.0, -2.0]   # x, y, z
-    max_accel: [3.0, 0.0, 3.5]
-    max_decel: [-1.8, 0.0, -3.5]
+    max_velocity: [0.5, 0.0, 3.0]     # x, y, z
+    min_velocity: [-0.35, 0.0, -3.0]   # x, y, z
+    max_accel: [3.0, 0.0, 5.2]
+    max_decel: [-1.8, 0.0, -5.2]
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.03, 0.0, 0.05]  # avoid jitter. x, y, z
