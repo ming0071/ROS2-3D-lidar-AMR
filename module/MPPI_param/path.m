@@ -1,5 +1,5 @@
 folder_path = 'data/singlePath/'; 
-num_files = 10;
+num_files = 8;
 
 figure;
 hold on;
@@ -27,7 +27,8 @@ end
 
 xlabel('X (m)');
 ylabel('Y (m)');
-title('Robot Trajectories');
+title('AMR Trajectories');
 legend show;
 grid on;
 axis equal;
+% ylim([-10, 10]);
