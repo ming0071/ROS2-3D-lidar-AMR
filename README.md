@@ -15,6 +15,7 @@
 - 2D LiDARs: Hokuyo x2 (diagonally mounted for 360° scanning)
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
+詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，連接設定請參考[ROS2 hokuyo、velodyne、imu 設定](https://hackmd.io/yG8ylLVMSLygO6TTthbPmA)
 
 <div align="left">
 <img src="doc/figure/AMR.png" height="350pix" />
@@ -35,6 +36,7 @@
     - [serial_imu](https://sealandtech.com.tw/resource.html?s=anrot&type=tutorial&p=ros2/readme)
 - Mapping:
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
+    - pcl_viewer: ```apt-get install pcl-tools```
 - Localization: AMCL + DLIO odometry
     - AMCL
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
@@ -43,16 +45,17 @@
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
-
 ### Chassis control
 
 1. OpenCR reads encoder signals from both wheels.
 2. Receives /cmd_vel from the ROS 2 navigation stack.
 3. Converts central velocity commands into left/right wheel speeds using differential drive kinematics (not Ackermann).
 4. Applies PID control for velocity tracking and sends PWM signals to the motors.
-
+詳細的說明可以參考[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/TpN4b9gtSACNYpgH3mTC4g)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/0XjzgDc3QnSv--7CCwsMhg)
 
 ## Launch command
+
+詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，這邊列出基本使用指令
 
 ### Mechatronics system
 
@@ -66,28 +69,6 @@ ros2 launch scl_amr mechatronics.launch.py
 #### keyboard control
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-```
-
-#### TF + sensor
-```bash
-cd ~/ros2_ws/
-source install/setup.bash
-ros2 launch scl_amr sensor.launch.py
-```
-
-#### encoder data
-```bash
-ros2 topic echo /encoder_right
-ros2 topic echo /encoder_left
-ping 192.168.0.10
-ping 192.168.1.11
-```
-
-#### only TF
-```bash
-cd ~/ros2_ws/
-source install/setup.bash
-ros2 launch scl_amr AMR_model.launch.py
 ```
 
 ### Off-Line SLAM
@@ -122,15 +103,7 @@ pcl_viewer ~/ros2_ws/src/scl_amr/map/dlio_map.pcd
 ros2 launch pointcloud_to_2dmap_ros2 pointcloud_to_2dmap.launch.py
 ```
 
-#### pcl_viewer
-```bash
-# install
-apt-get install pcl-tools
-# view
-pcl_viewer map.pcd
-```
-
-#### Bag file
+#### Bag file resource
 - [LIO-SAM](https://drive.google.com/drive/folders/1gJHwfdHCRdjP7vuT556pv8atqrCJPbUq)
 - [hdl_graph_slam](https://zenodo.org/records/6960371)
 - [fast-lio](https://drive.google.com/drive/folders/1blQJuAB4S80NwZmpM6oALyHWvBljPSOE)
@@ -179,51 +152,6 @@ ros2 service calllocal_costmap/clear_entirely_local_costmap nav2_msgs/srv/ClearE
 #### rviz update
 ```bash
 cp /home/scl/ros2_ws/install/scl_amr/share/scl_amr/rviz/nav2_scl.rviz /home/scl/ros2_ws/src/scl_amr/rviz/
-```
-
-#### Map server
-```bash
-rviz2
-# add map topic, add topic name 'map'
-
-ros2 launch scl_amr map.launch.py
-
-# ros2 run nav2_map_server map_server --ros-args --params-file ~/ros2_ws/src/scl_amr/config/map_server_params.yaml
-
-# ros2 lifecycle set /map_server configure
-# ros2 lifecycle set /map_server activate
-```
-
-#### AMCL localization
-```bash
-ros2 launch scl_amr mechatronics.launch.py
-
-ros2 launch rf2o_laser_odometry rf2o_laser_odometry.launch.py
-
-rviz2
-
-ros2 launch nav2_bringup localization_launch.py
-然後要拉 2D pose estimate
-```
-
-### Commonly used command
-#### Compile workspace
-```bash
-rosdep install --from-paths src --ignore-src -r -y --rosdistro jazzy
-colcon build --symlink-install
-source install/setup.bash
-```
-
-#### Source workspace
-```bash
-source ~/nav2_ws/install/setup.bash
-source ~/ros2_ws/install/setup.bash
-```
-
-#### Dependency Updates
-```bash
-rosdep update
-rosdep install --from-paths src --ignore-src -r -y --rosdistro jazzy
 ```
 
 #### About tf
