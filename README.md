@@ -1,13 +1,13 @@
 <div align="center">
-<h1>Autonomous Mobile Robot (AMR) System Based on ROS 2</h1>
+<h1>Autonomous Mobile Robot (AMR) Based on ROS 2</h1>
 </div>
+
 本專案提出一套基於 ROS 2 Jazzy 架構的自主移動機器人（Autonomous Mobile Robot, AMR）系統，整合 3D LiDAR 與 IMU 進行地圖建構、定位、路徑規劃與運動控制，並透過 2D LiDAR 實現動態障礙物偵測與避障，應用於室內導航任務。
 
 在定位方面，系統採用 DLIO（LiDAR-Inertial Odometry）進行高頻姿態估測，並結合 AMCL 以補償累積誤差。在路徑規劃與控制方面，分別比較了 A* 與 Theta* 演算法，以及 DWB 與 MPPI 控制器。最終選用 Theta* 搭配 MPPI，實驗顯示可實現更平滑的軌跡與穩健的避障控制能力。
 
 系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，具備良好的重複性與一致性。
 
----
 
 ## Hardware Configuration
 
@@ -56,26 +56,26 @@
 
 ### Mechatronics system
 
-main (sencor + tf + chassic)
+#### main (sencor + tf + chassic)
 ```bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr mechatronics.launch.py
 ```
 
-keyboard control
+#### keyboard control
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-TF + sensor
+#### TF + sensor
 ```bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr sensor.launch.py
 ```
 
-encoder data
+#### encoder data
 ```bash
 ros2 topic echo /encoder_right
 ros2 topic echo /encoder_left
@@ -83,7 +83,7 @@ ping 192.168.0.10
 ping 192.168.1.11
 ```
 
-only TF
+#### only TF
 ```bash
 cd ~/ros2_ws/
 source install/setup.bash
