@@ -22,13 +22,6 @@
 
 ## Software Architecture
 
-### Core Functionalities 
-
-- Mapping: DLIO
-- Localization: AMCL + DLIO odometry
-- Path Planning: Theta* (global planner)
-- Controller: MPPI (Model Predictive Path Integral) controller
-
 ### Using packages
 
 - Mechatronic System:
@@ -41,13 +34,14 @@
     - [serial_imu](https://sealandtech.com.tw/resource.html?s=anrot&type=tutorial&p=ros2/readme)
 - Mapping:
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
-- Localization:
+- Localization: AMCL + DLIO odometry
     - AMCL
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
 - Navigation2:
-    - 2d map : [pointcloud_to_2dmap_ros](https://github.com/m11312045/pointcloud_to_2dmap_ros/tree/ros2)
-    - local planner : MPPI
-    - global planner : theta*
+    - 2d map: [pointcloud_to_2dmap_ros](https://github.com/m11312045/pointcloud_to_2dmap_ros/tree/ros2)
+    - global planner: Theta* path planner
+    - local planner: MPPI (Model Predictive Path Integral) controller
+
 
 ### Chassis control
 
