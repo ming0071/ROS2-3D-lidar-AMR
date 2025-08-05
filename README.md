@@ -16,8 +16,8 @@
 - Microcontroller: OpenCR (with micro-ROS support)
 
 <div align="left">
-<img src="doc/figure/AMR.png" height="300pix" />
-<img src="doc/figure/AMR system structure.png" height="300pix" />
+<img src="doc/figure/AMR.png" height="350pix" />
+<img src="doc/figure/AMR system structure.png" height="350pix" />
 </div>
 
 ## Software Architecture
