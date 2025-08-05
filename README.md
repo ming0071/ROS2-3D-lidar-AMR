@@ -46,6 +46,8 @@
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
+詳細的 ROS 2 與所使用到的 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/EfJsUhefRHKWiOXAKQouHg)
+
 ### Chassis control
 
 1. OpenCR reads encoder signals from both wheels.
