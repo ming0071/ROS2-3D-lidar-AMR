@@ -14,7 +14,11 @@
 - 2D LiDARs: Hokuyo x2 (diagonally mounted for 360° scanning)
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
-<img src="doc/figure/AMR system structure.png" height="256pix" /> <img src="doc/figure/AMR.png" height="256pix" />
+
+<div align="left">
+<img src="doc/figure/AMR system structure.png" height="256pix" />
+<img src="doc/figure/AMR.png" height="256pix" />
+</div>
 
 ## Software Architecture
 
