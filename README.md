@@ -1,5 +1,6 @@
-# Autonomous Mobile Robot (AMR) System Based on ROS 2
-
+<div align="center">
+<h1>Autonomous Mobile Robot (AMR) System Based on ROS 2</h1>
+</div>
 本專案提出一套基於 ROS 2 Jazzy 架構的自主移動機器人（Autonomous Mobile Robot, AMR）系統，整合 3D LiDAR 與 IMU 進行地圖建構、定位、路徑規劃與運動控制，並透過 2D LiDAR 實現動態障礙物偵測與避障，應用於室內導航任務。
 
 在定位方面，系統採用 DLIO（LiDAR-Inertial Odometry）進行高頻姿態估測，並結合 AMCL 以補償累積誤差。在路徑規劃與控制方面，分別比較了 A* 與 Theta* 演算法，以及 DWB 與 MPPI 控制器。最終選用 Theta* 搭配 MPPI，實驗顯示可實現更平滑的軌跡與穩健的避障控制能力。
