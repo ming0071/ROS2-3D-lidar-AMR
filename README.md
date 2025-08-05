@@ -15,12 +15,13 @@
 - 2D LiDARs: Hokuyo x2 (diagonally mounted for 360° scanning)
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
-詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，連接設定請參考[ROS2 hokuyo、velodyne、imu 設定](https://hackmd.io/yG8ylLVMSLygO6TTthbPmA)
 
 <div align="left">
 <img src="doc/figure/AMR.png" height="350pix" />
 <img src="doc/figure/AMR system structure.png" height="350pix" />
 </div>
+
+詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，連接設定請參考[ROS2 hokuyo、velodyne、imu 設定](https://hackmd.io/yG8ylLVMSLygO6TTthbPmA)
 
 ## Software Architecture
 
@@ -51,11 +52,12 @@
 2. Receives /cmd_vel from the ROS 2 navigation stack.
 3. Converts central velocity commands into left/right wheel speeds using differential drive kinematics (not Ackermann).
 4. Applies PID control for velocity tracking and sends PWM signals to the motors.
+
 詳細的說明可以參考[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/TpN4b9gtSACNYpgH3mTC4g)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/0XjzgDc3QnSv--7CCwsMhg)
 
 ## Launch command
 
-詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，這邊列出基本使用指令
+詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/ncs94EM-RHGrup9VuTKezw)，這裡僅列出基本使用指令
 
 ### Mechatronics system
 
@@ -103,11 +105,6 @@ pcl_viewer ~/ros2_ws/src/scl_amr/map/dlio_map.pcd
 ros2 launch pointcloud_to_2dmap_ros2 pointcloud_to_2dmap.launch.py
 ```
 
-#### Bag file resource
-- [LIO-SAM](https://drive.google.com/drive/folders/1gJHwfdHCRdjP7vuT556pv8atqrCJPbUq)
-- [hdl_graph_slam](https://zenodo.org/records/6960371)
-- [fast-lio](https://drive.google.com/drive/folders/1blQJuAB4S80NwZmpM6oALyHWvBljPSOE)
-
 ### Navigation
 
 #### Nav2 
@@ -137,16 +134,6 @@ source install/setup.bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr multi_navigate_and_log.launch.py log_csv:=5.csv
-```
-
-#### Clear global costmap
-```bash
-ros2 service call /global_costmap/clear_entirely_global_costmap nav2_msgs/srv/ClearEntireCostmap "{}"
-```
-
-#### Clear local costmap
-```bash
-ros2 service calllocal_costmap/clear_entirely_local_costmap nav2_msgs/srv/ClearEntireCostmap "{}"
 ```
 
 #### rviz update
