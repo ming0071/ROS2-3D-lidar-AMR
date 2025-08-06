@@ -51,7 +51,7 @@ Gif 動圖中演示 AMR 於動態障礙路徑的移動過程：
 ### Chassis control
 
 1. OpenCR reads encoder signals from both wheels.
-2. Receives /cmd_vel from the ROS 2 navigation stack.
+2. Receives `/cmd_vel` from the ROS 2 navigation stack.
 3. Converts central velocity commands into left/right wheel speeds using differential drive kinematics (not Ackermann).
 4. Applies PID control for velocity tracking and sends PWM signals to the motors.
 
