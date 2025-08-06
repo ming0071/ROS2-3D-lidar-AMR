@@ -17,9 +17,10 @@
 
 <img src="doc/figure/AMR system structure.png" />
 
-<img src="doc/figure/A point.gif" height="350pix" />
+演示成果:
+<img src="doc/figure/A point.gif" />
 
-詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 hokuyo、velodyne、imu 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
+詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
 ## Software Architecture
 
@@ -44,7 +45,7 @@
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
-詳細的 ROS 2 與所使用到的 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
+詳細的 ROS 2 與 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
 
 ### Chassis control
 
@@ -57,7 +58,7 @@
 
 ## Launch command
 
-詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，這裡僅列出基本使用指令
+詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
 
 ### Mechatronics system
 
@@ -66,11 +67,6 @@
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr mechatronics.launch.py
-```
-
-#### keyboard control
-```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 ### Off-Line SLAM
@@ -109,26 +105,31 @@ ros2 launch pointcloud_to_2dmap_ros2 pointcloud_to_2dmap.launch.py
 
 #### Nav2 
 ```bash
+# mechatronics 
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr mechatronics.launch.py
 
+# odometry
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr dlio.launch.py
 
+# navigation
 cd ~/nav2_ws/
 source install/setup.bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr navigation_bringup_launch.py
 
+# 1. single navigate
 cd ~/nav2_ws/
 source install/setup.bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr single_navigate_and_log.launch.py mode:=1
 
+# 2. multi navigate
 cd ~/nav2_ws/
 source install/setup.bash
 cd ~/ros2_ws/
