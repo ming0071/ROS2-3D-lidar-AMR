@@ -15,10 +15,7 @@
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
 
-<div align="left">
-<img src="doc/figure/AMR.png" height="350pix" />
-<img src="doc/figure/AMR system structure.png" height="350pix" />
-</div>
+<img src="doc/figure/AMR system structure.png" />
 
 <img src="doc/figure/A point.gif" height="350pix" />
 
