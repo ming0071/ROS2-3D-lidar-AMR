@@ -6,9 +6,10 @@
 
 在定位方面，系統採用 DLIO（LiDAR-Inertial Odometry）進行高頻姿態估測，並結合 AMCL 以補償累積誤差。在路徑規劃與控制方面，分別比較了 A* 與 Theta* 演算法，以及 DWB 與 MPPI 控制器。最終選用 Theta* 搭配 MPPI，實驗顯示可實現更平滑的軌跡與穩健的避障控制能力。
 
+<img src="doc/figure/AMR system structure.png" />
+
 系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，具備良好的重複性與一致性。
 
-#### 演示成果:
 <img src="doc/figure/A point.gif" />
 
 ## Hardware Configuration
@@ -17,10 +18,6 @@
 - 2D LiDARs: Hokuyo x2 (diagonally mounted for 360° scanning)
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
-
-<img src="doc/figure/AMR system structure.png" />
-
-
 
 詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
