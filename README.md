@@ -19,7 +19,7 @@
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
 
-**[Article]** 詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
+> **[Article]** 詳細的設備規格請參閱[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
 ## Software Architecture
 
@@ -44,7 +44,7 @@
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
-**[Article]** 詳細的 ROS 2 與 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
+> **[Article]** 詳細的 ROS 2 與 package 安裝指南請參閱[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
 
 ### Chassis control
 
@@ -53,11 +53,11 @@
 3. Converts central velocity commands into left/right wheel speeds using differential drive kinematics (not Ackermann).
 4. Applies PID control for velocity tracking and sends PWM signals to the motors.
 
-**[Article]** 詳細的說明可以參考[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/@ming0071/micro-ros-install-setup)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/@ming0071/opencr-chassic-firmware)
+> **[Article]** 詳細的說明請參閱[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/@ming0071/micro-ros-install-setup)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/@ming0071/opencr-chassic-firmware)
 
 ## Launch command
 
-**[Article]** 詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
+> **[Article]** 詳細的指令請參閱[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
 
 ### Mechatronics system
 
