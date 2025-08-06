@@ -8,7 +8,7 @@
 
 <img src="doc/figure/AMR system structure.png" />
 
-系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，且移動軌跡具備良好的一致性。Gif 動圖中演示於動態障礙路徑的移動過程：
+系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，且移動軌跡具備良好的一致性。Gif 動圖中演示 AMR 於動態障礙路徑的移動過程：
 
 <img src="doc/figure/A point.gif" />
 
@@ -19,7 +19,7 @@
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
 
-> 詳細的設備規格請參閱[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
+> 詳細的設備規格請參閱[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，設備連接設定請參閱[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
 ## Software Architecture
 
