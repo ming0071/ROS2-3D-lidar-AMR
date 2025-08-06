@@ -8,7 +8,6 @@
 
 系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，具備良好的重複性與一致性。
 
-
 ## Hardware Configuration
 
 - 3D LiDAR: Velodyne VLP-16 Puck
@@ -20,6 +19,8 @@
 <img src="doc/figure/AMR.png" height="350pix" />
 <img src="doc/figure/AMR system structure.png" height="350pix" />
 </div>
+
+<img src="doc/figure/A point.gif" height="350pix" />
 
 詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 hokuyo、velodyne、imu 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
