@@ -8,7 +8,7 @@
 
 <img src="doc/figure/AMR system structure.png" />
 
-系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，具備良好的重複性與一致性。
+系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，且移動軌跡具備良好的一致性。Gif 動圖中演示於動態障礙路徑的移動過程：
 
 <img src="doc/figure/A point.gif" />
 
@@ -19,7 +19,7 @@
 - IMU: CH110
 - Microcontroller: OpenCR (with micro-ROS support)
 
-詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
+**[Article]** 詳細的設備規格請參考[SCL AMR 硬體系統](https://hackmd.io/@ming0071/scl-amr)，連接設定請參考[ROS2 Hokuyo、Velodyne、IMU 設定](https://hackmd.io/@ming0071/hokuyo-velodyne-imu-setup)
 
 ## Software Architecture
 
@@ -37,14 +37,14 @@
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
     - pcl_viewer: ```apt-get install pcl-tools```
 - Localization: AMCL + DLIO odometry
-    - AMCL
+    - AMCL: from navigation2, alpha(1~5) = 0.01
     - [DLIO](https://github.com/vectr-ucla/direct_lidar_inertial_odometry/tree/feature/ros2)
 - Navigation2:
     - 2d map: [pointcloud_to_2dmap_ros](https://github.com/m11312045/pointcloud_to_2dmap_ros/tree/ros2)
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
-詳細的 ROS 2 與 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
+**[Article]** 詳細的 ROS 2 與 package 安裝指南請參考[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
 
 ### Chassis control
 
@@ -53,11 +53,11 @@
 3. Converts central velocity commands into left/right wheel speeds using differential drive kinematics (not Ackermann).
 4. Applies PID control for velocity tracking and sends PWM signals to the motors.
 
-詳細的說明可以參考[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/@ming0071/micro-ros-install-setup)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/@ming0071/opencr-chassic-firmware)
+**[Article]** 詳細的說明可以參考[Micro-ROS 配合 ESP32、OpenCR 安裝與設定](https://hackmd.io/@ming0071/micro-ros-install-setup)、[ROS2 AMR OpenCR底盤驅動](https://hackmd.io/@ming0071/opencr-chassic-firmware)
 
 ## Launch command
 
-詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
+**[Article]** 詳細的指令請參考[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
 
 ### Mechatronics system
 
