@@ -70,13 +70,13 @@ ros2 launch scl_amr mechatronics.launch.py
 
 ### Off-Line SLAM
 
-#### Record baf file
+#### Record bag file
 ```bash
 cd ~/ros2_ws/src/scl_amr/bagfile/
 ros2 bag record -a -o b1_2rounds_no_vehivle
 ```
 
-#### DLIO SLAM
+#### DLIO mapping
 ```bash
 # bag 
 cd ~/ros2_ws/src/scl_amr/bagfile/
