@@ -4,11 +4,11 @@ amcl:
     # Since DLIO provides high-precision odometry, we assume low odom error.
     # Low alpha values reduce injected noise, allowing particles to follow DLIO output closely.
     # AMCL acts mainly as a slow map-to-odom corrector, not primary localization.
-    alpha1: 0.2
-    alpha2: 0.2
-    alpha3: 0.2
-    alpha4: 0.2
-    alpha5: 0.2
+    alpha1: 0.01
+    alpha2: 0.01
+    alpha3: 0.01
+    alpha4: 0.01
+    alpha5: 0.01
     base_frame_id: "base_link"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
@@ -20,7 +20,7 @@ amcl:
     laser_max_range: 100.0
     laser_min_range: -1.0
     laser_model_type: "likelihood_field"
-    max_beams: 90             # ori : 60, Max scan rays use, of scan samples
+    max_beams: 90 # Increased from 60 to use more laser beams
     max_particles: 2500
     min_particles: 1000
     odom_frame_id: "odom"
@@ -33,12 +33,12 @@ amcl:
     save_pose_rate: 0.5
     sigma_hit: 0.2
     tf_broadcast: true
-    transform_tolerance: 0.5  # ori : 1.0
+    transform_tolerance: 0.5 # Reduced from 1.0 for tighter TF timing
     update_min_a: 0.05
     update_min_d: 0.05
     z_hit: 0.5
     z_max: 0.05
-    z_rand: 0.3               # ori : 0.5, Random measurement weight, Likelihood randomness
+    z_rand: 0.3 # Reduced from 0.5 to lower randomness weight
     z_short: 0.05
     scan_topic: scan_hokuyo
 
@@ -96,8 +96,8 @@ controller_server:
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.1   # 0.07
-      yaw_goal_tolerance: 0.1  # 0.08
+      xy_goal_tolerance: 0.1 # 0.07
+      yaw_goal_tolerance: 0.1 # 0.08
     # MPPI controller
     FollowPath:
       plugin: "nav2_mppi_controller::MPPIController"
@@ -108,54 +108,63 @@ controller_server:
       ax_min: -1.8
       ay_max: 0.0
       ay_min: 0.0
-      az_max: 3.5   # this
+      az_max: 3.5
       vx_std: 0.2
       vy_std: 0.0
-      wz_std: 0.6    # this
+      wz_std: 0.6
       vx_max: 0.5
       vx_min: -0.25
       vy_max: 0.0
-      wz_max: 2.0    # this
+      wz_max: 2.0
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
       temperature: 0.3
       gamma: 0.015
       motion_model: "DiffDrive"
-      visualize: false    # when testing set true
+      visualize: false # when testing set true
       regenerate_noises: true
       TrajectoryVisualizer:
         trajectory_step: 5
         time_step: 3
       AckermannConstraints:
-        min_turning_r: 0.0  # test
-      critics: [
-        "ConstraintCritic", "CostCritic", "GoalCritic",
-        "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic",
-        "PathAngleCritic", "PreferForwardCritic", "ObstaclesCritic" , "TwirlingCritic"]
-      ConstraintCritic:   
+        min_turning_r: 0.0 # test
+      critics:
+        [
+          "ConstraintCritic",
+          "CostCritic",
+          "GoalCritic",
+          "GoalAngleCritic",
+          "PathAlignCritic",
+          "PathFollowCritic",
+          "PathAngleCritic",
+          "PreferForwardCritic",
+          "ObstaclesCritic",
+          "TwirlingCritic",
+        ]
+      ConstraintCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 4.0  # no ?
+        cost_weight: 4.0
       GoalCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 30.0   # 25
-        threshold_to_consider: 1.4    # ori : 1.4
+        cost_weight: 30.0
+        threshold_to_consider: 1.4
       GoalAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 10.0   # fir : 7, sec : 15
-        threshold_to_consider: 0.3    # ori : 0.5  
+        cost_weight: 10.0
+        threshold_to_consider: 0.3 # ori : 0.5
       PreferForwardCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 5.0               # ori : 5.0
+        cost_weight: 5.0
         threshold_to_consider: 0.5
       ObstaclesCritic:
         enabled: true
         cost_power: 1
-        repulsion_weight: 1.5   # porportional inflation_radius, ori : 1.5
+        repulsion_weight: 1.5
         critical_weight: 20.0
         consider_footprint: false
         collision_cost: 10000.0
@@ -174,28 +183,29 @@ controller_server:
       PathAlignCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 10.0                 # ori :10.0
+        cost_weight: 10.0
         max_path_occupancy_ratio: 0.05
         trajectory_point_step: 4
         threshold_to_consider: 0.5
-        offset_from_furthest: 20  
+        offset_from_furthest: 20
         use_path_orientations: false
       PathFollowCritic:
         enabled: true
         cost_power: 1
         cost_weight: 5.0
         offset_from_furthest: 5
-        threshold_to_consider: 1.4      # ori : 1.4
+        threshold_to_consider: 1.4
       PathAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 2.2                 # ori : 2.2
+        cost_weight: 2.2
         offset_from_furthest: 4
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
-        mode: 0  # 0: Prefer forward, penalize large path angles relative to robot heading
-                 # 1: No direction preference, penalize smaller of forward/backward angles
-                 # 2: Use path direction if available, penalize deviation from requested heading
+        mode:
+          0 # 0: Prefer forward, penalize large path angles relative to robot heading
+          # 1: No direction preference, penalize smaller of forward/backward angles
+          # 2: Use path direction if available, penalize deviation from requested heading
       TwirlingCritic:
         enabled: true
         twirling_cost_power: 1
@@ -253,8 +263,8 @@ local_costmap:
       plugins: ["obstacle_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 2.58   # guide : 2.58, ori : 3.0
-        inflation_radius: 1.75      # guide : 1.75, ori : 0.7
+        cost_scaling_factor: 2.58 # guide : 2.58, ori : 3.0
+        inflation_radius: 1.75 # guide : 1.75, ori : 0.7
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
@@ -310,8 +320,8 @@ global_costmap:
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 2.58   # guide : 2.58, ori : 3.0
-        inflation_radius: 1.75      # guide : 1.75, ori : 0.7
+        cost_scaling_factor: 2.58 # guide : 2.58, ori : 3.0
+        inflation_radius: 1.75 # guide : 1.75, ori : 0.7
       always_send_full_costmap: True
 
 # The yaml_filename does not need to be specified since it going to be set by defaults in launch.
@@ -340,15 +350,15 @@ planner_server:
       w_traversal_cost: 2.0
       w_heuristic_cost: 1.0
 # planner_server:
-  # ros__parameters:
-  #   expected_planner_frequency: 20.0
-  #   planner_plugins: ["GridBased"]
-  #   costmap_update_timeout: 1.0
-  #   GridBased:
-  #     plugin: "nav2_navfn_planner::NavfnPlanner"
-  #     tolerance: 0.5
-  #     use_astar: true
-  #     allow_unknown: true
+# ros__parameters:
+#   expected_planner_frequency: 20.0
+#   planner_plugins: ["GridBased"]
+#   costmap_update_timeout: 1.0
+#   GridBased:
+#     plugin: "nav2_navfn_planner::NavfnPlanner"
+#     tolerance: 0.5
+#     use_astar: true
+#     allow_unknown: true
 
 smoother_server:
   ros__parameters:
@@ -366,7 +376,8 @@ behavior_server:
     local_footprint_topic: local_costmap/published_footprint
     global_footprint_topic: global_costmap/published_footprint
     cycle_frequency: 10.0
-    behavior_plugins: ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
+    behavior_plugins:
+      ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
     spin:
       plugin: "nav2_behaviors::Spin"
     backup:
@@ -401,14 +412,14 @@ velocity_smoother:
   ros__parameters:
     smoothing_frequency: 10.0
     scale_velocities: False
-    feedback: "CLOSED_LOOP"   # CLOSED_LOOP reference is odom, OPEN_LOOP reference is /cmd_vel
-    max_velocity: [0.5, 0.0, 3.0]     # x, y, z
-    min_velocity: [-0.35, 0.0, -3.0]   # x, y, z
+    feedback: "CLOSED_LOOP" # CLOSED_LOOP reference is odom, OPEN_LOOP reference is /cmd_vel
+    max_velocity: [0.5, 0.0, 3.0] # x, y, z
+    min_velocity: [-0.35, 0.0, -3.0] # x, y, z
     max_accel: [3.0, 0.0, 5.2]
     max_decel: [-1.8, 0.0, -5.2]
     odom_topic: "odom"
     odom_duration: 0.1
-    deadband_velocity: [0.03, 0.0, 0.05]  # avoid jitter. x, y, z
+    deadband_velocity: [0.03, 0.0, 0.05] # avoid jitter. x, y, z
     velocity_timeout: 0.8
 
 collision_monitor:
@@ -457,9 +468,9 @@ docking_server:
     dock_prestaging_tolerance: 0.5
 
     # Types of docks
-    dock_plugins: ['simple_charging_dock']
+    dock_plugins: ["simple_charging_dock"]
     simple_charging_dock:
-      plugin: 'opennav_docking::SimpleChargingDock'
+      plugin: "opennav_docking::SimpleChargingDock"
       docking_threshold: 0.05
       staging_x_offset: -0.7
       use_external_detection_pose: true
@@ -500,5 +511,5 @@ loopback_simulator:
     base_frame_id: "base_link"
     odom_frame_id: "odom"
     map_frame_id: "map"
-    scan_frame_id: "base_scan"  # tb4_loopback_simulator.launch.py remaps to 'rplidar_link'
+    scan_frame_id: "base_scan" # tb4_loopback_simulator.launch.py remaps to 'rplidar_link'
     update_duration: 0.02
