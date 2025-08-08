@@ -46,7 +46,7 @@ Gif 動圖中演示 AMR 於動態障礙路徑的移動過程：
     - global planner: Theta* path planner
     - local planner: MPPI (Model Predictive Path Integral) controller
 
-> 詳細的 ROS 2 與 package 安裝指南請參閱[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)
+> 詳細的 ROS 2 與 package 安裝指南請參閱[ROS2 Jazzy Package 安裝：機電系統、建圖、導航](https://hackmd.io/@ming0071/ROS2-Jazzy-install)，Nav2的參數調整請參閱[Navigation2 參數設定](https://hackmd.io/@ming0071/nav2-params)
 
 ### Chassis control
 
