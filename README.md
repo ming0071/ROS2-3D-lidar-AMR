@@ -61,9 +61,8 @@ Gif 動圖中演示 AMR 於動態障礙路徑的移動過程：
 
 > 詳細的指令請參閱[ROS2 launch 指令集](https://hackmd.io/@ming0071/ros2-launch-commands)，此處僅列出基本使用指令
 
-### Mechatronics system
+### Mechatronics system (sencor + tf + chassic)
 
-#### main (sencor + tf + chassic)
 ```bash
 cd ~/ros2_ws/
 source install/setup.bash
@@ -102,9 +101,8 @@ pcl_viewer ~/ros2_ws/src/scl_amr/map/dlio_map.pcd
 ros2 launch pointcloud_to_2dmap_ros2 pointcloud_to_2dmap.launch.py
 ```
 
-### Navigation
+### Navigation2
 
-#### Nav2 
 ```bash
 # mechatronics 
 cd ~/ros2_ws/
