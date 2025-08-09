@@ -4,11 +4,11 @@
 
 本專案提出一套基於 ROS 2 Jazzy 架構的自主移動機器人（Autonomous Mobile Robot, AMR）系統，整合 3D LiDAR 與 IMU 進行地圖建構、定位、路徑規劃與運動控制，並透過 2D LiDAR 實現動態障礙物偵測與避障，應用於室內導航任務。
 
-在定位方面，系統採用 DLIO（LiDAR-Inertial Odometry）進行高頻姿態估測，並結合 AMCL 以補償累積誤差。在路徑規劃與控制方面，分別比較了 A* 與 Theta* 演算法，以及 DWB 與 MPPI 控制器。最終選用 Theta* 搭配 MPPI，實驗顯示可實現更平滑的軌跡與穩健的避障控制能力。
+在定位方面，系統採用 DLIO（LiDAR-Inertial Odometry）進行高頻姿態估測，並結合 AMCL 以補償長時間累積誤差。在路徑規劃與控制方面，分別比較了 A* 與 Theta* 演算法，以及 DWB 與 MPPI 控制器。最終選用 Theta* 搭配 MPPI，實驗顯示可實現更平滑的軌跡與穩健的避障控制能力。
 
 <img src="doc/figure/AMR system structure.png" />
 
-系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差小於 5.1 公分，角度誤差小於 3.5 度，且移動軌跡具備良好的一致性。
+系統於兩組不同導航任務中進行驗證，包含 38 公尺動態障礙路徑與 185 公尺長距離走廊導航。結果顯示平均位置誤差 < 5.1 cm，角度誤差 < 3.5°，且移動軌跡具備良好的一致性。
 
 Gif 動圖中演示 AMR 於動態障礙路徑的移動過程：
 
@@ -136,16 +136,4 @@ source install/setup.bash
 cd ~/ros2_ws/
 source install/setup.bash
 ros2 launch scl_amr multi_navigate_and_log.launch.py log_csv:=5.csv
-```
-
-#### rviz update
-```bash
-cp /home/scl/ros2_ws/install/scl_amr/share/scl_amr/rviz/nav2_scl.rviz /home/scl/ros2_ws/src/scl_amr/rviz/
-```
-
-#### About tf
-```bash
-ros2 run rqt_tf_tree rqt_tf_tree --force-discover
-
-ros2 run tf2_ros tf2_echo map odom 
 ```
